@@ -25,41 +25,6 @@
 
     .container { max-width: 680px; margin: 0 auto; padding: 16px; }
 
-    /* API Key */
-    .api-section {
-      background: #fff8f0;
-      border: 1.5px solid #ffd6b0;
-      border-radius: 12px;
-      padding: 14px 16px;
-      margin-bottom: 16px;
-    }
-    .api-section label { font-size: 0.82rem; color: #888; display: block; margin-bottom: 6px; }
-    .api-row { display: flex; gap: 8px; }
-    .api-row input {
-      flex: 1;
-      border: 1.5px solid #e0d8d0;
-      border-radius: 8px;
-      padding: 8px 12px;
-      font-size: 0.9rem;
-      background: white;
-    }
-    .api-row input:focus { outline: none; border-color: #ff6b35; }
-    .btn-save {
-      background: #ff6b35;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 8px 14px;
-      font-size: 0.85rem;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-    .btn-save:hover { background: #e55a26; }
-    .api-status { font-size: 0.78rem; margin-top: 6px; }
-    .api-status.ok { color: #4caf50; }
-    .api-status.empty { color: #aaa; }
-
-    /* Ingredient categories */
     .section-title {
       font-size: 1rem;
       font-weight: 600;
@@ -79,9 +44,6 @@
       font-weight: 600;
       color: #999;
       margin-bottom: 8px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
     }
     .chips { display: flex; flex-wrap: wrap; gap: 8px; }
     .chip {
@@ -101,7 +63,6 @@
       color: white;
     }
 
-    /* Custom ingredient */
     .custom-section {
       background: white;
       border-radius: 12px;
@@ -129,7 +90,6 @@
     }
     .btn-add:hover { background: #e0e0e0; }
 
-    /* Selected summary */
     .selected-bar {
       background: #fff8f0;
       border: 1.5px dashed #ffb87a;
@@ -142,7 +102,6 @@
     }
     .selected-bar span { font-weight: 600; }
 
-    /* Generate button */
     .btn-generate {
       width: 100%;
       background: linear-gradient(135deg, #ff6b35, #f7931e);
@@ -159,7 +118,6 @@
     .btn-generate:hover { opacity: 0.9; }
     .btn-generate:disabled { opacity: 0.5; cursor: not-allowed; }
 
-    /* Result */
     .result-card {
       background: white;
       border-radius: 14px;
@@ -182,9 +140,7 @@
       color: #444;
       white-space: pre-wrap;
     }
-    .result-content strong { color: #333; }
 
-    /* Loading */
     .loading {
       text-align: center;
       padding: 24px;
@@ -203,7 +159,6 @@
     }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* Error */
     .error-msg {
       background: #fff0f0;
       border: 1.5px solid #ffb0b0;
@@ -213,6 +168,7 @@
       color: #c00;
       margin-bottom: 14px;
       display: none;
+      white-space: pre-wrap;
     }
     .error-msg.visible { display: block; }
 
@@ -233,22 +189,9 @@
 
 <div class="container">
 
-  <!-- API Key -->
-  <div class="api-section">
-    <label>Anthropic API Key（用于 AI 生成食谱，仅存在本地浏览器中）</label>
-    <div class="api-row">
-      <input type="password" id="apiKeyInput" placeholder="sk-ant-..." />
-      <button class="btn-save" onclick="saveApiKey()">保存</button>
-    </div>
-    <div class="api-status empty" id="apiStatus">未设置 API Key</div>
-  </div>
-
   <div class="section-title">📦 选择你有的食材</div>
-
-  <!-- Categories -->
   <div id="categoriesContainer"></div>
 
-  <!-- Custom ingredient -->
   <div class="custom-section">
     <div class="section-title" style="margin-top:0">✏️ 手动添加食材</div>
     <div class="custom-row">
@@ -258,10 +201,8 @@
     <div class="chips" id="customChips"></div>
   </div>
 
-  <!-- Selected summary -->
   <div class="selected-bar" id="selectedBar">还没有选食材，点上面的选一些吧～</div>
 
-  <!-- Preference row -->
   <div style="display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap">
     <div style="flex:1;min-width:140px">
       <div style="font-size:0.82rem;color:#888;margin-bottom:5px">菜系偏好</div>
@@ -311,30 +252,12 @@
 
 <script>
 const INGREDIENTS = [
-  {
-    name: "🥩 肉类",
-    items: ["猪肉", "牛肉", "鸡肉", "羊肉", "猪排", "鸡腿", "鸡胸肉", "五花肉", "培根", "火腿"]
-  },
-  {
-    name: "🐟 海鲜",
-    items: ["虾", "鱼", "螃蟹", "蛤蜊", "鱿鱼", "扇贝", "鲈鱼", "带鱼", "鲫鱼"]
-  },
-  {
-    name: "🥚 蛋奶豆",
-    items: ["鸡蛋", "豆腐", "豆腐干", "牛奶", "奶酪", "皮蛋", "咸蛋"]
-  },
-  {
-    name: "🥦 蔬菜",
-    items: ["土豆", "番茄", "茄子", "辣椒", "青椒", "洋葱", "大葱", "白菜", "菠菜", "生菜", "西兰花", "胡萝卜", "黄瓜", "冬瓜", "南瓜", "芹菜", "韭菜", "莲藕", "蘑菇", "木耳"]
-  },
-  {
-    name: "🌾 主食/粮食",
-    items: ["大米", "面条", "馒头", "玉米", "红薯", "粉丝", "年糕", "饺子皮"]
-  },
-  {
-    name: "🧄 调料/常备",
-    items: ["大蒜", "姜", "葱", "酱油", "醋", "豆瓣酱", "番茄酱", "蚝油", "料酒", "花椒", "八角"]
-  }
+  { name: "🥩 肉类", items: ["猪肉", "牛肉", "鸡肉", "羊肉", "猪排", "鸡腿", "鸡胸肉", "五花肉", "培根", "火腿"] },
+  { name: "🐟 海鲜", items: ["虾", "鱼", "螃蟹", "蛤蜊", "鱿鱼", "扇贝", "鲈鱼", "带鱼", "鲫鱼"] },
+  { name: "🥚 蛋奶豆", items: ["鸡蛋", "豆腐", "豆腐干", "牛奶", "奶酪", "皮蛋", "咸蛋"] },
+  { name: "🥦 蔬菜", items: ["土豆", "番茄", "茄子", "辣椒", "青椒", "洋葱", "大葱", "白菜", "菠菜", "生菜", "西兰花", "胡萝卜", "黄瓜", "冬瓜", "南瓜", "芹菜", "韭菜", "莲藕", "蘑菇", "木耳"] },
+  { name: "🌾 主食/粮食", items: ["大米", "面条", "馒头", "玉米", "红薯", "粉丝", "年糕", "饺子皮"] },
+  { name: "🧄 调料/常备", items: ["大蒜", "姜", "葱", "酱油", "醋", "豆瓣酱", "番茄酱", "蚝油", "料酒", "花椒", "八角"] }
 ];
 
 let selectedIngredients = new Set();
@@ -350,21 +273,6 @@ function init() {
     }</div>`;
     container.appendChild(div);
   });
-
-  const saved = localStorage.getItem('anthropic_api_key');
-  if (saved) {
-    document.getElementById('apiKeyInput').value = saved;
-    document.getElementById('apiStatus').textContent = '✅ API Key 已设置';
-    document.getElementById('apiStatus').className = 'api-status ok';
-  }
-}
-
-function saveApiKey() {
-  const key = document.getElementById('apiKeyInput').value.trim();
-  if (!key) return;
-  localStorage.setItem('anthropic_api_key', key);
-  document.getElementById('apiStatus').textContent = '✅ API Key 已保存';
-  document.getElementById('apiStatus').className = 'api-status ok';
 }
 
 function toggleIngredient(name, el) {
@@ -382,15 +290,14 @@ function addCustom() {
   const input = document.getElementById('customInput');
   const val = input.value.trim();
   if (!val) return;
-  const items = val.split(/[,，、\s]+/).filter(Boolean);
-  items.forEach(item => {
+  val.split(/[,，、\s]+/).filter(Boolean).forEach(item => {
     if (!customIngredients.includes(item)) {
       customIngredients.push(item);
       selectedIngredients.add(item);
-      renderCustomChips();
     }
   });
   input.value = '';
+  renderCustomChips();
   updateSummary();
 }
 
@@ -402,40 +309,29 @@ function removeCustom(name) {
 }
 
 function renderCustomChips() {
-  const container = document.getElementById('customChips');
-  container.innerHTML = customIngredients.map(item =>
+  document.getElementById('customChips').innerHTML = customIngredients.map(item =>
     `<div class="chip selected" style="cursor:default">${item} <span onclick="removeCustom('${item}')" style="cursor:pointer;opacity:0.7;margin-left:2px">×</span></div>`
   ).join('');
 }
 
 function updateSummary() {
-  const bar = document.getElementById('selectedBar');
   const all = [...selectedIngredients];
-  if (all.length === 0) {
-    bar.innerHTML = '还没有选食材，点上面的选一些吧～';
-  } else {
-    bar.innerHTML = `<span>已选 ${all.length} 种食材：</span>${all.join('、')}`;
-  }
+  const bar = document.getElementById('selectedBar');
+  bar.innerHTML = all.length === 0
+    ? '还没有选食材，点上面的选一些吧～'
+    : `<span>已选 ${all.length} 种食材：</span>${all.join('、')}`;
 }
 
 async function generateRecipes() {
-  const key = localStorage.getItem('anthropic_api_key') || document.getElementById('apiKeyInput').value.trim();
-  if (!key) {
-    showError('请先填写并保存你的 Anthropic API Key ↑');
-    return;
-  }
   const ingredients = [...selectedIngredients];
-  if (ingredients.length === 0) {
-    showError('请至少选一种食材！');
-    return;
-  }
+  if (ingredients.length === 0) { showError('请至少选一种食材！'); return; }
 
   const cuisine = document.getElementById('cuisinePref').value;
   const servings = document.getElementById('servingsPref').value;
   const count = document.getElementById('countPref').value;
 
   const prompt = `我冰箱里现在有这些食材：${ingredients.join('、')}。
-请根据这些食材，帮我设计 ${count} 道适合 ${servings} 人吃的${cuisine ? cuisine : '家常'}菜谱。
+请根据这些食材，帮我设计 ${count} 道适合 ${servings} 人吃的${cuisine || '家常'}菜谱。
 要求：
 1. 只使用我提供的食材（调料可以假设家里有常用的）
 2. 步骤要详细、清晰，适合普通人在家操作
@@ -446,22 +342,12 @@ async function generateRecipes() {
   document.getElementById('loading').classList.add('visible');
   document.getElementById('resultCard').classList.remove('visible');
   document.getElementById('generateBtn').disabled = true;
-  document.getElementById('resultContent').textContent = '';
 
   try {
-    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+    const resp = await fetch('/api/recipe', {
       method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'x-api-key': key,
-        'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-request-override': 'true'
-      },
-      body: JSON.stringify({
-        model: 'claude-haiku-4-5-20251001',
-        max_tokens: 2048,
-        messages: [{ role: 'user', content: prompt }]
-      })
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ messages: [{ role: 'user', content: prompt }] })
     });
 
     if (!resp.ok) {
@@ -470,14 +356,12 @@ async function generateRecipes() {
     }
 
     const data = await resp.json();
-    const text = data.content?.[0]?.text || '没有生成结果，请重试';
-
-    document.getElementById('resultContent').textContent = text;
+    document.getElementById('resultContent').textContent = data.content?.[0]?.text || '没有生成结果，请重试';
     document.getElementById('resultCard').classList.add('visible');
     document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
 
   } catch (e) {
-    showError('生成失败：' + e.message + '\n\n提示：如果是跨域错误，请确认 API Key 正确，或尝试关闭浏览器的跨域限制（部分浏览器会拦截直接调用 API）。');
+    showError('生成失败：' + e.message);
   } finally {
     document.getElementById('loading').classList.remove('visible');
     document.getElementById('generateBtn').disabled = false;
