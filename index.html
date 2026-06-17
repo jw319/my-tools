@@ -178,9 +178,48 @@
       color: #bbb;
       padding: 20px;
     }
+    /* Password gate */
+    .gate {
+      position: fixed; inset: 0;
+      background: #f7f3ee;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 999;
+    }
+    .gate-box {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 28px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 280px;
+    }
+    .gate-box h2 { font-size: 1.3rem; margin-bottom: 6px; }
+    .gate-box p { font-size: 0.85rem; color: #999; margin-bottom: 20px; }
+    .gate-box input {
+      width: 100%; border: 1.5px solid #e0d8d0; border-radius: 8px;
+      padding: 10px 12px; font-size: 1rem; text-align: center;
+      margin-bottom: 12px; letter-spacing: 4px;
+    }
+    .gate-box input:focus { outline: none; border-color: #ff6b35; }
+    .gate-box button {
+      width: 100%; background: linear-gradient(135deg, #ff6b35, #f7931e);
+      color: white; border: none; border-radius: 8px;
+      padding: 11px; font-size: 0.95rem; font-weight: 600; cursor: pointer;
+    }
+    .gate-error { color: #c00; font-size: 0.82rem; margin-top: 8px; display: none; }
   </style>
 </head>
 <body>
+
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <h2>🍳 冰箱里有啥？</h2>
+    <p>请输入密码进入</p>
+    <input type="password" id="gateInput" placeholder="••••••" onkeydown="if(event.key==='Enter')checkPassword()" />
+    <button onclick="checkPassword()">进入</button>
+    <div class="gate-error" id="gateError">密码错误，请重试</div>
+  </div>
+</div>
 
 <header>
   <h1>🍳 冰箱里有啥？帮你想菜！</h1>
@@ -375,6 +414,16 @@ function showError(msg) {
 }
 function hideError() {
   document.getElementById('errorMsg').classList.remove('visible');
+}
+
+function checkPassword() {
+  const val = document.getElementById('gateInput').value;
+  if (val === '030319') {
+    document.getElementById('gate').style.display = 'none';
+  } else {
+    document.getElementById('gateError').style.display = 'block';
+    document.getElementById('gateInput').value = '';
+  }
 }
 
 init();
