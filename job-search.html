@@ -77,6 +77,22 @@
   .row { margin-bottom: 12px; }
   .row:last-child { margin-bottom: 0; }
 
+  .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .chip {
+    border: 1.5px solid #dcece1;
+    border-radius: 20px;
+    padding: 5px 13px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s;
+    background: #fbfefc;
+    color: #4a6b58;
+  }
+  .chip:hover { border-color: #8fcbab; }
+  .chip.selected { background: #6fb98f; border-color: #6fb98f; color: white; }
+  .chips-hint { font-size: 0.74rem; color: #9db3a8; margin-top: 6px; }
+
   .file-btn {
     display: inline-flex;
     align-items: center;
@@ -179,7 +195,9 @@
   .stat-tile .num { font-size: 1.4rem; font-weight: 700; }
   .stat-tile .label { font-size: 0.76rem; margin-top: 2px; opacity: 0.85; }
   .stat-tile.screening { background: #eaf3fb; color: #3d6da3; }
-  .stat-tile.interview { background: #f1eefb; color: #6a52a3; }
+  .stat-tile.interview1 { background: #f1eefb; color: #6a52a3; }
+  .stat-tile.interview2 { background: #ede4fa; color: #7a45b5; }
+  .stat-tile.final { background: #fdf3e0; color: #b8862f; }
   .stat-tile.rejected { background: #fbeeec; color: #b05a45; }
   .stat-tile.offer { background: #eaf7ef; color: #3d7157; }
   .stats-empty { font-size: 0.84rem; color: #9db3a8; }
@@ -318,19 +336,8 @@
         <input type="text" id="keywords" placeholder="例如：数据分析、产品经理..." oninput="persistField('keywords', KEYWORDS_KEY)" />
       </div>
       <div class="row">
-        <label class="field-label" for="category">岗位类别</label>
-        <select id="category" onchange="persistField('category', CATEGORY_KEY)">
-          <option value="">不限</option>
-          <option value="技术开发">技术开发</option>
-          <option value="数据">数据</option>
-          <option value="产品">产品</option>
-          <option value="设计">设计</option>
-          <option value="运营">运营</option>
-          <option value="市场营销">市场营销</option>
-          <option value="销售">销售</option>
-          <option value="职能（HR/财务/行政）">职能（HR/财务/行政）</option>
-          <option value="其他">其他</option>
-        </select>
+        <label class="field-label">感兴趣的岗位方向（可多选，不选则不限）</label>
+        <div class="chips" id="categoryChips"></div>
       </div>
       <div class="row">
         <label class="field-label" for="experience">经验要求</label>
@@ -383,6 +390,38 @@
   </div>
 
   <div class="card">
+    <h2>🎓 校招追踪（提前批 / 暑期实习 / 内推）</h2>
+    <div class="row">
+      <label class="field-label" for="gradYear">目标届别</label>
+      <input type="text" id="gradYear" list="gradYearList" placeholder="例如：2027届" oninput="persistField('gradYear', GRAD_YEAR_KEY)" />
+      <datalist id="gradYearList">
+        <option value="2026届"></option>
+        <option value="2027届"></option>
+        <option value="2028届"></option>
+      </datalist>
+    </div>
+    <div class="chips-hint" style="margin-bottom:10px">秋招大规模开始前，AI 会重点找提前批、暑期实习（留用）、内推码这类现在就能投的机会，会复用左上角的 base 地和感兴趣的岗位方向。</div>
+    <button class="btn-search" id="campusSearchBtn" onclick="searchCampusJobs()">🔍 查找最新校招信息</button>
+    <div class="last-search" id="campusLastSearch"></div>
+  </div>
+
+  <div class="loading" id="campusLoading">
+    <div class="spinner"></div>
+    AI 正在联网搜索校招信息，大概需要 30～60 秒，请耐心等一下…
+  </div>
+
+  <div class="results" id="campusResults">
+    <div class="card">
+      <h2>🎓 最新校招 / 实习机会</h2>
+      <div id="campusJobsContainer"></div>
+    </div>
+    <div class="card sources-card" id="campusSourcesCard" style="display:none">
+      <h2>🔗 参考来源</h2>
+      <div class="sources-list" id="campusSourcesList"></div>
+    </div>
+  </div>
+
+  <div class="card">
     <h2>📋 我的投递记录</h2>
     <div id="appsContainer"></div>
   </div>
@@ -399,17 +438,24 @@ const KEYWORDS_KEY = 'jobSearchKeywords';
 const CATEGORY_KEY = 'jobSearchCategory';
 const EXPERIENCE_KEY = 'jobSearchExperience';
 const LAST_SEARCH_KEY = 'jobSearchLastSearch';
+const CAMPUS_LAST_SEARCH_KEY = 'jobSearchCampusLastSearch';
 const APPLICATIONS_KEY = 'jobSearchApplications';
+const GRAD_YEAR_KEY = 'jobSearchGradYear';
 
 const STATUS_LABELS = {
   screening: '初筛',
-  interview: '一面',
+  interview1: '一面',
+  interview2: '二面',
+  final: '终面',
   rejected: '简历挂',
   offer: 'Offer'
 };
 
+const CATEGORIES = ['技术开发', '数据', '产品', '设计', '运营', '市场营销', '销售', '职能（HR/财务/行政）', '其他'];
+
 let resumeData = null; // { name, mediaType: 'application/pdf'|'text/plain', base64?, text? }
 let applications = []; // [{ id, title, company, location, applyLink, status, updatedAt }]
+let selectedCategories = new Set();
 
 function init() {
   const savedResume = localStorage.getItem(RESUME_KEY);
@@ -422,21 +468,51 @@ function init() {
 
   const fieldMap = [
     ['baseCity', CITY_KEY], ['district', DISTRICT_KEY], ['keywords', KEYWORDS_KEY],
-    ['category', CATEGORY_KEY], ['experience', EXPERIENCE_KEY]
+    ['experience', EXPERIENCE_KEY]
   ];
   fieldMap.forEach(([id, key]) => {
     const saved = localStorage.getItem(key);
     if (saved) document.getElementById(id).value = saved;
   });
 
+  document.getElementById('gradYear').value = localStorage.getItem(GRAD_YEAR_KEY) || '2027届';
+
+  try {
+    const savedCategories = JSON.parse(localStorage.getItem(CATEGORY_KEY) || '[]');
+    selectedCategories = new Set(savedCategories);
+  } catch (e) { selectedCategories = new Set(); }
+  renderCategoryChips();
+
   const lastSearch = localStorage.getItem(LAST_SEARCH_KEY);
-  if (lastSearch) updateLastSearchLabel(lastSearch);
+  if (lastSearch) updateLastSearchLabel('lastSearch', lastSearch);
+  const campusLastSearch = localStorage.getItem(CAMPUS_LAST_SEARCH_KEY);
+  if (campusLastSearch) updateLastSearchLabel('campusLastSearch', campusLastSearch);
 
   try {
     applications = JSON.parse(localStorage.getItem(APPLICATIONS_KEY) || '[]');
   } catch (e) { applications = []; }
   renderStats();
   renderApplications();
+}
+
+function renderCategoryChips() {
+  const container = document.getElementById('categoryChips');
+  container.innerHTML = CATEGORIES.map(cat => {
+    const selected = selectedCategories.has(cat) ? ' selected' : '';
+    return `<div class="chip${selected}" data-cat="${escapeHtml(cat)}" onclick="toggleCategory(this)">${escapeHtml(cat)}</div>`;
+  }).join('');
+}
+
+function toggleCategory(el) {
+  const cat = el.dataset.cat;
+  if (selectedCategories.has(cat)) {
+    selectedCategories.delete(cat);
+    el.classList.remove('selected');
+  } else {
+    selectedCategories.add(cat);
+    el.classList.add('selected');
+  }
+  localStorage.setItem(CATEGORY_KEY, JSON.stringify([...selectedCategories]));
 }
 
 function persistField(elId, key) {
@@ -479,9 +555,9 @@ function handleResumeFile(event) {
   else reader.readAsText(file);
 }
 
-function updateLastSearchLabel(iso) {
+function updateLastSearchLabel(elId, iso) {
   const d = new Date(iso);
-  document.getElementById('lastSearch').textContent = `上次搜索：${d.toLocaleString('zh-CN')}`;
+  document.getElementById(elId).textContent = `上次搜索：${d.toLocaleString('zh-CN')}`;
 }
 
 function escapeHtml(str) {
@@ -498,20 +574,48 @@ function safeUrl(url) {
   return null;
 }
 
-async function searchJobs() {
+function searchJobs() {
   const city = document.getElementById('baseCity').value.trim();
   const district = document.getElementById('district').value.trim();
   const keywords = document.getElementById('keywords').value.trim();
-  const category = document.getElementById('category').value;
+  const categories = [...selectedCategories];
   const experience = document.getElementById('experience').value;
 
+  runSearch({
+    payload: { baseCity: city, district, keywords, categories, experience },
+    ids: {
+      loading: 'loading', results: 'results', jobsContainer: 'jobsContainer',
+      sourcesCard: 'sourcesCard', sourcesList: 'sourcesList', btn: 'searchBtn', lastSearch: 'lastSearch'
+    },
+    lastSearchKey: LAST_SEARCH_KEY
+  });
+}
+
+function searchCampusJobs() {
+  const city = document.getElementById('baseCity').value.trim();
+  const district = document.getElementById('district').value.trim();
+  const keywords = document.getElementById('keywords').value.trim();
+  const categories = [...selectedCategories];
+  const gradYear = document.getElementById('gradYear').value.trim() || '2027届';
+
+  runSearch({
+    payload: { baseCity: city, district, keywords, categories, campusMode: true, gradYear },
+    ids: {
+      loading: 'campusLoading', results: 'campusResults', jobsContainer: 'campusJobsContainer',
+      sourcesCard: 'campusSourcesCard', sourcesList: 'campusSourcesList', btn: 'campusSearchBtn', lastSearch: 'campusLastSearch'
+    },
+    lastSearchKey: CAMPUS_LAST_SEARCH_KEY
+  });
+}
+
+async function runSearch({ payload, ids, lastSearchKey }) {
   if (!resumeData) { showError('请先上传简历'); return; }
-  if (!city) { showError('请填写 base 地'); return; }
+  if (!payload.baseCity) { showError('请填写 base 地'); return; }
 
   hideError();
-  document.getElementById('loading').classList.add('visible');
-  document.getElementById('results').classList.remove('visible');
-  document.getElementById('searchBtn').disabled = true;
+  document.getElementById(ids.loading).classList.add('visible');
+  document.getElementById(ids.results).classList.remove('visible');
+  document.getElementById(ids.btn).disabled = true;
 
   try {
     const resp = await fetch('/api/job-search', {
@@ -520,11 +624,7 @@ async function searchJobs() {
       body: JSON.stringify({
         resumeBase64: resumeData.mediaType === 'application/pdf' ? resumeData.base64 : undefined,
         resumeText: resumeData.mediaType === 'text/plain' ? resumeData.text : undefined,
-        baseCity: city,
-        district,
-        keywords,
-        category,
-        experience
+        ...payload
       })
     });
 
@@ -534,21 +634,21 @@ async function searchJobs() {
     }
 
     const data = await resp.json();
-    renderResults(data);
+    renderResults(data, ids);
 
     const now = new Date().toISOString();
-    localStorage.setItem(LAST_SEARCH_KEY, now);
-    updateLastSearchLabel(now);
+    localStorage.setItem(lastSearchKey, now);
+    updateLastSearchLabel(ids.lastSearch, now);
 
   } catch (e) {
     showError('搜索失败：' + e.message);
   } finally {
-    document.getElementById('loading').classList.remove('visible');
-    document.getElementById('searchBtn').disabled = false;
+    document.getElementById(ids.loading).classList.remove('visible');
+    document.getElementById(ids.btn).disabled = false;
   }
 }
 
-function renderResults(data) {
+function renderResults(data, ids) {
   const textBlocks = (data.content || []).filter(b => b.type === 'text');
   const fullText = textBlocks.map(b => b.text).join('');
 
@@ -560,11 +660,11 @@ function renderResults(data) {
     try { jobs = JSON.parse(bracketMatch[0]); } catch (e) { jobs = null; }
   }
 
-  const container = document.getElementById('jobsContainer');
+  const container = document.getElementById(ids.jobsContainer);
   if (Array.isArray(jobs) && jobs.length > 0) {
     container.innerHTML = jobs.map(renderJobCard).join('');
   } else {
-    container.innerHTML = `<div class="raw-fallback">${escapeHtml(fullText || '没有找到合适的岗位，换个 base 地或关键词再试试～')}</div>`;
+    container.innerHTML = `<div class="raw-fallback">${escapeHtml(fullText || '没有找到合适的岗位，换个筛选条件再试试～')}</div>`;
   }
 
   const citations = [];
@@ -573,9 +673,9 @@ function renderResults(data) {
     if (c.url && !seen.has(c.url)) { seen.add(c.url); citations.push(c); }
   }));
 
-  const sourcesCard = document.getElementById('sourcesCard');
+  const sourcesCard = document.getElementById(ids.sourcesCard);
   if (citations.length > 0) {
-    document.getElementById('sourcesList').innerHTML = citations.map(c => {
+    document.getElementById(ids.sourcesList).innerHTML = citations.map(c => {
       const url = safeUrl(c.url);
       const title = escapeHtml(c.title || c.url);
       return url ? `<div><a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${title}</a></div>` : '';
@@ -585,8 +685,8 @@ function renderResults(data) {
     sourcesCard.style.display = 'none';
   }
 
-  document.getElementById('results').classList.add('visible');
-  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.getElementById(ids.results).classList.add('visible');
+  document.getElementById(ids.results).scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function jobKey(job) {
@@ -599,6 +699,8 @@ function renderJobCard(job) {
   const company = escapeHtml(job.company || '');
   const location = escapeHtml(job.location || '');
   const salary = escapeHtml(job.salary_range || '');
+  const category = escapeHtml(job.category || '');
+  const opportunityType = escapeHtml(job.opportunity_type || '');
   const reason = escapeHtml(job.match_reason || '');
   const method = escapeHtml(job.apply_method || '');
   const source = escapeHtml(job.source_note || '');
@@ -622,6 +724,8 @@ function renderJobCard(job) {
       <div class="job-company">${company}</div>
       <div class="job-meta">
         ${location ? `<span class="badge">📍 ${location}</span>` : ''}
+        ${category ? `<span class="badge">🏷️ ${category}</span>` : ''}
+        ${opportunityType ? `<span class="badge gold">🎓 ${opportunityType}</span>` : ''}
         ${salary ? `<span class="badge gold">💰 ${salary}</span>` : ''}
         ${method ? `<span class="badge coral">${method}</span>` : ''}
       </div>
@@ -664,7 +768,8 @@ function removeApplication(id) {
 
 function renderStats() {
   const total = applications.length;
-  const counts = { screening: 0, interview: 0, rejected: 0, offer: 0 };
+  const counts = {};
+  Object.keys(STATUS_LABELS).forEach(key => { counts[key] = 0; });
   applications.forEach(a => { if (counts[a.status] !== undefined) counts[a.status]++; });
 
   const container = document.getElementById('statsContainer');
@@ -673,14 +778,13 @@ function renderStats() {
     return;
   }
 
+  const tiles = Object.entries(STATUS_LABELS).map(([key, label]) =>
+    `<div class="stat-tile ${key}"><div class="num">${counts[key]}</div><div class="label">${escapeHtml(label)}</div></div>`
+  ).join('');
+
   container.innerHTML = `
     <div class="stats-total">总投递数：<b>${total}</b></div>
-    <div class="stats-grid">
-      <div class="stat-tile screening"><div class="num">${counts.screening}</div><div class="label">初筛</div></div>
-      <div class="stat-tile interview"><div class="num">${counts.interview}</div><div class="label">一面</div></div>
-      <div class="stat-tile rejected"><div class="num">${counts.rejected}</div><div class="label">简历挂</div></div>
-      <div class="stat-tile offer"><div class="num">${counts.offer}</div><div class="label">Offer</div></div>
-    </div>
+    <div class="stats-grid">${tiles}</div>
   `;
 }
 
