@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>求职工作台 🌿</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", sans-serif;
+    background: #f4faf6;
+    color: #33423c;
+    min-height: 100vh;
+    padding-bottom: 40px;
+  }
+
+  header {
+    background: linear-gradient(135deg, #8fcbab, #bfe6c8);
+    color: #234032;
+    padding: 26px 24px 20px;
+    text-align: center;
+  }
+  header h1 { font-size: 1.6rem; font-weight: 700; }
+  header p { font-size: 0.85rem; opacity: 0.85; margin-top: 4px; }
+
+  .container { max-width: 1080px; margin: 0 auto; padding: 16px; }
+
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  @media (max-width: 860px) {
+    .dashboard-grid { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 10px rgba(60, 110, 80, 0.08);
+  }
+  .dashboard-grid .card { margin-bottom: 0; }
+
+  .card h2 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #4a6b58;
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 6px;
+  }
+
+  label.field-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #7a9186;
+    margin-bottom: 6px;
+  }
+
+  input[type="text"], input[type="search"], select {
+    width: 100%;
+    border: 1.5px solid #dcece1;
+    border-radius: 10px;
+    padding: 9px 12px;
+    font-size: 0.9rem;
+    background: #fbfefc;
+    color: #33423c;
+    font-family: inherit;
+  }
+  input[type="text"]:focus, input[type="search"]:focus, select:focus {
+    outline: none; border-color: #8fcbab;
+  }
+
+  .row { margin-bottom: 12px; }
+  .row:last-child { margin-bottom: 0; }
+
+  .file-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #eaf7ef;
+    color: #3d7157;
+    border: 1.5px dashed #a9d9bc;
+    border-radius: 10px;
+    padding: 9px 14px;
+    font-size: 0.88rem;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s;
+  }
+  .file-btn:hover { background: #ddf1e5; }
+  #resumeStatus {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #5c8a70;
+    display: none;
+    line-height: 1.5;
+  }
+  #resumeStatus.visible { display: block; }
+  #resumeHint {
+    margin-top: 6px;
+    font-size: 0.74rem;
+    color: #9db3a8;
+    line-height: 1.5;
+  }
+
+  .btn-search {
+    width: 100%;
+    background: linear-gradient(135deg, #6fb98f, #9ad6b0);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 11px;
+    font-size: 0.94rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(111, 185, 143, 0.35);
+    transition: transform 0.1s, opacity 0.1s;
+  }
+  .btn-search:hover { transform: translateY(-1px); }
+  .btn-search:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+  .last-search {
+    text-align: center;
+    font-size: 0.76rem;
+    color: #9db3a8;
+    margin-top: 8px;
+  }
+
+  .error-msg {
+    display: none;
+    background: #fff2f0;
+    color: #c0503f;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+  }
+  .error-msg.visible { display: block; }
+
+  .loading {
+    display: none;
+    text-align: center;
+    padding: 26px 10px;
+    color: #5c8a70;
+    font-size: 0.88rem;
+  }
+  .loading.visible { display: block; }
+  .spinner {
+    width: 26px; height: 26px;
+    border: 3px solid #dcece1;
+    border-top-color: #6fb98f;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Stats */
+  .stats-total {
+    font-size: 0.86rem;
+    color: #5c8a70;
+    margin-bottom: 12px;
+  }
+  .stats-total b { font-size: 1.3rem; color: #2c463a; }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+  }
+  .stat-tile {
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+  }
+  .stat-tile .num { font-size: 1.4rem; font-weight: 700; }
+  .stat-tile .label { font-size: 0.76rem; margin-top: 2px; opacity: 0.85; }
+  .stat-tile.screening { background: #eaf3fb; color: #3d6da3; }
+  .stat-tile.interview { background: #f1eefb; color: #6a52a3; }
+  .stat-tile.rejected { background: #fbeeec; color: #b05a45; }
+  .stat-tile.offer { background: #eaf7ef; color: #3d7157; }
+  .stats-empty { font-size: 0.84rem; color: #9db3a8; }
+
+  .results { display: none; }
+  .results.visible { display: block; }
+
+  .job-card {
+    background: white;
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(60, 110, 80, 0.07);
+    border-left: 4px solid #9ad6b0;
+  }
+  .job-title { font-size: 1rem; font-weight: 700; color: #2c463a; }
+  .job-company { font-size: 0.86rem; color: #5c8a70; margin-top: 2px; }
+  .job-meta {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-top: 8px;
+  }
+  .badge {
+    font-size: 0.72rem;
+    background: #eaf7ef;
+    color: #3d7157;
+    border-radius: 20px;
+    padding: 3px 10px;
+  }
+  .badge.coral { background: #fff1ec; color: #c9694f; }
+  .badge.gold { background: #fbf3e3; color: #a3792f; }
+  .job-reason {
+    font-size: 0.85rem;
+    color: #4a5f55;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+  .job-actions {
+    margin-top: 10px;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .apply-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: white;
+    background: #6fb98f;
+    border-radius: 8px;
+    padding: 7px 14px;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .status-select {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+    width: auto;
+    max-width: 160px;
+  }
+  .source-note { font-size: 0.76rem; color: #9db3a8; }
+
+  .raw-fallback {
+    white-space: pre-wrap;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #33423c;
+  }
+
+  .sources-card h2 { color: #7a9186; }
+  .sources-list { font-size: 0.8rem; line-height: 1.9; }
+  .sources-list a { color: #5c8a70; }
+
+  /* Application tracker list */
+  .app-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eef5f0;
+    flex-wrap: wrap;
+  }
+  .app-row:last-child { border-bottom: none; }
+  .app-info { flex: 1; min-width: 160px; }
+  .app-title { font-size: 0.88rem; font-weight: 600; color: #2c463a; }
+  .app-company { font-size: 0.78rem; color: #7a9186; }
+  .app-remove {
+    background: none; border: none; color: #c0503f;
+    font-size: 0.78rem; cursor: pointer; padding: 4px 8px;
+  }
+  .apps-empty { font-size: 0.84rem; color: #9db3a8; }
+
+  footer {
+    text-align: center;
+    font-size: 0.76rem;
+    color: #9db3a8;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🌿 求职工作台</h1>
+  <p>上传简历，选好 base 地，AI 帮你联网找岗位</p>
+</header>
+
+<div class="container">
+
+  <div class="dashboard-grid">
+
+    <div class="card">
+      <h2>📍 地区选择</h2>
+      <div class="row">
+        <label class="field-label" for="baseCity">base 地（城市或“远程”）</label>
+        <input type="text" id="baseCity" list="cityList" placeholder="例如：上海、深圳、远程..." oninput="persistField('baseCity', CITY_KEY)" />
+        <datalist id="cityList">
+          <option value="北京"></option>
+          <option value="上海"></option>
+          <option value="广州"></option>
+          <option value="深圳"></option>
+          <option value="杭州"></option>
+          <option value="成都"></option>
+          <option value="南京"></option>
+          <option value="武汉"></option>
+          <option value="苏州"></option>
+          <option value="西安"></option>
+          <option value="远程"></option>
+          <option value="海外"></option>
+        </datalist>
+      </div>
+      <div class="row">
+        <label class="field-label" for="district">具体区域（可选）</label>
+        <input type="text" id="district" placeholder="例如：浦东新区" oninput="persistField('district', DISTRICT_KEY)" />
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>🔍 岗位搜索</h2>
+      <div class="row">
+        <label class="field-label" for="keywords">关键词 / 职位名（可选）</label>
+        <input type="text" id="keywords" placeholder="例如：数据分析、产品经理..." oninput="persistField('keywords', KEYWORDS_KEY)" />
+      </div>
+      <div class="row">
+        <label class="field-label" for="category">岗位类别</label>
+        <select id="category" onchange="persistField('category', CATEGORY_KEY)">
+          <option value="">不限</option>
+          <option value="技术开发">技术开发</option>
+          <option value="数据">数据</option>
+          <option value="产品">产品</option>
+          <option value="设计">设计</option>
+          <option value="运营">运营</option>
+          <option value="市场营销">市场营销</option>
+          <option value="销售">销售</option>
+          <option value="职能（HR/财务/行政）">职能（HR/财务/行政）</option>
+          <option value="其他">其他</option>
+        </select>
+      </div>
+      <div class="row">
+        <label class="field-label" for="experience">经验要求</label>
+        <select id="experience" onchange="persistField('experience', EXPERIENCE_KEY)">
+          <option value="">不限</option>
+          <option value="应届生">应届生</option>
+          <option value="1-3年">1-3年</option>
+          <option value="3-5年">3-5年</option>
+          <option value="5-10年">5-10年</option>
+          <option value="10年以上">10年以上</option>
+        </select>
+      </div>
+      <button class="btn-search" id="searchBtn" onclick="searchJobs()">🔍 开始搜索</button>
+      <div class="last-search" id="lastSearch"></div>
+    </div>
+
+    <div class="card">
+      <h2>📄 简历管理</h2>
+      <div class="row">
+        <label class="file-btn" for="resumeFile">选择简历文件</label>
+        <input type="file" id="resumeFile" accept=".pdf,.txt" style="display:none" onchange="handleResumeFile(event)" />
+        <div id="resumeStatus"></div>
+        <div id="resumeHint">支持 PDF 或 TXT。Word 文档请先另存为 PDF 再上传。上传一次会保存在本机浏览器里，下次打开自动带上。</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="error-msg" id="errorMsg"></div>
+
+  <div class="card">
+    <h2>📊 投递状态统计</h2>
+    <div id="statsContainer"></div>
+  </div>
+
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    AI 正在联网搜索岗位，大概需要 30～60 秒，请耐心等一下…
+  </div>
+
+  <div class="results" id="results">
+    <div class="card">
+      <h2>⭐ 自动匹配的岗位</h2>
+      <div id="jobsContainer"></div>
+    </div>
+    <div class="card sources-card" id="sourcesCard" style="display:none">
+      <h2>🔗 参考来源</h2>
+      <div class="sources-list" id="sourcesList"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📋 我的投递记录</h2>
+    <div id="appsContainer"></div>
+  </div>
+
+</div>
+
+<footer>岗位信息来自 AI 联网搜索，投递前请自行核实 | Powered by Claude AI</footer>
+
+<script>
+const RESUME_KEY = 'jobSearchResume';
+const CITY_KEY = 'jobSearchCity';
+const DISTRICT_KEY = 'jobSearchDistrict';
+const KEYWORDS_KEY = 'jobSearchKeywords';
+const CATEGORY_KEY = 'jobSearchCategory';
+const EXPERIENCE_KEY = 'jobSearchExperience';
+const LAST_SEARCH_KEY = 'jobSearchLastSearch';
+const APPLICATIONS_KEY = 'jobSearchApplications';
+
+const STATUS_LABELS = {
+  screening: '初筛',
+  interview: '一面',
+  rejected: '简历挂',
+  offer: 'Offer'
+};
+
+let resumeData = null; // { name, mediaType: 'application/pdf'|'text/plain', base64?, text? }
+let applications = []; // [{ id, title, company, location, applyLink, status, updatedAt }]
+
+function init() {
+  const savedResume = localStorage.getItem(RESUME_KEY);
+  if (savedResume) {
+    try {
+      resumeData = JSON.parse(savedResume);
+      showResumeStatus(`✅ 已加载简历：${resumeData.name}（点击上方按钮可重新上传替换）`);
+    } catch (e) { /* ignore corrupt data */ }
+  }
+
+  const fieldMap = [
+    ['baseCity', CITY_KEY], ['district', DISTRICT_KEY], ['keywords', KEYWORDS_KEY],
+    ['category', CATEGORY_KEY], ['experience', EXPERIENCE_KEY]
+  ];
+  fieldMap.forEach(([id, key]) => {
+    const saved = localStorage.getItem(key);
+    if (saved) document.getElementById(id).value = saved;
+  });
+
+  const lastSearch = localStorage.getItem(LAST_SEARCH_KEY);
+  if (lastSearch) updateLastSearchLabel(lastSearch);
+
+  try {
+    applications = JSON.parse(localStorage.getItem(APPLICATIONS_KEY) || '[]');
+  } catch (e) { applications = []; }
+  renderStats();
+  renderApplications();
+}
+
+function persistField(elId, key) {
+  localStorage.setItem(key, document.getElementById(elId).value);
+}
+
+function showResumeStatus(msg) {
+  const el = document.getElementById('resumeStatus');
+  el.textContent = msg;
+  el.classList.add('visible');
+}
+
+function handleResumeFile(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const isPdf = file.type === 'application/pdf' || /\.pdf$/i.test(file.name);
+  const isTxt = file.type === 'text/plain' || /\.txt$/i.test(file.name);
+
+  if (!isPdf && !isTxt) {
+    showError('暂时只支持 PDF 或 TXT 格式，Word 文档请先另存为 PDF 再上传');
+    return;
+  }
+  hideError();
+
+  const reader = new FileReader();
+  reader.onload = () => {
+    if (isPdf) {
+      const base64 = reader.result.split(',')[1];
+      resumeData = { name: file.name, mediaType: 'application/pdf', base64 };
+    } else {
+      resumeData = { name: file.name, mediaType: 'text/plain', text: reader.result };
+    }
+    localStorage.setItem(RESUME_KEY, JSON.stringify(resumeData));
+    showResumeStatus(`✅ 已上传简历：${file.name}`);
+  };
+  reader.onerror = () => showError('简历文件读取失败，请重试');
+
+  if (isPdf) reader.readAsDataURL(file);
+  else reader.readAsText(file);
+}
+
+function updateLastSearchLabel(iso) {
+  const d = new Date(iso);
+  document.getElementById('lastSearch').textContent = `上次搜索：${d.toLocaleString('zh-CN')}`;
+}
+
+function escapeHtml(str) {
+  return String(str ?? '').replace(/[&<>"']/g, ch => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[ch]));
+}
+
+function safeUrl(url) {
+  try {
+    const u = new URL(url, window.location.href);
+    if (u.protocol === 'http:' || u.protocol === 'https:') return u.href;
+  } catch (e) { /* fall through */ }
+  return null;
+}
+
+async function searchJobs() {
+  const city = document.getElementById('baseCity').value.trim();
+  const district = document.getElementById('district').value.trim();
+  const keywords = document.getElementById('keywords').value.trim();
+  const category = document.getElementById('category').value;
+  const experience = document.getElementById('experience').value;
+
+  if (!resumeData) { showError('请先上传简历'); return; }
+  if (!city) { showError('请填写 base 地'); return; }
+
+  hideError();
+  document.getElementById('loading').classList.add('visible');
+  document.getElementById('results').classList.remove('visible');
+  document.getElementById('searchBtn').disabled = true;
+
+  try {
+    const resp = await fetch('/api/job-search', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({
+        resumeBase64: resumeData.mediaType === 'application/pdf' ? resumeData.base64 : undefined,
+        resumeText: resumeData.mediaType === 'text/plain' ? resumeData.text : undefined,
+        baseCity: city,
+        district,
+        keywords,
+        category,
+        experience
+      })
+    });
+
+    if (!resp.ok) {
+      const err = await resp.json().catch(() => ({}));
+      throw new Error(err.error?.message || `请求失败 (${resp.status})`);
+    }
+
+    const data = await resp.json();
+    renderResults(data);
+
+    const now = new Date().toISOString();
+    localStorage.setItem(LAST_SEARCH_KEY, now);
+    updateLastSearchLabel(now);
+
+  } catch (e) {
+    showError('搜索失败：' + e.message);
+  } finally {
+    document.getElementById('loading').classList.remove('visible');
+    document.getElementById('searchBtn').disabled = false;
+  }
+}
+
+function renderResults(data) {
+  const textBlocks = (data.content || []).filter(b => b.type === 'text');
+  const fullText = textBlocks.map(b => b.text).join('');
+
+  let jobs = null;
+  const fenceMatch = fullText.match(/```json\s*([\s\S]*?)```/);
+  const candidate = fenceMatch ? fenceMatch[1] : fullText;
+  const bracketMatch = candidate.match(/\[[\s\S]*\]/);
+  if (bracketMatch) {
+    try { jobs = JSON.parse(bracketMatch[0]); } catch (e) { jobs = null; }
+  }
+
+  const container = document.getElementById('jobsContainer');
+  if (Array.isArray(jobs) && jobs.length > 0) {
+    container.innerHTML = jobs.map(renderJobCard).join('');
+  } else {
+    container.innerHTML = `<div class="raw-fallback">${escapeHtml(fullText || '没有找到合适的岗位，换个 base 地或关键词再试试～')}</div>`;
+  }
+
+  const citations = [];
+  const seen = new Set();
+  textBlocks.forEach(b => (b.citations || []).forEach(c => {
+    if (c.url && !seen.has(c.url)) { seen.add(c.url); citations.push(c); }
+  }));
+
+  const sourcesCard = document.getElementById('sourcesCard');
+  if (citations.length > 0) {
+    document.getElementById('sourcesList').innerHTML = citations.map(c => {
+      const url = safeUrl(c.url);
+      const title = escapeHtml(c.title || c.url);
+      return url ? `<div><a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${title}</a></div>` : '';
+    }).join('');
+    sourcesCard.style.display = 'block';
+  } else {
+    sourcesCard.style.display = 'none';
+  }
+
+  document.getElementById('results').classList.add('visible');
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function jobKey(job) {
+  const link = safeUrl(job.apply_link);
+  return link || `${job.title || ''}::${job.company || ''}`;
+}
+
+function renderJobCard(job) {
+  const title = escapeHtml(job.title || '（未知职位）');
+  const company = escapeHtml(job.company || '');
+  const location = escapeHtml(job.location || '');
+  const salary = escapeHtml(job.salary_range || '');
+  const reason = escapeHtml(job.match_reason || '');
+  const method = escapeHtml(job.apply_method || '');
+  const source = escapeHtml(job.source_note || '');
+  const link = safeUrl(job.apply_link);
+  const key = jobKey(job);
+  const existing = applications.find(a => a.id === key);
+  const currentStatus = existing ? existing.status : '';
+
+  const statusOptions = ['<option value="" disabled' + (currentStatus ? '' : ' selected') + '>标记投递状态</option>']
+    .concat(Object.entries(STATUS_LABELS).map(([val, label]) =>
+      `<option value="${val}"${currentStatus === val ? ' selected' : ''}>${label}</option>`
+    )).join('');
+
+  const jobData = escapeHtml(JSON.stringify({
+    id: key, title: job.title || '', company: job.company || '', location: job.location || '', applyLink: link || ''
+  }));
+
+  return `
+    <div class="job-card">
+      <div class="job-title">${title}</div>
+      <div class="job-company">${company}</div>
+      <div class="job-meta">
+        ${location ? `<span class="badge">📍 ${location}</span>` : ''}
+        ${salary ? `<span class="badge gold">💰 ${salary}</span>` : ''}
+        ${method ? `<span class="badge coral">${method}</span>` : ''}
+      </div>
+      ${reason ? `<div class="job-reason">${reason}</div>` : ''}
+      <div class="job-actions">
+        ${link ? `<a class="apply-link" href="${escapeHtml(link)}" target="_blank" rel="noopener noreferrer">去投递 →</a>` : ''}
+        <select class="status-select" data-job="${jobData}" onchange="handleJobStatusChange(this)">
+          ${statusOptions}
+        </select>
+        ${source ? `<span class="source-note">来源：${source}</span>` : ''}
+      </div>
+    </div>
+  `;
+}
+
+function handleJobStatusChange(selectEl) {
+  const status = selectEl.value;
+  if (!status) return;
+  const job = JSON.parse(selectEl.dataset.job);
+  upsertApplication(job, status);
+}
+
+function upsertApplication(job, status) {
+  const idx = applications.findIndex(a => a.id === job.id);
+  const record = { ...job, status, updatedAt: new Date().toISOString() };
+  if (idx >= 0) applications[idx] = { ...applications[idx], ...record };
+  else applications.push(record);
+
+  localStorage.setItem(APPLICATIONS_KEY, JSON.stringify(applications));
+  renderStats();
+  renderApplications();
+}
+
+function removeApplication(id) {
+  applications = applications.filter(a => a.id !== id);
+  localStorage.setItem(APPLICATIONS_KEY, JSON.stringify(applications));
+  renderStats();
+  renderApplications();
+}
+
+function renderStats() {
+  const total = applications.length;
+  const counts = { screening: 0, interview: 0, rejected: 0, offer: 0 };
+  applications.forEach(a => { if (counts[a.status] !== undefined) counts[a.status]++; });
+
+  const container = document.getElementById('statsContainer');
+  if (total === 0) {
+    container.innerHTML = `<div class="stats-empty">还没有投递记录。搜索到岗位后，在卡片上选择投递状态即可开始跟踪～</div>`;
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="stats-total">总投递数：<b>${total}</b></div>
+    <div class="stats-grid">
+      <div class="stat-tile screening"><div class="num">${counts.screening}</div><div class="label">初筛</div></div>
+      <div class="stat-tile interview"><div class="num">${counts.interview}</div><div class="label">一面</div></div>
+      <div class="stat-tile rejected"><div class="num">${counts.rejected}</div><div class="label">简历挂</div></div>
+      <div class="stat-tile offer"><div class="num">${counts.offer}</div><div class="label">Offer</div></div>
+    </div>
+  `;
+}
+
+function renderApplications() {
+  const container = document.getElementById('appsContainer');
+  if (applications.length === 0) {
+    container.innerHTML = `<div class="apps-empty">暂无投递记录</div>`;
+    return;
+  }
+
+  const sorted = [...applications].sort((a, b) => (b.updatedAt || '').localeCompare(a.updatedAt || ''));
+
+  container.innerHTML = sorted.map(a => {
+    const title = escapeHtml(a.title || '（未知职位）');
+    const company = escapeHtml(a.company || '');
+    const link = safeUrl(a.applyLink);
+    const statusOptions = Object.entries(STATUS_LABELS).map(([val, label]) =>
+      `<option value="${val}"${a.status === val ? ' selected' : ''}>${label}</option>`
+    ).join('');
+    const idAttr = escapeHtml(a.id);
+
+    return `
+      <div class="app-row" data-row-id="${idAttr}">
+        <div class="app-info">
+          <div class="app-title">${link ? `<a href="${escapeHtml(link)}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">${title}</a>` : title}</div>
+          <div class="app-company">${company}</div>
+        </div>
+        <select class="status-select" data-id="${idAttr}" onchange="updateApplicationRowStatus(this)">
+          ${statusOptions}
+        </select>
+        <button class="app-remove" onclick="removeApplication(this.closest('.app-row').dataset.rowId)">移除</button>
+      </div>
+    `;
+  }).join('');
+}
+
+function updateApplicationRowStatus(selectEl) {
+  const id = selectEl.dataset.id;
+  const idx = applications.findIndex(a => a.id === id);
+  if (idx < 0) return;
+  applications[idx].status = selectEl.value;
+  applications[idx].updatedAt = new Date().toISOString();
+  localStorage.setItem(APPLICATIONS_KEY, JSON.stringify(applications));
+  renderStats();
+  renderApplications();
+}
+
+function showError(msg) {
+  const el = document.getElementById('errorMsg');
+  el.textContent = msg;
+  el.classList.add('visible');
+}
+function hideError() {
+  document.getElementById('errorMsg').classList.remove('visible');
+}
+
+init();
+</script>
+</body>
+</html>
