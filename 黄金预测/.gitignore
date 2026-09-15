@@ -4,6 +4,12 @@
 data/
 *.db
 
+# ---- 作品集 PDF 与打印中间件：由 make_pdf.py 生成 ----
+# 每次运行都会重新生成（数字随每日数据变化），属于构建产物。
+# 需要投递用的 PDF 时，在本地运行 scripts/make_pdf.py 即可。
+黄金走势预测工作台_作品集.pdf
+docs/portfolio-print.html
+
 # ---- Python ----
 __pycache__/
 *.py[cod]

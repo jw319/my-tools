@@ -30,8 +30,9 @@ open dashboard.html     # 打开工作台
 
 ```
 黄金预测/
-├── run_daily.sh              一键：采集 + 建模 + 生成工作台
+├── run_daily.sh              一键：采集 + 建模 + 生成工作台 + 重新生成 PDF
 ├── dashboard.html            ★ 交付物：单文件工作台（内嵌图表库与数据，可离线打开）
+├── 黄金走势预测工作台_作品集.pdf  ★ 交付物：A4 双页作品集，可直接投递招聘官网
 ├── assets/
 │   └── echarts.min.js        图表库（Apache-2.0，构建时内联进 HTML）
 ├── docs/
@@ -41,6 +42,7 @@ open dashboard.html     # 打开工作台
 │   ├── collect.py            数据采集 → SQLite + 宽表 CSV
 │   ├── model.py              特征工程 + 走前式回测 + 次日预测
 │   ├── build_dashboard.py    把预测结果注入模板，生成 dashboard.html 与 gold/index.html
+│   ├── make_pdf.py           生成作品集 PDF（A4 双页，数字实时读取，无硬编码）
 │   ├── template.html         工作台 HTML 模板
 │   ├── experiment.py         对照实验：水平值 vs 滚动标准化
 │   └── experiment2.py        对照实验：模型与正则强度扫描
@@ -54,9 +56,25 @@ open dashboard.html     # 打开工作台
 
 同级的 `../gold/index.html` 是上面提到的英文短链别名，由 `build_dashboard.py` 一并写出。
 
-> `data/` 不入库是有意为之：约 10MB，且每天都会变，提交进来只会让仓库膨胀、diff 全是噪音。
+> `data/` 与作品集 PDF 都不入库是有意为之：前者约 10MB，后者每次运行都重新生成，
+> 且都会每天变化，提交进来只会让仓库膨胀、diff 全是噪音。
 > `assets/echarts.min.js` 则是有意入库的 1MB 第三方依赖——这样 `build_dashboard.py`
 > 在完全离线的环境下也能构建出可离线打开的工作台。
+
+### 投递用的 PDF
+
+`make_pdf.py` 用系统 Chrome 的无头模式把排版好的 HTML 打成 A4 双页 PDF，
+**所有数字都从 `data/prediction.json` 实时读取**（准确率、AUC、IC、MAE、
+分层命中率、因子数、数据源数、黄金交易日数），没有任何硬编码——
+否则项目每天更新，PDF 隔天就会对不上。
+
+```bash
+python scripts/make_pdf.py     # → 黄金走势预测工作台_作品集.pdf
+```
+
+> 踩过的坑：读 `market.csv` 时不能先 `next(csv.reader(f))` 取表头再交给
+> `csv.DictReader`——后者会把第二行当成表头，字段名取不到，于是静默算出 0 个交易日。
+> 只用 `DictReader` 并检查 `reader.fieldnames` 即可。
 
 ---
 
