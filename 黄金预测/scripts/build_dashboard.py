@@ -14,6 +14,11 @@ DATA = ROOT / "data"
 ASSETS = ROOT / "assets"
 TPL = ROOT / "scripts" / "template.html"
 OUT = ROOT / "dashboard.html"
+# 英文短链别名：<仓库根>/gold/index.html
+# 中文目录名在简历、邮件、招聘系统里会被转义成 %E9%BB%84%E9%87%91... 又长又容易被截断，
+# 所以额外输出一份到 gold/，分享时用 https://<user>.github.io/<repo>/gold/ 即可。
+# 内容与 dashboard.html 逐字节相同 → 在 git 中是同一个 blob，不会额外占用仓库空间。
+ALIAS = ROOT.parent / "gold" / "index.html"
 CST = timezone(timedelta(hours=8))
 
 
@@ -58,6 +63,12 @@ def main() -> int:
     # 用 replace 而非 format，避免 CSS/JS 中的花括号被误解析
     html = html.replace("/*__DATA__*/{}", json.dumps(payload, ensure_ascii=False, separators=(",", ":")))
     OUT.write_text(html, encoding="utf-8")
+
+    # 英文短链别名（若目标目录不存在会自动创建）
+    if ALIAS.parent.parent.exists():          # 只在被放进仓库时输出
+        ALIAS.parent.mkdir(parents=True, exist_ok=True)
+        ALIAS.write_text(html, encoding="utf-8")
+        print(f"已生成英文短链别名 {ALIAS}")
 
     size = OUT.stat().st_size / 1024
     print(f"已生成 {OUT}  ({size:.0f} KB)")

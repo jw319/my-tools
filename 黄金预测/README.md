@@ -6,8 +6,14 @@
 
 ![工作台预览](docs/preview.jpg)
 
-> **在线预览**：<https://jw319.github.io/my-tools/黄金预测/dashboard.html>
-> （中文路径在部分浏览器地址栏里会被转义，若打不开就直接下载 `dashboard.html` 双击打开，它是自包含的）
+> **在线预览**：<https://jw319.github.io/my-tools/gold/>
+>
+> 这个短链指向仓库根目录的 `gold/index.html`，由 `build_dashboard.py` 自动生成，
+> 与 `dashboard.html` **逐字节相同**（因此 git 里只存一份 blob，不额外占用空间）。
+> 之所以多做一个英文短链：中文目录名在简历、邮件、招聘系统里会被转义成
+> `%E9%BB%84%E9%87%91%E9%A2%84%E6%B5%8B` 一长串，既不好看也容易被截断。
+>
+> 若链接打不开，直接下载 `dashboard.html` 双击即可——它是自包含的，不需要联网。
 
 ---
 
@@ -34,7 +40,7 @@ open dashboard.html     # 打开工作台
 ├── scripts/
 │   ├── collect.py            数据采集 → SQLite + 宽表 CSV
 │   ├── model.py              特征工程 + 走前式回测 + 次日预测
-│   ├── build_dashboard.py    把预测结果注入模板，生成 dashboard.html
+│   ├── build_dashboard.py    把预测结果注入模板，生成 dashboard.html 与 gold/index.html
 │   ├── template.html         工作台 HTML 模板
 │   ├── experiment.py         对照实验：水平值 vs 滚动标准化
 │   └── experiment2.py        对照实验：模型与正则强度扫描
@@ -45,6 +51,8 @@ open dashboard.html     # 打开工作台
     ├── backtest.csv          逐日回测明细
     └── prediction.json       ★ 最新预测结果
 ```
+
+同级的 `../gold/index.html` 是上面提到的英文短链别名，由 `build_dashboard.py` 一并写出。
 
 > `data/` 不入库是有意为之：约 10MB，且每天都会变，提交进来只会让仓库膨胀、diff 全是噪音。
 > `assets/echarts.min.js` 则是有意入库的 1MB 第三方依赖——这样 `build_dashboard.py`

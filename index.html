@@ -1,432 +1,219 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>冰箱里有啥？帮你想菜！</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小工具集 · Tools</title>
+<meta name="description" content="用 AI 协作完成的一系列小工具：金融量化、求职管理、生活效率。">
+<style>
+  :root{
+    --bg:#f5f6f8; --card:#fff; --border:#e6e8ec; --line:#eef0f3;
+    --tx:#171a21; --tx2:#5b6472; --tx3:#8b93a1;
+    --gold:#c9922f; --gold-l:#e8c877;
+    --green:#2f9e6e; --blue:#2f6fed;
+    --shadow:0 1px 2px rgba(16,24,40,.04),0 4px 16px rgba(16,24,40,.05);
+    --shadow-h:0 2px 6px rgba(16,24,40,.06),0 12px 32px rgba(16,24,40,.10);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--tx);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    font-size:14px; line-height:1.65; -webkit-font-smoothing:antialiased;
+    min-height:100vh; display:flex; flex-direction:column;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;width:100%}
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", sans-serif;
-      background: #f7f3ee;
-      color: #333;
-      min-height: 100vh;
-    }
+  /* ---------- header ---------- */
+  header{
+    background:linear-gradient(135deg,#fffdf7 0%,#fff9ec 55%,#fdf6e6 100%);
+    border-bottom:1px solid var(--border);
+    padding:56px 0 48px;
+  }
+  header h1{
+    font-size:34px;font-weight:750;letter-spacing:-.8px;
+    display:flex;align-items:center;gap:12px;
+  }
+  header p{font-size:15px;color:var(--tx2);margin-top:10px;max-width:560px}
+  .hint{
+    margin-top:20px;font-size:12.5px;color:var(--tx3);
+    display:flex;align-items:center;gap:7px;flex-wrap:wrap;
+  }
+  .hint code{
+    background:#fff;border:1px solid var(--border);border-radius:6px;
+    padding:2px 8px;font-size:11.5px;color:var(--tx2);
+  }
 
-    header {
-      background: linear-gradient(135deg, #ff6b35, #f7931e);
-      color: white;
-      padding: 20px 24px 16px;
-      text-align: center;
-    }
-    header h1 { font-size: 1.6rem; font-weight: 700; }
-    header p { font-size: 0.85rem; opacity: 0.9; margin-top: 4px; }
+  /* ---------- cards ---------- */
+  main{flex:1;padding:40px 0 56px}
+  .grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:20px;
+  }
+  .card{
+    display:flex;flex-direction:column;gap:12px;
+    background:var(--card);border:1px solid var(--border);border-radius:16px;
+    padding:24px;box-shadow:var(--shadow);
+    text-decoration:none;color:inherit;
+    transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+    position:relative;overflow:hidden;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-h);border-color:var(--gold-l)}
+  .card::after{
+    content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+    background:var(--gold-l);opacity:0;transition:opacity .18s;
+  }
+  .card:hover::after{opacity:1}
+  .card.featured{grid-column:1/-1}
+  .card.featured::after{background:var(--gold);opacity:1}
 
-    .container { max-width: 680px; margin: 0 auto; padding: 16px; }
+  .card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+  .icon{
+    width:46px;height:46px;border-radius:13px;flex:none;
+    display:flex;align-items:center;justify-content:center;font-size:23px;
+    background:#f7f8fa;border:1px solid var(--border);
+  }
+  .card.featured .icon{
+    background:linear-gradient(140deg,#e8c877,#c9922f);border:none;
+    box-shadow:0 3px 10px rgba(201,146,47,.28);
+    color:#fff;font-size:19px;font-weight:750;letter-spacing:-.5px;
+  }
+  .card h2{font-size:18px;font-weight:680;letter-spacing:-.2px}
+  .card.featured h2{font-size:22px}
+  .card p{font-size:13.5px;color:var(--tx2);flex:1}
+  .card.featured p{font-size:14.5px;max-width:720px}
 
-    .section-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #555;
-      margin: 16px 0 10px;
-    }
+  .badge{
+    font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;
+    white-space:nowrap;flex:none;
+  }
+  .badge.ok{background:#e7f6f1;color:var(--green)}
+  .badge.warn{background:#fdf0e8;color:#c9722f}
 
-    .category {
-      background: white;
-      border-radius: 12px;
-      padding: 12px 14px;
-      margin-bottom: 10px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    }
-    .category-name {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #999;
-      margin-bottom: 8px;
-    }
-    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-    .chip {
-      border: 1.5px solid #e0d8d0;
-      border-radius: 20px;
-      padding: 5px 13px;
-      font-size: 0.88rem;
-      cursor: pointer;
-      transition: all 0.15s;
-      background: white;
-      user-select: none;
-    }
-    .chip:hover { border-color: #ff6b35; color: #ff6b35; }
-    .chip.selected {
-      background: #ff6b35;
-      border-color: #ff6b35;
-      color: white;
-    }
+  .facts{list-style:none;display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:2px}
+  .facts li{font-size:12.5px;color:var(--tx2);display:flex;align-items:baseline;gap:6px}
+  .facts b{font-size:15px;font-weight:700;color:var(--tx);font-variant-numeric:tabular-nums}
+  .facts b.gold{color:var(--gold)}
 
-    .custom-section {
-      background: white;
-      border-radius: 12px;
-      padding: 12px 14px;
-      margin-bottom: 12px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    }
-    .custom-row { display: flex; gap: 8px; margin-bottom: 8px; }
-    .custom-row input {
-      flex: 1;
-      border: 1.5px solid #e0d8d0;
-      border-radius: 8px;
-      padding: 7px 12px;
-      font-size: 0.9rem;
-    }
-    .custom-row input:focus { outline: none; border-color: #ff6b35; }
-    .btn-add {
-      background: #f0f0f0;
-      border: none;
-      border-radius: 8px;
-      padding: 7px 14px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      color: #555;
-    }
-    .btn-add:hover { background: #e0e0e0; }
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+  .tag{
+    font-size:11px;padding:3px 9px;border-radius:6px;
+    background:#f4f5f7;color:var(--tx2);border:1px solid var(--line);
+  }
 
-    .selected-bar {
-      background: #fff8f0;
-      border: 1.5px dashed #ffb87a;
-      border-radius: 10px;
-      padding: 10px 14px;
-      margin-bottom: 14px;
-      font-size: 0.85rem;
-      color: #a05a20;
-      min-height: 40px;
-    }
-    .selected-bar span { font-weight: 600; }
+  .go{
+    font-size:13px;font-weight:600;color:var(--gold);
+    display:flex;align-items:center;gap:5px;margin-top:6px;
+  }
+  .go::after{content:'→';transition:transform .18s}
+  .card:hover .go::after{transform:translateX(3px)}
 
-    .btn-generate {
-      width: 100%;
-      background: linear-gradient(135deg, #ff6b35, #f7931e);
-      color: white;
-      border: none;
-      border-radius: 12px;
-      padding: 15px;
-      font-size: 1.05rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: opacity 0.2s;
-      margin-bottom: 20px;
-    }
-    .btn-generate:hover { opacity: 0.9; }
-    .btn-generate:disabled { opacity: 0.5; cursor: not-allowed; }
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid var(--border);background:#fff;
+    padding:24px 0;font-size:12.5px;color:var(--tx3);
+  }
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer a{color:var(--tx2);text-decoration:none;border-bottom:1px solid var(--line)}
+  footer a:hover{color:var(--gold);border-color:var(--gold-l)}
 
-    .result-card {
-      background: white;
-      border-radius: 14px;
-      padding: 20px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      margin-bottom: 20px;
-      display: none;
-    }
-    .result-card.visible { display: block; }
-    .result-card h2 {
-      font-size: 1.15rem;
-      color: #ff6b35;
-      margin-bottom: 14px;
-      padding-bottom: 10px;
-      border-bottom: 1.5px solid #f0ebe4;
-    }
-    .result-content {
-      font-size: 0.92rem;
-      line-height: 1.8;
-      color: #444;
-      white-space: pre-wrap;
-    }
-
-    .loading {
-      text-align: center;
-      padding: 24px;
-      color: #aaa;
-      font-size: 0.9rem;
-      display: none;
-    }
-    .loading.visible { display: block; }
-    .spinner {
-      width: 32px; height: 32px;
-      border: 3px solid #f0ebe4;
-      border-top-color: #ff6b35;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      margin: 0 auto 10px;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    .error-msg {
-      background: #fff0f0;
-      border: 1.5px solid #ffb0b0;
-      border-radius: 10px;
-      padding: 12px 14px;
-      font-size: 0.88rem;
-      color: #c00;
-      margin-bottom: 14px;
-      display: none;
-      white-space: pre-wrap;
-    }
-    .error-msg.visible { display: block; }
-
-    footer {
-      text-align: center;
-      font-size: 0.75rem;
-      color: #bbb;
-      padding: 20px;
-    }
-    /* Password gate */
-    .gate {
-      position: fixed; inset: 0;
-      background: #f7f3ee;
-      display: flex; align-items: center; justify-content: center;
-      z-index: 999;
-    }
-    .gate-box {
-      background: white;
-      border-radius: 16px;
-      padding: 32px 28px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.1);
-      text-align: center;
-      width: 280px;
-    }
-    .gate-box h2 { font-size: 1.3rem; margin-bottom: 6px; }
-    .gate-box p { font-size: 0.85rem; color: #999; margin-bottom: 20px; }
-    .gate-box input {
-      width: 100%; border: 1.5px solid #e0d8d0; border-radius: 8px;
-      padding: 10px 12px; font-size: 1rem; text-align: center;
-      margin-bottom: 12px; letter-spacing: 4px;
-    }
-    .gate-box input:focus { outline: none; border-color: #ff6b35; }
-    .gate-box button {
-      width: 100%; background: linear-gradient(135deg, #ff6b35, #f7931e);
-      color: white; border: none; border-radius: 8px;
-      padding: 11px; font-size: 0.95rem; font-weight: 600; cursor: pointer;
-    }
-    .gate-error { color: #c00; font-size: 0.82rem; margin-top: 8px; display: none; }
-  </style>
+  @media(max-width:760px){
+    .grid{grid-template-columns:1fr}
+    header{padding:40px 0 34px}
+    header h1{font-size:26px}
+  }
+</style>
 </head>
 <body>
 
-<div class="gate" id="gate">
-  <div class="gate-box">
-    <h2>🍳 冰箱里有啥？</h2>
-    <p>请输入密码进入</p>
-    <input type="password" id="gateInput" placeholder="••••••" onkeydown="if(event.key==='Enter')checkPassword()" />
-    <button onclick="checkPassword()">进入</button>
-    <div class="gate-error" id="gateError">密码错误，请重试</div>
-  </div>
-</div>
-
 <header>
-  <h1>🍳 冰箱里有啥？帮你想菜！</h1>
-  <p>选好食材，AI 帮你出菜谱</p>
+  <div class="wrap">
+    <h1>🛠️ 小工具集</h1>
+    <p>一些用 AI 协作做出来的小东西——从数据采集、建模到界面，都在这些仓库里。</p>
+    <div class="hint">
+      <span>源码与文档：</span>
+      <a href="https://github.com/jw319/my-tools" style="color:var(--gold);text-decoration:none;font-weight:600">github.com/jw319/my-tools</a>
+    </div>
+  </div>
 </header>
 
-<div class="container">
+<main>
+  <div class="wrap">
 
-  <div class="section-title">📦 选择你有的食材</div>
-  <div id="categoriesContainer"></div>
+    <div class="grid">
 
-  <div class="custom-section">
-    <div class="section-title" style="margin-top:0">✏️ 手动添加食材</div>
-    <div class="custom-row">
-      <input type="text" id="customInput" placeholder="如：豆腐、排骨..." onkeydown="if(event.key==='Enter')addCustom()" />
-      <button class="btn-add" onclick="addCustom()">添加</button>
+      <!-- ============ 黄金预测工作台（主推） ============ -->
+      <a class="card featured" href="gold/index.html">
+        <div class="card-top">
+          <div class="icon">Au</div>
+          <span class="badge ok">可交互演示</span>
+        </div>
+        <h2>黄金走势预测工作台</h2>
+        <p>
+          每日自动采集 COMEX 金价与全球宏观因子（实际利率、美元指数、VIX、通胀预期等），
+          多因子建模预测次日走势，输出单文件可视化工作台。刻意没有堆砌深度学习——
+          回测显示复杂模型在有限样本上会过拟合，因此选择了可解释性更好的强正则线性模型，
+          并把模型的能力边界如实写进了文档。
+        </p>
+        <ul class="facts">
+          <li><b>16</b> 个免费数据源</li>
+          <li><b>20</b> 个因子</li>
+          <li><b>1779</b> 天走前式回测</li>
+          <li><b class="gold">52.4%</b> 方向准确率</li>
+        </ul>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">scikit-learn</span>
+          <span class="tag">走前式回测</span>
+          <span class="tag">特征工程</span>
+          <span class="tag">ECharts</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">离线单文件</span>
+        </div>
+        <div class="go">打开工作台</div>
+      </a>
+
+      <!-- ============ 求职工作台 ============ -->
+      <a class="card" href="job-search.html">
+        <div class="card-top">
+          <div class="icon">🌿</div>
+          <span class="badge warn">AI 功能需部署后端</span>
+        </div>
+        <h2>求职工作台</h2>
+        <p>上传简历、选好 base 地，AI 联网帮你找岗位并管理投递进度。界面与流程完整，AI 调用走独立后端接口。</p>
+        <div class="tags">
+          <span class="tag">HTML</span>
+          <span class="tag">Serverless</span>
+          <span class="tag">LLM API</span>
+        </div>
+        <div class="go">打开</div>
+      </a>
+
+      <!-- ============ 菜谱 App ============ -->
+      <a class="card" href="recipe.html">
+        <div class="card-top">
+          <div class="icon">🍳</div>
+          <span class="badge warn">AI 功能需部署后端</span>
+        </div>
+        <h2>冰箱里有啥？帮你想菜</h2>
+        <p>勾选家里现有的食材，选好菜系与人数，AI 生成可直接下厨的菜谱。支持手动添加食材。</p>
+        <div class="tags">
+          <span class="tag">HTML</span>
+          <span class="tag">Serverless</span>
+          <span class="tag">LLM API</span>
+        </div>
+        <div class="go">打开</div>
+      </a>
+
     </div>
-    <div class="chips" id="customChips"></div>
+
   </div>
+</main>
 
-  <div class="selected-bar" id="selectedBar">还没有选食材，点上面的选一些吧～</div>
-
-  <div style="display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap">
-    <div style="flex:1;min-width:140px">
-      <div style="font-size:0.82rem;color:#888;margin-bottom:5px">菜系偏好</div>
-      <select id="cuisinePref" style="width:100%;border:1.5px solid #e0d8d0;border-radius:8px;padding:7px 10px;font-size:0.88rem;background:white">
-        <option value="">不限</option>
-        <option value="家常菜">家常菜</option>
-        <option value="川菜">川菜（辣）</option>
-        <option value="粤菜">粤菜（清淡）</option>
-        <option value="东北菜">东北菜</option>
-        <option value="江浙菜">江浙菜</option>
-      </select>
-    </div>
-    <div style="flex:1;min-width:140px">
-      <div style="font-size:0.82rem;color:#888;margin-bottom:5px">人数</div>
-      <select id="servingsPref" style="width:100%;border:1.5px solid #e0d8d0;border-radius:8px;padding:7px 10px;font-size:0.88rem;background:white">
-        <option value="1">1 人</option>
-        <option value="2" selected>2 人</option>
-        <option value="3">3～4 人</option>
-        <option value="5">5 人以上</option>
-      </select>
-    </div>
-    <div style="flex:1;min-width:140px">
-      <div style="font-size:0.82rem;color:#888;margin-bottom:5px">菜谱数量</div>
-      <select id="countPref" style="width:100%;border:1.5px solid #e0d8d0;border-radius:8px;padding:7px 10px;font-size:0.88rem;background:white">
-        <option value="1">1 道菜</option>
-        <option value="2" selected>2 道菜</option>
-        <option value="3">3 道菜</option>
-      </select>
-    </div>
+<footer>
+  <div class="wrap">
+    <span>小工具集 · 持续更新中</span>
+    <span><a href="https://github.com/jw319/my-tools">GitHub</a></span>
   </div>
+</footer>
 
-  <button class="btn-generate" id="generateBtn" onclick="generateRecipes()">✨ 帮我想菜谱！</button>
-
-  <div class="error-msg" id="errorMsg"></div>
-  <div class="loading" id="loading">
-    <div class="spinner"></div>
-    AI 正在思考你的菜谱，稍等一下...
-  </div>
-  <div class="result-card" id="resultCard">
-    <h2>🍽️ 今天可以做这些！</h2>
-    <div class="result-content" id="resultContent"></div>
-  </div>
-
-</div>
-
-<footer>食材选好，开火做饭～ | Powered by Claude AI</footer>
-
-<script>
-const INGREDIENTS = [
-  { name: "🥩 肉类", items: ["猪肉", "牛肉", "鸡肉", "羊肉", "猪排", "鸡腿", "鸡胸肉", "五花肉", "培根", "火腿"] },
-  { name: "🐟 海鲜", items: ["虾", "鱼", "螃蟹", "蛤蜊", "鱿鱼", "扇贝", "鲈鱼", "带鱼", "鲫鱼"] },
-  { name: "🥚 蛋奶豆", items: ["鸡蛋", "豆腐", "豆腐干", "牛奶", "奶酪", "皮蛋", "咸蛋"] },
-  { name: "🥦 蔬菜", items: ["土豆", "番茄", "茄子", "辣椒", "青椒", "洋葱", "大葱", "白菜", "菠菜", "生菜", "西兰花", "胡萝卜", "黄瓜", "冬瓜", "南瓜", "芹菜", "韭菜", "莲藕", "蘑菇", "木耳"] },
-  { name: "🌾 主食/粮食", items: ["大米", "面条", "馒头", "玉米", "红薯", "粉丝", "年糕", "饺子皮"] },
-  { name: "🧄 调料/常备", items: ["大蒜", "姜", "葱", "酱油", "醋", "豆瓣酱", "番茄酱", "蚝油", "料酒", "花椒", "八角"] }
-];
-
-let selectedIngredients = new Set();
-let customIngredients = [];
-
-function init() {
-  const container = document.getElementById('categoriesContainer');
-  INGREDIENTS.forEach(cat => {
-    const div = document.createElement('div');
-    div.className = 'category';
-    div.innerHTML = `<div class="category-name">${cat.name}</div><div class="chips">${
-      cat.items.map(item => `<div class="chip" onclick="toggleIngredient('${item}', this)">${item}</div>`).join('')
-    }</div>`;
-    container.appendChild(div);
-  });
-}
-
-function toggleIngredient(name, el) {
-  if (selectedIngredients.has(name)) {
-    selectedIngredients.delete(name);
-    el.classList.remove('selected');
-  } else {
-    selectedIngredients.add(name);
-    el.classList.add('selected');
-  }
-  updateSummary();
-}
-
-function addCustom() {
-  const input = document.getElementById('customInput');
-  const val = input.value.trim();
-  if (!val) return;
-  val.split(/[,，、\s]+/).filter(Boolean).forEach(item => {
-    if (!customIngredients.includes(item)) {
-      customIngredients.push(item);
-      selectedIngredients.add(item);
-    }
-  });
-  input.value = '';
-  renderCustomChips();
-  updateSummary();
-}
-
-function removeCustom(name) {
-  customIngredients = customIngredients.filter(i => i !== name);
-  selectedIngredients.delete(name);
-  renderCustomChips();
-  updateSummary();
-}
-
-function renderCustomChips() {
-  document.getElementById('customChips').innerHTML = customIngredients.map(item =>
-    `<div class="chip selected" style="cursor:default">${item} <span onclick="removeCustom('${item}')" style="cursor:pointer;opacity:0.7;margin-left:2px">×</span></div>`
-  ).join('');
-}
-
-function updateSummary() {
-  const all = [...selectedIngredients];
-  const bar = document.getElementById('selectedBar');
-  bar.innerHTML = all.length === 0
-    ? '还没有选食材，点上面的选一些吧～'
-    : `<span>已选 ${all.length} 种食材：</span>${all.join('、')}`;
-}
-
-async function generateRecipes() {
-  const ingredients = [...selectedIngredients];
-  if (ingredients.length === 0) { showError('请至少选一种食材！'); return; }
-
-  const cuisine = document.getElementById('cuisinePref').value;
-  const servings = document.getElementById('servingsPref').value;
-  const count = document.getElementById('countPref').value;
-
-  const prompt = `我冰箱里现在有这些食材：${ingredients.join('、')}。
-请根据这些食材，帮我设计 ${count} 道适合 ${servings} 人吃的${cuisine || '家常'}菜谱。
-要求：
-1. 只使用我提供的食材（调料可以假设家里有常用的）
-2. 步骤要详细、清晰，适合普通人在家操作
-3. 每道菜包含：菜名、所需食材和用量、详细烹饪步骤
-4. 用中文回答，格式整洁，步骤用数字编号`;
-
-  hideError();
-  document.getElementById('loading').classList.add('visible');
-  document.getElementById('resultCard').classList.remove('visible');
-  document.getElementById('generateBtn').disabled = true;
-
-  try {
-    const resp = await fetch('/api/recipe', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ messages: [{ role: 'user', content: prompt }] })
-    });
-
-    if (!resp.ok) {
-      const err = await resp.json().catch(() => ({}));
-      throw new Error(err.error?.message || `请求失败 (${resp.status})`);
-    }
-
-    const data = await resp.json();
-    document.getElementById('resultContent').textContent = data.content?.[0]?.text || '没有生成结果，请重试';
-    document.getElementById('resultCard').classList.add('visible');
-    document.getElementById('resultCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-  } catch (e) {
-    showError('生成失败：' + e.message);
-  } finally {
-    document.getElementById('loading').classList.remove('visible');
-    document.getElementById('generateBtn').disabled = false;
-  }
-}
-
-function showError(msg) {
-  const el = document.getElementById('errorMsg');
-  el.textContent = msg;
-  el.classList.add('visible');
-}
-function hideError() {
-  document.getElementById('errorMsg').classList.remove('visible');
-}
-
-function checkPassword() {
-  const val = document.getElementById('gateInput').value;
-  if (val === '030319') {
-    document.getElementById('gate').style.display = 'none';
-  } else {
-    document.getElementById('gateError').style.display = 'block';
-    document.getElementById('gateInput').value = '';
-  }
-}
-
-init();
-</script>
 </body>
 </html>
