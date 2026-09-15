@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黄金走势预测工作台</title>
+<!--ECHARTS_START-->
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+<script>
+if (typeof echarts === 'undefined') {
+  document.write('<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"><\/script>');
+}
+</script>
+<!--ECHARTS_END-->
+<style>
+:root{
+  --bg:#f5f6f8; --card:#ffffff; --border:#e6e8ec; --line:#eef0f3;
+  --tx:#171a21; --tx2:#5b6472; --tx3:#8b93a1;
+  --up:#d9363e; --down:#17a673; --gold:#c9922f; --gold-l:#e8c877;
+  --blue:#2f6fed; --shadow:0 1px 2px rgba(16,24,40,.04),0 4px 16px rgba(16,24,40,.05);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+     font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;padding:0 0 60px}
+.wrap{max-width:1320px;margin:0 auto;padding:0 24px}
+
+/* ---------- header ---------- */
+header{background:linear-gradient(135deg,#fffdf7 0%,#fff9ec 55%,#fdf6e6 100%);border-bottom:1px solid var(--border);padding:22px 0 20px;margin-bottom:24px}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:13px}
+.logo{width:42px;height:42px;border-radius:11px;background:linear-gradient(140deg,#e8c877,#c9922f);
+      display:flex;align-items:center;justify-content:center;font-size:21px;box-shadow:0 3px 10px rgba(201,146,47,.28)}
+h1{font-size:20px;font-weight:700;letter-spacing:-.2px}
+.sub{font-size:12.5px;color:var(--tx2);margin-top:1px}
+.sub b{color:var(--gold);font-weight:600}
+.stamp{font-size:12px;color:var(--tx3);text-align:right;line-height:1.7}
+.stamp .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--down);margin-right:5px;vertical-align:1px}
+
+/* ---------- cards ---------- */
+.card{background:var(--card);border:1px solid var(--border);border-radius:13px;box-shadow:var(--shadow);padding:20px 22px}
+.card-h{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.card-t{font-size:15px;font-weight:650;display:flex;align-items:center;gap:8px}
+.card-t::before{content:'';width:3px;height:15px;border-radius:2px;background:var(--gold)}
+.card-d{font-size:12px;color:var(--tx3)}
+
+/* ---------- kpi row ---------- */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:13px;padding:16px 18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.kpi::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold-l)}
+.kpi.up::after{background:var(--up)} .kpi.down::after{background:var(--down)}
+.kpi-l{font-size:12px;color:var(--tx3);margin-bottom:6px;display:flex;align-items:center;gap:5px}
+.kpi-v{font-size:27px;font-weight:700;letter-spacing:-.6px;font-variant-numeric:tabular-nums;line-height:1.15}
+.kpi-v.up{color:var(--up)} .kpi-v.down{color:var(--down)}
+.kpi-s{font-size:11.5px;color:var(--tx3);margin-top:4px;font-variant-numeric:tabular-nums}
+
+/* ---------- headline ---------- */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:18px;margin-bottom:18px}
+.verdict{display:flex;flex-direction:column;justify-content:center;padding:24px 26px;border-radius:13px;border:1px solid var(--border);
+        background:var(--card);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.verdict::before{content:'';position:absolute;inset:0;opacity:.5;background:
+  radial-gradient(120% 100% at 100% 0%,rgba(217,54,62,.09),transparent 62%)}
+.verdict.dn::before{background:radial-gradient(120% 100% at 100% 0%,rgba(23,166,115,.09),transparent 62%)}
+.v-tag{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:20px;
+       background:#fdeceb;color:var(--up);width:fit-content;position:relative}
+.v-tag.dn{background:#e7f6f1;color:var(--down)}
+.v-big{font-size:46px;font-weight:750;letter-spacing:-1.6px;line-height:1.1;margin:14px 0 2px;position:relative;font-variant-numeric:tabular-nums}
+.v-sub{font-size:13px;color:var(--tx2);position:relative}
+.v-bar{height:9px;border-radius:5px;background:#eef0f3;margin:18px 0 8px;overflow:hidden;position:relative}
+.v-bar i{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,#eab6b9,var(--up));transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.v-bar.dn i{background:linear-gradient(90deg,#a8ddcb,var(--down))}
+.v-note{display:flex;justify-content:space-between;font-size:11.5px;color:var(--tx3);position:relative}
+
+/* ---------- charts ---------- */
+.chart{width:100%}
+.chart.sm{height:150px} .chart.md{height:290px} .chart.lg{height:380px}
+.range{display:flex;gap:5px}
+.range button{border:1px solid var(--border);background:#fff;color:var(--tx2);font-size:12px;padding:4px 11px;border-radius:7px;cursor:pointer;
+              font-family:inherit;transition:all .15s}
+.range button:hover{border-color:var(--gold-l);color:var(--gold)}
+.range button.on{background:var(--gold);border-color:var(--gold);color:#fff;font-weight:600}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+section{margin-bottom:18px}
+
+/* ---------- factor mini ---------- */
+.mini{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:12px 14px 6px;box-shadow:var(--shadow)}
+.mini-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:2px}
+.mini-n{font-size:12.5px;color:var(--tx2);font-weight:550}
+.mini-v{font-size:13.5px;font-weight:700;font-variant-numeric:tabular-nums}
+.mini-g{font-size:10.5px;color:var(--tx3)}
+
+/* ---------- table ---------- */
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th{text-align:left;font-size:11.5px;font-weight:600;color:var(--tx3);text-transform:uppercase;letter-spacing:.4px;
+   padding:9px 10px;border-bottom:1px solid var(--border);background:#fafbfc}
+th:first-child{border-radius:8px 0 0 0} th:last-child{border-radius:0 8px 0 0}
+td{padding:9px 10px;font-size:13px;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#fafbfc}
+.t-up{color:var(--up);font-weight:600} .t-dn{color:var(--down);font-weight:600}
+.pill{display:inline-block;font-size:10.5px;padding:2px 8px;border-radius:5px;background:#f1f3f6;color:var(--tx2);font-weight:500}
+
+/* ---------- misc ---------- */
+.legend-note{font-size:12px;color:var(--tx3);line-height:1.9}
+.legend-note b.r{color:var(--up)} .legend-note b.g{color:var(--down)}
+.disc{background:#fffdf5;border:1px solid #f0e6cd;border-radius:11px;padding:15px 18px;font-size:12.5px;color:#7a6a48;line-height:1.85}
+.disc b{color:#5c4d2e}
+.badge{font-size:11px;padding:3px 9px;border-radius:6px;background:#f1f3f6;color:var(--tx2)}
+.badge.ok{background:#e7f6f1;color:var(--down)}
+.badge.warn{background:#fdf0e8;color:#c9722f}
+.foot{text-align:center;font-size:11.5px;color:var(--tx3);margin-top:26px;line-height:2}
+code.k{background:#f4f5f7;border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:11.5px;color:var(--tx2)}
+@media(max-width:1080px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .hero,.grid2{grid-template-columns:1fr}
+  .grid3,.grid4{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){.grid3,.grid4{grid-template-columns:1fr}.kpis{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hd">
+    <div class="brand">
+      <div class="logo">🥇</div>
+      <div>
+        <h1>黄金走势预测工作台</h1>
+        <div class="sub">多因子量化 · 每日自动采集 · 次日方向预测　<b id="hdrAsOf"></b></div>
+      </div>
+    </div>
+    <div class="stamp">
+      <div><span class="dot"></span>数据采集正常</div>
+      <div id="hdrTime"></div>
+      <div id="hdrSrc"></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ================= KPI ================= -->
+  <section class="kpis" id="kpis"></section>
+
+  <!-- ================= 结论 + 主图 ================= -->
+  <section class="hero">
+    <div class="verdict" id="verdict">
+      <div class="v-tag" id="vTag">模型信号</div>
+      <div class="v-big" id="vBig">—</div>
+      <div class="v-sub" id="vSub"></div>
+      <div class="v-bar" id="vBar"><i style="width:0"></i></div>
+      <div class="v-note"><span>下跌概率</span><span id="vNoteMid">上涨概率</span><span>上涨概率</span></div>
+      <div style="margin-top:18px;font-size:12.5px;color:var(--tx2);line-height:1.95;position:relative" id="vReason"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-h">
+        <div class="card-t">黄金价格走势与次日预测</div>
+        <div class="range">
+          <button data-s="98.8">1月</button>
+          <button data-s="86" class="on">1年</button>
+          <button data-s="58">3年</button>
+          <button data-s="0">全部</button>
+        </div>
+      </div>
+      <div class="chart lg" id="chPrice"></div>
+    </div>
+  </section>
+
+  <!-- ================= 因子贡献 + 概率分层 ================= -->
+  <section class="grid2">
+    <div class="card">
+      <div class="card-h">
+        <div class="card-t">驱动因子贡献分解</div>
+        <div class="card-d">对明日收益的边际贡献（基点 bp）</div>
+      </div>
+      <div class="chart" id="chContrib" style="height:400px"></div>
+      <div class="legend-note">
+        正向贡献 <b class="r">红色</b> = 该因子当前状态对金价<b class="r">偏多</b>；负向 <b class="g">绿色</b> = 偏空。
+        贡献 = 标准化系数 × 标准化因子值，可直接相加还原模型预测收益。
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-h">
+        <div class="card-t">置信度分层命中率</div>
+        <div class="card-d">按模型上涨概率分 5 档的回测方向准确率</div>
+      </div>
+      <div class="chart" id="chBucket" style="height:220px"></div>
+      <div class="card-h" style="margin-top:14px">
+        <div class="card-t">回测：实际 vs 预测</div>
+        <div class="card-d">次日收盘价对照</div>
+      </div>
+      <div class="chart" id="chBacktest" style="height:230px"></div>
+    </div>
+  </section>
+
+  <!-- ================= 因子面板 ================= -->
+  <section class="card">
+    <div class="card-h">
+      <div class="card-t">核心影响因素面板</div>
+      <div class="card-d">近 120 个交易日 · 灰色虚线为对金价的理论方向</div>
+    </div>
+    <div class="grid4" id="minis"></div>
+  </section>
+
+  <!-- ================= 模型表现 ================= -->
+  <section class="grid2">
+    <div class="card">
+      <div class="card-h">
+        <div class="card-t">模型回测表现</div>
+        <div class="card-d" id="mPeriod"></div>
+      </div>
+      <table>
+        <thead><tr><th>指标</th><th>模型</th><th>基准（随机/朴素）</th><th>解读</th></tr></thead>
+        <tbody id="mTable"></tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-h">
+        <div class="card-t">全部因子明细</div>
+        <div class="card-d">系数方向 · 当前取值 · 今日贡献</div>
+      </div>
+      <div style="max-height:352px;overflow:auto">
+        <table>
+          <thead><tr><th>因子</th><th>类别</th><th>理论方向</th><th>当前值</th><th>贡献(bp)</th></tr></thead>
+          <tbody id="fTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 免责 ================= -->
+  <section class="disc">
+    <b>⚠️ 风险提示与模型说明</b><br>
+    1. 黄金日频方向的可预测性天然很弱，任何模型的方向准确率长期很难稳定超过 <b>55%</b>。本工作台的价值在于
+    <b>纪律化的因子监控与归因</b>，而非"精准预测点位"。<br>
+    2. 预测区间由走前式回测的残差分布给出（80% 置信度），实际单日波动可能超出区间。<br>
+    3. 所有宏观因子已按 <code class="k">真实发布滞后</code> 对齐，回测中不存在未来数据泄露；但这不代表实盘中能拿到同样的信息优势。<br>
+    4. 本工具为量化研究与数据可视化用途，<b>不构成任何投资建议</b>。据此交易的风险由使用者自行承担。
+  </section>
+
+  <div class="foot">
+    黄金走势预测工作台 · 数据源：新浪财经 / FRED（圣路易斯联储）· 模型：Ridge + Logistic（走前式验证）<br>
+    生成时间 <span id="footTime"></span>
+  </div>
+</div>
+
+<script>
+const DATA = /*__DATA__*/{};
+
+/* ============ 主题 ============ */
+const C = {up:'#d9363e', down:'#17a673', gold:'#c9922f', goldL:'#e8c877', blue:'#2f6fed',
+           tx:'#171a21', tx2:'#5b6472', tx3:'#8b93a1', line:'#eef0f3', border:'#e6e8ec'};
+const AXIS = {axisLine:{lineStyle:{color:C.border}}, axisLabel:{color:C.tx3,fontSize:11},
+              splitLine:{lineStyle:{color:C.line}}, axisTick:{show:false}};
+const f2 = n => (n==null||isNaN(n)) ? '—' : Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+
+/* ============ 头部 ============ */
+const P = DATA.prediction, M = DATA.metrics;
+document.getElementById('hdrAsOf').textContent = '数据截至 ' + P.last_price_date;
+document.getElementById('hdrTime').textContent  = '更新于 ' + (DATA.generated_at||'').replace('T',' ').slice(0,16);
+document.getElementById('footTime').textContent = (DATA.generated_at||'').replace('T',' ');
+document.getElementById('hdrSrc').textContent   = '新浪财经 · FRED';
+document.getElementById('mPeriod').textContent  = M.start + ' ~ ' + M.end + ' · ' + M.samples + ' 个交易日';
+
+/* ============ KPI ============ */
+const chg = P.pred_change_abs, up = chg >= 0;
+const probPct = (P.prob_up*100);
+const sigma = M.resid_sigma;
+const lo = P.last_price*Math.exp(P.pred_ret - 1.2816*sigma);
+const hi = P.last_price*Math.exp(P.pred_ret + 1.2816*sigma);
+
+// 信号强度：偏离 50% 随机线的幅度（个百分点）
+const edge = Math.abs(probPct - 50);
+const strength = edge < 3 ? '极弱·接近随机' : edge < 7 ? '偏弱' : edge < 12 ? '中等' : '较强';
+
+const kpis = [
+  {l:'最新收盘价', v:f2(P.last_price), s:P.last_price_date+' · COMEX黄金'},
+  {l:'明日预测价', v:f2(P.pred_price), cls:up?'up':'down', s:'80% 区间 '+f2(lo)+' ~ '+f2(hi)},
+  {l:'预测涨跌',   v:(up?'+':'')+f2(chg)+'  '+(up?'▲':'▼'), cls:up?'up':'down',
+   s:'较最新收盘 '+(P.pred_change_pct>=0?'+':'')+P.pred_change_pct.toFixed(2)+'%'},
+  {l:'上涨概率',   v:probPct.toFixed(1)+'%', cls:probPct>=50?'up':'down',
+   s:'信号强度：'+strength+'（偏离随机线 '+edge.toFixed(1)+'pp）'},
+];
+document.getElementById('kpis').innerHTML = kpis.map(k=>`
+  <div class="kpi ${k.cls||''}">
+    <div class="kpi-l">${k.l}</div>
+    <div class="kpi-v ${k.cls||''}">${k.v}</div>
+    <div class="kpi-s">${k.s}</div>
+  </div>`).join('');
+
+/* ============ 结论卡 ============ */
+const bull = P.prob_up >= 0.5;
+document.getElementById('verdict').className = 'verdict' + (bull?'':' dn');
+const vt = document.getElementById('vTag');
+vt.className = 'v-tag' + (bull?'':' dn');
+vt.textContent = (bull ? '▲ 模型信号：偏多' : '▼ 模型信号：偏空') + '　·　强度' + strength;
+document.getElementById('vBig').textContent = (up?'+':'')+f2(chg) + ' 美元/盎司';
+document.getElementById('vSub').innerHTML =
+  `明日预测 <b>${f2(P.pred_price)}</b> 美元/盎司　·　较最新收盘 ${(P.pred_change_pct>=0?'+':'')}${P.pred_change_pct.toFixed(2)}%` +
+  `　·　80% 区间 <b>${f2(lo)} ~ ${f2(hi)}</b>`;
+document.getElementById('vBar').className = 'v-bar' + (bull?'':' dn');
+setTimeout(()=>{document.querySelector('#vBar i').style.width = Math.max(2,Math.min(100,probPct))+'%';},120);
+document.getElementById('vNoteMid').textContent = '上涨概率 '+probPct.toFixed(1)+'%';
+
+// 注意：变量名不能叫 top / name / status / origin / self / parent 等，
+// 它们与 window 的不可配置全局属性冲突，顶层 const 会直接抛 SyntaxError。
+const topF = (P.contribs||[]).slice(0,4);
+document.getElementById('vReason').innerHTML = '主导因子：<br>' + topF.map(c=>{
+  const pos = c.contrib_bp>=0;
+  return `· ${c.name}（当前 ${c.value>=0?'+':''}${c.value}）→ <b style="color:${pos?C.up:C.down}">${pos?'推涨':'压制'} ${Math.abs(c.contrib_bp).toFixed(1)} bp</b>`;
+}).join('<br>');
+
+/* ============ 主图：价格 + 预测 ============ */
+(function(){
+  const hist = DATA.history || [];
+  const dates = hist.map(h=>h.date), prices = hist.map(h=>h.price);
+  // 预测点：最近交易日之后的第一个工作日
+  const d = new Date(P.last_price_date+'T00:00:00');
+  do { d.setDate(d.getDate()+1); } while(d.getDay()===0||d.getDay()===6);
+  const pad = n => String(n).padStart(2,'0');
+  const nd = `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+
+  const predPrices = new Array(prices.length-1).fill(null)
+     .concat([prices[prices.length-1], P.pred_price]);
+  const predDates = dates.slice(0,-1).concat([dates[dates.length-1], nd]);
+
+  const ch = echarts.init(document.getElementById('chPrice'));
+  ch.setOption({
+    animationDuration:800,
+    grid:{left:14,right:20,top:34,bottom:56,containLabel:true},
+    tooltip:{trigger:'axis',backgroundColor:'rgba(255,255,255,.97)',borderColor:C.border,borderWidth:1,
+      textStyle:{color:C.tx,fontSize:12.5},padding:[10,13],
+      extraCssText:'box-shadow:0 6px 24px rgba(16,24,40,.12);border-radius:9px',
+      axisPointer:{type:'cross',crossStyle:{color:C.tx3},lineStyle:{color:C.tx3,type:'dashed'}},
+      formatter: p=>{
+        let s = `<b>${p[0].axisValue}</b>`;
+        p.forEach(i=>{ if(i.value==null)return;
+          s += `<br/><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${i.color};margin-right:6px"></span>${i.seriesName}　<b>${f2(i.value)}</b>`;
+        });
+        return s;
+      }},
+    legend:{top:0,right:0,itemWidth:14,itemHeight:3,itemGap:16,textStyle:{color:C.tx2,fontSize:12},
+      data:['黄金收盘价','模型次日预测']},
+    xAxis:{type:'category',data:predDates,boundaryGap:false,...AXIS,splitLine:{show:false}},
+    yAxis:{type:'value',scale:true,...AXIS,
+      axisLabel:{color:C.tx3,fontSize:11,formatter:v=>v.toFixed(0)}},
+    dataZoom:[
+      {type:'inside',start:88,end:100},
+      {type:'slider',height:20,bottom:12,start:88,end:100,borderColor:'transparent',
+       backgroundColor:'#f4f5f7',fillerColor:'rgba(201,146,47,.16)',
+       handleStyle:{color:'#fff',borderColor:C.goldL},moveHandleStyle:{color:'#dfe3e8'},
+       textStyle:{color:C.tx3,fontSize:10.5},dataBackground:{lineStyle:{color:'#dfe3e8'},areaStyle:{color:'#f0f1f4'}}}
+    ],
+    series:[
+      {name:'黄金收盘价',type:'line',data:prices,smooth:false,showSymbol:false,
+       lineStyle:{color:C.gold,width:1.9},itemStyle:{color:C.gold},
+       areaStyle:{color:new echarts.graphic.LinearGradient(0,0,0,1,[
+         {offset:0,color:'rgba(201,146,47,.22)'},{offset:1,color:'rgba(201,146,47,0)'}])},
+       markPoint:{symbolSize:0,label:{show:false}}},
+      {name:'模型次日预测',type:'line',data:predPrices,connectNulls:true,
+       lineStyle:{color:up?C.up:C.down,width:2.2,type:[6,4]},itemStyle:{color:up?C.up:C.down},
+       symbol:'circle',symbolSize:5,
+       markPoint:{data:[{coord:[nd,P.pred_price],value:P.pred_price}],
+         symbol:'pin',symbolSize:44,
+         itemStyle:{color:up?C.up:C.down},
+         label:{formatter:f2(P.pred_price),fontSize:10.5,color:'#fff',fontWeight:600,offset:[0,-1]}}}
+    ]
+  });
+  window.addEventListener('resize',()=>ch.resize());
+  document.querySelectorAll('.range button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.range button').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    const s = parseFloat(b.dataset.s);
+    ch.dispatchAction({type:'dataZoom',start:s, end:100});
+  }));
+})();
+
+/* ============ 因子贡献条形图 ============ */
+(function(){
+  const cs = (P.contribs||[]).slice(0,13).reverse();
+  const ch = echarts.init(document.getElementById('chContrib'));
+  ch.setOption({
+    animationDuration:800,
+    grid:{left:14,right:52,top:10,bottom:8,containLabel:true},
+    tooltip:{trigger:'axis',axisPointer:{type:'shadow',shadowStyle:{color:'rgba(201,146,47,.06)'}},
+      backgroundColor:'rgba(255,255,255,.97)',borderColor:C.border,textStyle:{color:C.tx,fontSize:12.5},
+      padding:[10,13],extraCssText:'box-shadow:0 6px 24px rgba(16,24,40,.12);border-radius:9px',
+      formatter:p=>{const c=cs[p[0].dataIndex];
+        return `<b>${c.name}</b><br/>类别：${c.group}<br/>理论方向：${c.expect_dir>0?'正相关':c.expect_dir<0?'负相关':'中性'}
+        <br/>当前取值：<b>${c.value>=0?'+':''}${c.value}</b><br/>模型系数：${c.coef>0?'+':''}${c.coef}
+        <br/>今日贡献：<b style="color:${c.contrib_bp>=0?C.up:C.down}">${c.contrib_bp>=0?'+':''}${c.contrib_bp} bp</b>`;}},
+    xAxis:{type:'value',...AXIS,axisLabel:{color:C.tx3,fontSize:11,formatter:v=>v+'bp'}},
+    yAxis:{type:'category',data:cs.map(c=>c.name),...AXIS,
+      axisLabel:{color:C.tx2,fontSize:12},splitLine:{show:false},axisLine:{show:false}},
+    series:[{
+      type:'bar',data:cs.map(c=>({value:c.contrib_bp,
+        itemStyle:{color:c.contrib_bp>=0?C.up:C.down, borderRadius:c.contrib_bp>=0?[0,4,4,0]:[4,0,0,4]}})),
+      barWidth:'58%',
+      label:{show:true,position:'right',fontSize:11,color:C.tx2,fontWeight:600,
+        formatter:p=>(p.value>=0?'+':'')+p.value.toFixed(1)}
+    }]
+  });
+  window.addEventListener('resize',()=>ch.resize());
+})();
+
+/* ============ 概率分层命中率 ============ */
+(function(){
+  const bs = M.conf_buckets||[];
+  const ch = echarts.init(document.getElementById('chBucket'));
+  ch.setOption({
+    animationDuration:800,
+    grid:{left:10,right:18,top:16,bottom:8,containLabel:true},
+    tooltip:{trigger:'axis',axisPointer:{type:'shadow',shadowStyle:{color:'rgba(201,146,47,.06)'}},
+      backgroundColor:'rgba(255,255,255,.97)',borderColor:C.border,textStyle:{color:C.tx,fontSize:12.5},
+      extraCssText:'box-shadow:0 6px 24px rgba(16,24,40,.12);border-radius:9px',
+      formatter:p=>{const b=bs[p[0].dataIndex];
+        return `第 ${b.bucket+1} 档（平均上涨概率 ${(b.prob_mean*100).toFixed(1)}%）<br/>
+        样本 <b>${b.n}</b> 个交易日<br/>方向命中率 <b>${(b.hit*100).toFixed(1)}%</b>`;}},
+    xAxis:{type:'category',data:bs.map(b=>(b.prob_mean*100).toFixed(0)+'%'),...AXIS,splitLine:{show:false},
+      name:'平均上涨概率',nameLocation:'middle',nameGap:30,nameTextStyle:{color:C.tx3,fontSize:11}},
+    yAxis:{type:'value',...AXIS,axisLabel:{color:C.tx3,fontSize:11,formatter:v=>(v*100).toFixed(0)+'%'},
+      max:Math.max(0.72,...bs.map(b=>b.hit))+0.06},
+    series:[{
+      type:'bar',barWidth:'52%',
+      data:bs.map(b=>({value:b.hit,itemStyle:{
+        color:b.hit>0.5?'#2f6fed':'#a9b2c0', borderRadius:[5,5,0,0]}})),
+      label:{show:true,position:'top',fontSize:11,color:C.tx2,fontWeight:600,
+        formatter:p=>(p.value*100).toFixed(1)+'%'},
+      markLine:{silent:true,symbol:'none',
+        lineStyle:{color:'#c9722f',type:'dashed',width:1.4},
+        label:{formatter:'50% 随机线',fontSize:10.5,color:'#c9722f',position:'insideEndTop'},
+        data:[{yAxis:0.5}]}
+    }]
+  });
+  window.addEventListener('resize',()=>ch.resize());
+})();
+
+/* ============ 回测：实际 vs 预测 ============ */
+(function(){
+  const bt = DATA.backtest_curve||[];
+  const ch = echarts.init(document.getElementById('chBacktest'));
+  ch.setOption({
+    animationDuration:800,
+    grid:{left:10,right:18,top:30,bottom:6,containLabel:true},
+    tooltip:{trigger:'axis',backgroundColor:'rgba(255,255,255,.97)',borderColor:C.border,
+      textStyle:{color:C.tx,fontSize:12.5},padding:[10,13],
+      extraCssText:'box-shadow:0 6px 24px rgba(16,24,40,.12);border-radius:9px',
+      axisPointer:{type:'cross',crossStyle:{color:C.tx3},lineStyle:{color:C.tx3,type:'dashed'}},
+      formatter:p=>{const r=bt[p[0].dataIndex];
+        return `<b>${p[0].axisValue}</b><br/>
+        实际上次收盘 <b>${f2(r.actual)}</b><br/>模型预测　 <b>${f2(r.pred)}</b><br/>
+        误差 ${f2(Math.abs(r.actual-r.pred))}<br/>
+        方向 <b style="color:${r.hit?C.up:C.down}">${r.hit?'命中 ✓':'未中 ✗'}</b>　(上涨概率 ${(r.prob*100).toFixed(1)}%)`;}},
+    legend:{top:0,right:0,itemWidth:14,itemHeight:3,itemGap:14,textStyle:{color:C.tx2,fontSize:11.5}},
+    xAxis:{type:'category',data:bt.map(r=>r.date),boundaryGap:false,...AXIS,splitLine:{show:false},
+      axisLabel:{color:C.tx3,fontSize:10.5,interval:Math.floor(bt.length/6)}},
+    yAxis:{type:'value',scale:true,...AXIS,axisLabel:{color:C.tx3,fontSize:10.5,formatter:v=>v.toFixed(0)}},
+    series:[
+      {name:'实际次日收盘',type:'line',data:bt.map(r=>r.actual),showSymbol:false,
+       lineStyle:{color:C.gold,width:1.7},itemStyle:{color:C.gold}},
+      {name:'模型预测',type:'line',data:bt.map(r=>r.pred),showSymbol:false,
+       lineStyle:{color:C.blue,width:1.4,type:[5,3]},itemStyle:{color:C.blue}}
+    ]
+  });
+  window.addEventListener('resize',()=>ch.resize());
+})();
+
+/* ============ 因子小图 ============ */
+(function(){
+  const want = ['d_realyield_5d','d_dxy_5d','d_vix_5d','d_breakeven_5d',
+                'gold_silver','d_oil_5d','d_credit_5d','term_spread'];
+  const byKey = {}; (DATA.factor_series||[]).forEach(s=>byKey[s.key]=s);
+  const host = document.getElementById('minis');
+  host.innerHTML = want.map(k=>{
+    const s = byKey[k]; if(!s) return '';
+    return `<div class="mini">
+      <div class="mini-h"><span class="mini-n">${s.name}</span>
+      <span class="mini-v" id="mv-${k}">—</span></div>
+      <div class="mini-g">${s.group}类因子</div>
+      <div class="chart sm" id="m-${k}"></div></div>`;
+  }).join('');
+
+  want.forEach((k,i)=>{
+    const s = byKey[k]; if(!s) return;
+    const vals = (s.data||[]).filter(v=>v!=null);
+    const lastV = vals[vals.length-1], firstV = vals[0];
+    const el = document.getElementById('mv-'+k);
+    el.textContent = (lastV>=0?'+':'') + Number(lastV).toFixed(3);
+    el.style.color = lastV>=firstV ? C.up : C.down;
+
+    const ch = echarts.init(document.getElementById('m-'+k));
+    const pos = lastV>=0, col = pos?C.up:C.down;
+    ch.setOption({
+      animationDuration:700,
+      grid:{left:4,right:4,top:6,bottom:4,containLabel:false},
+      tooltip:{trigger:'axis',backgroundColor:'rgba(255,255,255,.97)',borderColor:C.border,
+        textStyle:{color:C.tx,fontSize:11.5},padding:[7,10],
+        extraCssText:'box-shadow:0 4px 16px rgba(16,24,40,.12);border-radius:8px',
+        formatter:p=>`${p[0].axisValue}<br/><b>${Number(p[0].value).toFixed(4)}</b>`},
+      xAxis:{type:'category',data:DATA.panel_dates||[],show:false,boundaryGap:false},
+      yAxis:{type:'value',scale:true,show:false},
+      series:[{type:'line',data:s.data,showSymbol:false,smooth:false,
+        lineStyle:{color:C.blue,width:1.5},itemStyle:{color:C.blue},
+        areaStyle:{color:new echarts.graphic.LinearGradient(0,0,0,1,[
+          {offset:0,color:pos?'rgba(217,54,62,.16)':'rgba(23,166,115,.16)'},
+          {offset:1,color:'rgba(255,255,255,0)'}])},
+        markLine:{silent:true,symbol:'none',lineStyle:{color:'#d7dbe0',type:'dashed',width:1},
+          label:{show:false},data:[{yAxis:0}]}
+      }]
+    });
+    window.addEventListener('resize',()=>ch.resize());
+  });
+})();
+
+/* ============ 指标表 ============ */
+(function(){
+  const acc = M.dir_accuracy, imp = (acc-0.5)/(M.mae_naive-M.mae_model>0?1:1);
+  const rows = [
+    ['方向准确率', (acc*100).toFixed(1)+'%', '50.0%（随机）',
+     `<span class="pill" style="background:${acc>0.53?'#e7f6f1':'#fdf0e8'};color:${acc>0.53?C.down:'#c9722f'}">${acc>0.53?'优于随机':'接近随机'}</span>`],
+    ['AUC', M.auc.toFixed(3), '0.500',
+     `<span class="pill">${M.auc>0.53?'有一定区分度':'区分度弱'}</span>`],
+    ['IC（预测-实际相关）', M.ic.toFixed(3), '0.000',
+     `<span class="pill">${Math.abs(M.ic)>0.05?'弱正相关':'近乎无关'}</span>`],
+    ['MAE（美元/盎司）', M.mae_model.toFixed(2), M.mae_naive.toFixed(2),
+     `<span class="pill" style="background:${M.mae_model<M.mae_naive?'#e7f6f1':'#fdf0e8'};color:${M.mae_model<M.mae_naive?C.down:'#c9722f'}">${M.mae_model<M.mae_naive?'优于朴素基准':'不及朴素基准'}</span>`],
+    ['残差波动率 σ', (M.resid_sigma*100).toFixed(2)+'%', '—', '<span class="pill">用于生成80%预测区间</span>'],
+    ['回测样本', M.samples+' 日', '—', `<span class="pill">${M.start} 起</span>`],
+  ];
+  document.getElementById('mTable').innerHTML = rows.map(r=>
+    `<tr><td style="font-weight:600">${r[0]}</td><td class="t-up">${r[1]}</td><td style="color:var(--tx3)">${r[2]}</td><td>${r[3]}</td></tr>`
+  ).join('');
+})();
+
+/* ============ 因子明细表 ============ */
+(function(){
+  document.getElementById('fTable').innerHTML = (P.contribs||[]).map(c=>{
+    const pos = c.contrib_bp>=0;
+    return `<tr>
+      <td style="font-weight:600">${c.name}</td>
+      <td><span class="pill">${c.group}</span></td>
+      <td style="color:${c.expect_dir>0?C.up:C.down};font-size:12px">${c.expect_dir>0?'正相关 ↑':'负相关 ↓'}</td>
+      <td>${c.value>=0?'+':''}${c.value}</td>
+      <td class="${pos?'t-up':'t-dn'}">${pos?'+':''}${c.contrib_bp}</td>
+    </tr>`;
+  }).join('');
+})();
+</script>
+</body>
+</html>
