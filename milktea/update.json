@@ -1,14 +1,60 @@
 {
- "version": "2.1.0",
+ "version": "2.2.0",
  "updated": "2026-09-22",
  "brands": [
   {
    "id": "heytea",
    "name": "喜茶",
+   "orderApp": "喜茶GO",
    "en": "HEYTEA",
    "color": "#1A1A1A",
    "desc": "现制茶饮头部品牌，以真果茶与轻乳茶见长",
    "menu": [
+    {
+     "name": "雪毫桂花龙眼",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 23,
+     "toppings": [],
+     "tags": [
+      "桂花",
+      "有果肉"
+     ],
+     "isNew": true,
+     "since": "2026-09"
+    },
+    {
+     "name": "椰山龙眼冰",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 23,
+     "toppings": [],
+     "tags": [
+      "回归",
+      "有果肉"
+     ],
+     "isNew": true,
+     "since": "2026-09"
+    },
+    {
+     "name": "空气马斯卡彭·英红",
+     "cat": "轻乳茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 22,
+     "toppings": [],
+     "tags": [
+      "奶盖",
+      "甜品感"
+     ],
+     "isNew": true,
+     "since": "2026-02"
+    },
     {
      "name": "多肉葡萄",
      "cat": "果茶",
@@ -64,7 +110,7 @@
      "tags": [
       "有果肉"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-04"
     },
     {
@@ -168,7 +214,7 @@
      "tags": [
       "轻负担"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-06"
     },
     {
@@ -276,10 +322,58 @@
   {
    "id": "nayuki",
    "name": "奈雪的茶",
+   "orderApp": "奈雪点单",
    "en": "NAYUKI",
    "color": "#2B2B2B",
    "desc": "茶饮 + 软欧包双品类品牌，霸气鲜果茶人气高",
    "menu": [
+    {
+     "name": "霸气小红杏酸奶冰",
+     "cat": "酸奶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "益生菌",
+      "有果肉",
+      "清爽"
+     ],
+     "isNew": true,
+     "since": "2026-09"
+    },
+    {
+     "name": "泰橘3倍超C小橙瓶",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "维C",
+      "有果肉",
+      "回归"
+     ],
+     "isNew": true,
+     "since": "2026-09"
+    },
+    {
+     "name": "初雪柠酪泰橘",
+     "cat": "奶茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "果奶",
+      "奶盖"
+     ],
+     "isNew": true,
+     "since": "2026-09"
+    },
     {
      "name": "霸气橙子",
      "cat": "果茶",
@@ -506,7 +600,7 @@
      "tags": [
       "椰香"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-03"
     },
     {
@@ -528,10 +622,70 @@
   {
    "id": "chagee",
    "name": "霸王茶姬",
+   "orderApp": "霸王茶姬",
    "en": "CHAGEE",
    "color": "#2E7D5B",
    "desc": "以原叶鲜奶茶为主的新中式国风茶饮",
    "menu": [
+    {
+     "name": "轻因·伯牙绝弦",
+     "cat": "轻乳茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "轻负担",
+      "低因"
+     ],
+     "isNew": true,
+     "since": "2026-08"
+    },
+    {
+     "name": "月抹静山",
+     "cat": "轻乳茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "抹茶",
+      "奶盖"
+     ],
+     "isNew": true,
+     "since": "2026-01"
+    },
+    {
+     "name": "轻因·云游栖梦",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 16,
+     "toppings": [],
+     "tags": [
+      "轻负担",
+      "低因"
+     ],
+     "isNew": true,
+     "since": "2026-03"
+    },
+    {
+     "name": "糯青山",
+     "cat": "奶茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 16,
+     "toppings": [],
+     "tags": [
+      "柠檬奶"
+     ],
+     "isNew": true,
+     "since": "2026-06"
+    },
     {
      "name": "伯牙绝弦",
      "cat": "奶茶",
@@ -558,7 +712,7 @@
      "tags": [
       "桂花"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-08"
     },
     {
@@ -656,7 +810,7 @@
      "tags": [
       "轻负担"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-05"
     },
     {
@@ -749,10 +903,26 @@
   {
    "id": "mixue",
    "name": "蜜雪冰城",
+   "orderApp": "蜜雪冰城",
    "en": "MIXUE",
    "color": "#E4002B",
    "desc": "高性价比国民品牌，主打 6-10 元的平价现制饮品",
    "menu": [
+    {
+     "name": "黄桃果霸",
+     "cat": "果茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 9,
+     "toppings": [],
+     "tags": [
+      "黄桃",
+      "有果肉"
+     ],
+     "isNew": true,
+     "since": "2026-08"
+    },
     {
      "name": "冰鲜柠檬水",
      "cat": "果茶",
@@ -911,7 +1081,7 @@
      "tags": [
       "有果肉"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-04"
     },
     {
@@ -992,10 +1162,41 @@
   {
    "id": "chabaidao",
    "name": "茶百道",
+   "orderApp": "茶百道",
    "en": "CHA PANDA",
    "color": "#1B69B0",
    "desc": "以熊猫为 IP 的成都茶饮品牌，杨枝甘露招牌",
    "menu": [
+    {
+     "name": "草莓夹心奶麻薯",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "麻薯",
+      "草莓"
+     ],
+     "isNew": true,
+     "since": "2026-01"
+    },
+    {
+     "name": "红气车厘子",
+     "cat": "果茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "车厘子",
+      "有果肉"
+     ],
+     "isNew": true,
+     "since": "2026-01"
+    },
     {
      "name": "杨枝甘露",
      "cat": "果茶",
@@ -1040,7 +1241,7 @@
      "tags": [
       "桂花"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-07"
     },
     {
@@ -1088,7 +1289,7 @@
      "tags": [
       "有果肉"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-05"
     },
     {
@@ -1248,10 +1449,56 @@
   {
    "id": "guming",
    "name": "古茗",
+   "orderApp": "古茗",
    "en": "GUMING",
    "color": "#2E8B57",
    "desc": "深耕下沉市场的鲜果茶与奶茶品牌，门店密度高",
    "menu": [
+    {
+     "name": "爆汁鲜果杯",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 15,
+     "toppings": [],
+     "tags": [
+      "有果肉",
+      "清爽"
+     ],
+     "isNew": true,
+     "since": "2026-01"
+    },
+    {
+     "name": "春橙山茶",
+     "cat": "果茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 16,
+     "toppings": [],
+     "tags": [
+      "奶盖",
+      "有果肉"
+     ],
+     "isNew": true,
+     "since": "2026-02"
+    },
+    {
+     "name": "龙井香青团",
+     "cat": "奶茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 15,
+     "toppings": [],
+     "tags": [
+      "青团",
+      "联名"
+     ],
+     "isNew": true,
+     "since": "2026-03"
+    },
     {
      "name": "杨枝甘露",
      "cat": "果茶",
@@ -1355,7 +1602,7 @@
      "tags": [
       "有果肉"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-05"
     },
     {
@@ -1413,7 +1660,7 @@
      "tags": [
       "椰香"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2023-09"
     },
     {
@@ -1494,6 +1741,7 @@
   {
    "id": "aunty",
    "name": "沪上阿姨",
+   "orderApp": "沪上阿姨",
    "en": "AUNTEA JENNY",
    "color": "#E22E7A",
    "desc": "以五谷杂粮奶茶起步的上海品牌，血糯米经典",
@@ -1573,7 +1821,7 @@
      "tags": [
       "有果肉"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-05"
     },
     {
@@ -1633,7 +1881,7 @@
      "tags": [
       "椰香"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2023-08"
     },
     {
@@ -1729,6 +1977,7 @@
   {
    "id": "molli",
    "name": "茉莉奶白",
+   "orderApp": "茉莉奶白",
    "en": "MOLI NAICHA",
    "color": "#4B7C5E",
    "desc": "主打茉莉香轻乳茶的新式茶饮，清爽不腻",
@@ -1830,7 +2079,7 @@
      "tags": [
       "花香"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-06"
     },
     {
@@ -1858,7 +2107,7 @@
      "tags": [
       "花香"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-07"
     },
     {
@@ -1951,6 +2200,7 @@
   {
    "id": "shuyi",
    "name": "书亦烧仙草",
+   "orderApp": "书亦烧仙草",
    "en": "SHUYI",
    "color": "#B5462F",
    "desc": "以烧仙草为特色的川渝奶茶品牌，料足实惠",
@@ -1999,7 +2249,7 @@
      "tags": [
       "有果肉"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-05"
     },
     {
@@ -2189,6 +2439,7 @@
   {
    "id": "yihetang",
    "name": "益禾堂",
+   "orderApp": "益禾堂",
    "en": "YIHETANG",
    "color": "#1F8A4C",
    "desc": "校园与街边常见的平价奶茶品牌，烤奶人气高",
@@ -2353,7 +2604,7 @@
      "tags": [
       "椰香"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2023-07"
     },
     {
@@ -2421,10 +2672,56 @@
   {
    "id": "luckin",
    "name": "瑞幸咖啡",
+   "orderApp": "瑞幸咖啡",
    "en": "LUCKIN",
    "color": "#0B4DA2",
    "desc": "中国门店数领先的连锁咖啡品牌，生椰拿铁爆款",
    "menu": [
+    {
+     "name": "桂花米酿拿铁",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 22,
+     "toppings": [],
+     "tags": [
+      "桂花",
+      "秋季限定"
+     ],
+     "isNew": true,
+     "since": "2026-09"
+    },
+    {
+     "name": "苦瓜轻体果蔬茶",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "轻负担",
+      "果蔬"
+     ],
+     "isNew": true,
+     "since": "2026-03"
+    },
+    {
+     "name": "鲜萃轻轻龙井",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "龙井",
+      "清爽"
+     ],
+     "isNew": true,
+     "since": "2026-03"
+    },
     {
      "name": "生椰拿铁",
      "cat": "咖啡",
@@ -2535,7 +2832,7 @@
      "tags": [
       "椰香"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-06"
     },
     {
@@ -2549,7 +2846,7 @@
      "tags": [
       "果咖"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-05"
     },
     {
@@ -2641,6 +2938,7 @@
   {
    "id": "cotti",
    "name": "库迪咖啡",
+   "orderApp": "库迪咖啡",
    "en": "COTTI",
    "color": "#D62632",
    "desc": "高性价比连锁咖啡品牌，价格亲民",
@@ -2741,7 +3039,7 @@
      "tags": [
       "桂花"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-09"
     },
     {
@@ -2783,7 +3081,7 @@
      "tags": [
       "芝士"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-05"
     },
     {
@@ -2861,6 +3159,7 @@
   {
    "id": "lelecha",
    "name": "乐乐茶",
+   "orderApp": "乐乐茶",
    "en": "LELECHA",
    "color": "#F2A03D",
    "desc": "脏脏茶与酪酪系列的原创茶饮品牌",
@@ -2908,7 +3207,7 @@
      "tags": [
       "有果肉"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-05"
     },
     {
@@ -2998,7 +3297,7 @@
      "tags": [
       "椰香"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-03"
     },
     {
@@ -3093,6 +3392,7 @@
   {
    "id": "seven",
    "name": "7分甜",
+   "orderApp": "7分甜",
    "en": "SEVEN",
    "color": "#F06292",
    "desc": "以杨枝甘露闻名的果茶品牌，甜度恰到好处",
@@ -3169,7 +3469,7 @@
      "tags": [
       "有果肉"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-05"
     },
     {
@@ -3326,6 +3626,7 @@
   {
    "id": "coco",
    "name": "CoCo都可",
+   "orderApp": "CoCo都可",
    "en": "COCO",
    "color": "#F5821F",
    "desc": "来自台湾的老牌连锁茶饮，珍珠奶茶经典",
@@ -3496,7 +3797,7 @@
      "tags": [
       "有果肉"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-04"
     },
     {
@@ -3561,6 +3862,7 @@
   {
    "id": "yidiandian",
    "name": "一点点",
+   "orderApp": "一点点",
    "en": "YIDIANDIAN",
    "color": "#3AAE5A",
    "desc": "台式手摇茶饮，波霸奶茶与免费加料受欢迎",
@@ -3768,7 +4070,7 @@
      "tags": [
       "阿华田"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-06"
     },
     {
@@ -3790,6 +4092,7 @@
   {
    "id": "chayan",
    "name": "茶颜悦色",
+   "orderApp": "茶颜悦色",
    "en": "CHAYAN YUESE",
    "color": "#1F6A47",
    "desc": "长沙起家的国风茶饮，奶油顶茶底层次丰富",
@@ -3848,7 +4151,7 @@
      "tags": [
       "奶油顶"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-07"
     },
     {
@@ -3918,7 +4221,7 @@
      "tags": [
       "奶油顶"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-08"
     },
     {
@@ -4013,6 +4316,7 @@
   {
    "id": "tianlala",
    "name": "甜啦啦",
+   "orderApp": "甜啦啦",
    "en": "TIANLALA",
    "color": "#F4B942",
    "desc": "6-10 元的平价学生茶饮品牌，门店覆盖广",
@@ -4178,7 +4482,7 @@
      "tags": [
       "有果肉"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-05"
     },
     {
@@ -4245,6 +4549,7 @@
   {
    "id": "shisan",
    "name": "拾叁茶",
+   "orderApp": "拾叁茶",
    "en": "SHISANCHA",
    "color": "#7A5C44",
    "desc": "南京起家的新中式茶饮，云顶轻乳茶与江南风果茶见长",
@@ -4275,7 +4580,7 @@
      "tags": [
       "花香"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-05"
     },
     {
@@ -4346,7 +4651,7 @@
      "tags": [
       "有果肉"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-06"
     },
     {
@@ -4374,7 +4679,7 @@
      "tags": [
       "桂花"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-09"
     },
     {
@@ -4426,10 +4731,26 @@
   {
    "id": "yeye",
    "name": "爷爷不泡茶",
+   "orderApp": "爷爷不泡茶",
    "en": "YEYE",
    "color": "#B5402E",
    "desc": "武汉人气茶饮，荔枝冰酿与手打柠檬茶出圈",
    "menu": [
+    {
+     "name": "鲜玫瑰荔枝",
+     "cat": "果茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 15,
+     "toppings": [],
+     "tags": [
+      "荔枝",
+      "花香"
+     ],
+     "isNew": true,
+     "since": "2026-05"
+    },
     {
      "name": "招牌荔枝冰酿",
      "cat": "果茶",
@@ -4502,7 +4823,7 @@
       "桂花",
       "清爽"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-08"
     },
     {
@@ -4576,7 +4897,7 @@
      "tags": [
       "花香"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-03"
     },
     {
@@ -4598,6 +4919,7 @@
   {
    "id": "chahuanong",
    "name": "茶话弄",
+   "orderApp": "茶话弄",
    "en": "CHAHUANONG",
    "color": "#7C2D4E",
    "desc": "西安国风茶饮，桂花引与唐诗风命名走红",
@@ -4698,7 +5020,7 @@
      "tags": [
       "奶油顶"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-07"
     },
     {
@@ -4740,7 +5062,7 @@
      "tags": [
       "有果肉"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-05"
     },
     {
@@ -4763,6 +5085,7 @@
   {
    "id": "moyogurt",
    "name": "茉酸奶",
+   "orderApp": "茉酸奶",
    "en": "MOREYOGURT",
    "color": "#6FA03C",
    "desc": "现制酸奶饮开创者，牛油果酸奶奶昔是招牌",
@@ -4849,7 +5172,7 @@
      "tags": [
       "清爽"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-06"
     },
     {
@@ -4915,6 +5238,7 @@
   {
    "id": "amashouzuo",
    "name": "阿嬷手作",
+   "orderApp": "阿嬷手作",
    "en": "AMASHOUZUO",
    "color": "#5C4033",
    "desc": "深圳起家的手作茶饮，广西水牛奶系列口碑高",
@@ -4999,7 +5323,7 @@
       "桂花",
       "水牛奶"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-09"
     },
     {
@@ -5080,6 +5404,7 @@
   {
    "id": "ningji",
    "name": "柠季",
+   "orderApp": "柠季手打柠檬茶",
    "en": "NINGJI",
    "color": "#4D9B3A",
    "desc": "长沙手打柠檬茶专门店，鸭屎香柠檬茶人气高",
@@ -5183,7 +5508,7 @@
      "tags": [
       "有果肉"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-06"
     },
     {
@@ -5233,6 +5558,7 @@
   {
    "id": "comwonka",
    "name": "卡旺卡",
+   "orderApp": "卡旺卡",
    "en": "KWK",
    "color": "#C25E10",
    "desc": "合肥老牌平价茶饮，招牌全套奶茶料多实在",
@@ -5332,7 +5658,7 @@
      "tags": [
       "桂花"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2024-08"
     },
     {

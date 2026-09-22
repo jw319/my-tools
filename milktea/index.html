@@ -1176,6 +1176,7 @@ function renderBrandDetail(host, brandId){
     + '<div><div class="dn">' + esc(b.name) + '</div>'
     + '<div class="dd">' + esc(b.desc) + '</div>'
     + '<div class="dd"><b style="color:var(--brand-d)">' + skus.length + '</b> 款在售 · 共 ' + CATS.length + ' 个品类</div>'
+    + (b.orderApp ? '<div class="dd">📱 点单：微信搜「<b>' + esc(b.orderApp) + '</b>」小程序</div>' : '')
     + '</div></div>';
 
   for(var g=0;g<CATS.length;g++){
