@@ -9,7 +9,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="奶茶工作台">
-<meta name="description" content="智能奶茶工作台：按心情、口味偏好、品牌范围智能推荐，18 家品牌菜单每周更新。">
+<meta name="description" content="智能奶茶工作台：按心情、口味偏好、品牌范围智能推荐，25 家品牌菜单每周更新。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%8B%3C/text%3E%3C/svg%3E">
 <style>
 :root{
@@ -38,7 +38,7 @@ input,select{font-family:inherit}
 /* ================= stage / phone shell ================= */
 .stage{
   min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:18px;padding:28px 16px;
+  gap:14px;padding:20px 16px;
 }
 .outside{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;user-select:none}
 .outside .logo{display:flex;align-items:center;gap:11px}
@@ -51,7 +51,7 @@ input,select{font-family:inherit}
 .outside .hint{font-size:12px;color:var(--tx3);margin-top:2px}
 
 .phone{
-  position:relative;width:390px;height:min(844px,calc(100dvh - 210px));
+  position:relative;width:min(460px,96vw);height:min(940px,calc(100dvh - 84px));
   background:var(--cream);border-radius:46px;border:1px solid #EADFD2;
   box-shadow:var(--shadow-l), 0 0 0 11px #FCFAF7, 0 0 0 13px #E9DFD3;
   display:flex;flex-direction:column;overflow:hidden;
@@ -81,15 +81,16 @@ input,select{font-family:inherit}
 /* ================= body: sidebar + main ================= */
 .body{flex:1 1 auto;display:flex;min-height:0}
 .sidebar{
-  flex:0 0 86px;display:flex;flex-direction:column;min-height:0;
+  flex:0 0 90px;display:flex;flex-direction:column;min-height:0;
   background:linear-gradient(180deg,#F8F1E9,#F5EDE3);border-right:1px solid var(--line);
 }
 .sb-head{
   flex:0 0 auto;padding:10px 0 6px;text-align:center;font-size:20px;user-select:none;
   border-bottom:1px dashed var(--line);
 }
-.sb-scroll{flex:1 1 auto;overflow-y:auto;overflow-x:hidden;padding:6px 6px 8px;display:flex;flex-direction:column;gap:3px}
-.sb-scroll::-webkit-scrollbar{width:0}
+.sb-scroll{flex:1 1 auto;overflow-y:auto;overflow-x:hidden;padding:6px 6px 8px;display:flex;flex-direction:column;gap:3px;scrollbar-width:thin;scrollbar-color:#D8C8B6 transparent}
+.sb-scroll::-webkit-scrollbar{width:4px}
+.sb-scroll::-webkit-scrollbar-thumb{background:#D8C8B6;border-radius:4px}
 .sb-item{
   display:flex;flex-direction:column;align-items:center;gap:4px;padding:7px 2px 6px;
   border-radius:12px;border:1.5px solid transparent;transition:all .16s ease;position:relative;
@@ -360,7 +361,7 @@ input,select{font-family:inherit}
   <header class="outside">
     <div class="logo"><div class="logo-badge">🧋</div><h1>奶茶工作台</h1></div>
     <p>看心情 · 按口味 · 圈定品牌 —— 智能推荐今天喝什么</p>
-    <p class="hint">菜单数据每周一自动核对更新 · 18 家品牌全覆盖</p>
+    <p class="hint">菜单数据每周一自动核对更新 · 25 家品牌 353 款饮品</p>
   </header>
 
   <div class="phone" id="phone">
@@ -456,9 +457,9 @@ var MOODS = [
   { id:'date',    emoji:'🥰', name:'约会',    cats:['果茶','奶茶'],     tags:['有果肉','奶盖','奶油顶'],         brandTags:['高端','国风'],          why:'约会适合有颜值、有话题的款' },
   { id:'focus',   emoji:'📚', name:'专注',    cats:['咖啡','纯茶'],     tags:['无糖'],                           brandTags:['咖啡强'],              why:'专注要低干扰，咖啡因 + 无糖最稳' },
   { id:'latenight',emoji:'🌙',name:'熬夜',    cats:['咖啡'],            tags:['浓醇'],                           brandTags:['咖啡强'],              why:'熬夜党直接上咖啡因，别犹豫' },
-  { id:'greasy',  emoji:'🥵', name:'解腻',    cats:['纯茶','果茶'],     tags:['清爽','无糖','微咸'],             brandTags:['轻负担强'],            why:'吃腻了来杯清口解腻的' },
+  { id:'greasy',  emoji:'🥵', name:'解腻',    cats:['纯茶','果茶','酸奶'], tags:['清爽','无糖','微咸'],          brandTags:['轻负担强'],            why:'吃腻了来杯清口解腻的' },
   { id:'budget',  emoji:'💰', name:'省钱',    cats:[],                  tags:[],                                 brandTags:['平价'],                why:'省钱模式，好喝不心疼' },
-  { id:'light',   emoji:'🌱', name:'轻负担',  cats:['纯茶','轻乳茶'],   tags:['轻负担','无糖'],                  brandTags:['轻负担强'],            why:'怕胖怕腻走轻负担路线' }
+  { id:'light',   emoji:'🌱', name:'轻负担',  cats:['纯茶','轻乳茶','酸奶'], tags:['轻负担','无糖'],             brandTags:['轻负担强'],            why:'怕胖怕腻走轻负担路线' }
 ];
 
 /* 品牌画像：擅长什么（用于把心情“翻译”成品牌倾向） */
@@ -480,7 +481,14 @@ var BRAND_TAGS = {
   coco:        ['经典','平价'],
   yidiandian:  ['经典','平价'],
   chayan:      ['国风','高端'],
-  tianlala:    ['平价']
+  tianlala:    ['平价'],
+  shisan:      ['轻负担强','国风'],
+  yeye:        ['果茶强'],
+  chahuanong:  ['国风'],
+  moyogurt:    ['轻负担强'],
+  amashouzuo:  ['高端'],
+  ningji:      ['果茶强'],
+  comwonka:    ['平价','料多强']
 };
 function brandTagList(brand){ return BRAND_TAGS[brand.id] || []; }
 
@@ -697,7 +705,7 @@ function condHit(item, cond){
   switch(cond){
     case '加小料': return item.toppings.length > 0;
     case '无小料': return item.toppings.length === 0;
-    case '冷饮': return item.cat==='果茶' || item.cat==='纯茶' || item.cat==='咖啡';
+    case '冷饮': return item.cat==='果茶' || item.cat==='纯茶' || item.cat==='咖啡' || item.cat==='酸奶';
     case '热饮': return item.cat==='奶茶' || item.cat==='轻乳茶';
     case '低糖': return item.cat==='纯茶' || item.cat==='轻乳茶';
     case '价格 ≤ 15 元': return item.price <= 15;
