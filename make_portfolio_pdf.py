@@ -63,7 +63,7 @@ def load_milktea_facts() -> dict:
                 "news": str(d["news"]), "version": d["version"]}
     except Exception as e:
         print(f"警告：读取奶茶数据失败（{e}），用兜底值")
-        return {"brands": "25", "skus": "373", "news": "20", "version": "2.2.0"}
+        return {"brands": "25", "skus": "402", "news": "10", "version": "2.3.0"}
 
 
 def b64img(p: Path) -> str:
