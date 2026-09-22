@@ -1,5 +1,5 @@
 {
- "version": "2.3.0",
+ "version": "2.4.0",
  "updated": "2026-09-22",
  "brands": [
   {
@@ -11,14 +11,45 @@
    "desc": "现制茶饮头部品牌，以真果茶与轻乳茶见长",
    "menu": [
     {
-     "name": "酷黑莓桑",
+     "name": "多肉葡萄",
      "cat": "果茶",
      "tea": [
       "绿茶"
      ],
-     "price": 19,
+     "price": 22,
      "toppings": [],
      "tags": [
+      "招牌",
+      "有果肉"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "芝芝莓莓",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 23,
+     "toppings": [],
+     "tags": [
+      "奶盖",
+      "有果肉"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "芝芝多肉青提",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 23,
+     "toppings": [],
+     "tags": [
+      "奶盖",
       "有果肉"
      ],
      "isNew": false,
@@ -30,7 +61,7 @@
      "tea": [
       "绿茶"
      ],
-     "price": 18,
+     "price": 21,
      "toppings": [],
      "tags": [
       "清爽"
@@ -39,41 +70,27 @@
      "since": ""
     },
     {
-     "name": "芒芒甘露",
+     "name": "多肉芒芒甘露",
      "cat": "果茶",
      "tea": [
       "绿茶"
      ],
-     "price": 18,
+     "price": 23,
      "toppings": [],
      "tags": [
-      "芒果"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "多肉葡萄",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "招牌",
+      "芒果",
       "有果肉"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "超多肉椰椰芒芒",
+     "name": "椰椰芒芒",
      "cat": "果茶",
      "tea": [
       "绿茶"
      ],
-     "price": 19,
+     "price": 17,
      "toppings": [],
      "tags": [
       "椰香",
@@ -83,49 +100,64 @@
      "since": ""
     },
     {
-     "name": "羽衣纤体瓶PLUS",
+     "name": "清爽芭乐提",
      "cat": "果茶",
      "tea": [
       "绿茶"
-     ],
-     "price": 25,
-     "toppings": [],
-     "tags": [
-      "轻负担",
-      "果蔬"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "去火·纤体瓶PLUS",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 25,
-     "toppings": [],
-     "tags": [
-      "轻负担",
-      "果蔬"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "空气马斯卡彭·英红",
-     "cat": "轻乳茶",
-     "tea": [
-      "红茶"
      ],
      "price": 22,
      "toppings": [],
      "tags": [
-      "奶盖",
-      "甜品感"
+      "清爽",
+      "有果肉"
      ],
-     "isNew": true,
-     "since": "2026-02"
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "奇兰苹果杏",
+     "cat": "果茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 21,
+     "toppings": [],
+     "tags": [
+      "苹果",
+      "奇兰"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "羽衣纤体瓶",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "轻负担",
+      "果蔬"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "雪毫茉王芭乐",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 22,
+     "toppings": [],
+     "tags": [
+      "茉莉",
+      "有果肉"
+     ],
+     "isNew": false,
+     "since": ""
     },
     {
      "name": "雪毫桂花龙眼",
@@ -151,11 +183,104 @@
      "price": 23,
      "toppings": [],
      "tags": [
-      "回归",
+      "椰香",
       "有果肉"
      ],
      "isNew": true,
      "since": "2026-09"
+    },
+    {
+     "name": "烤黑糖波波牛乳",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 19,
+     "toppings": [
+      "黑糖波波"
+     ],
+     "tags": [
+      "珍珠",
+      "浓醇"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "三倍厚抹牛乳",
+     "cat": "奶茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 21,
+     "toppings": [],
+     "tags": [
+      "抹茶",
+      "浓醇"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "龙井糯糯",
+     "cat": "奶茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 20,
+     "toppings": [],
+     "tags": [
+      "糯米",
+      "浓醇"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "芋泥牛乳满贯",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 18,
+     "toppings": [
+      "芋泥"
+     ],
+     "tags": [
+      "芋泥",
+      "料多"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "生打椰椰奶冻",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "椰香"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "小奶茉",
+     "cat": "轻乳茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 13,
+     "toppings": [],
+     "tags": [
+      "轻负担",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
     }
    ]
   },
@@ -167,6 +292,171 @@
    "orderApp": "奈雪点单",
    "desc": "茶饮 + 软欧包双品类品牌，霸气鲜果茶人气高",
    "menu": [
+    {
+     "name": "霸气杨梅",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "杨梅",
+      "有果肉"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "霸气西瓜",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 16,
+     "toppings": [],
+     "tags": [
+      "清爽",
+      "有果肉"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "霸气一桶瓜",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 24,
+     "toppings": [],
+     "tags": [
+      "大桶",
+      "有果肉"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "霸气一桶杨梅",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 23,
+     "toppings": [],
+     "tags": [
+      "大桶",
+      "杨梅"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "霸气橙子",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 25,
+     "toppings": [],
+     "tags": [
+      "有果肉",
+      "维C"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "霸气山楂草莓",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "山楂",
+      "有果肉"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "霸气水果茶",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 28,
+     "toppings": [],
+     "tags": [
+      "大杯",
+      "有果肉"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "霸气芝士芒果",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 29,
+     "toppings": [],
+     "tags": [
+      "奶盖",
+      "芒果"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "霸气黑桑葚",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 29,
+     "toppings": [],
+     "tags": [
+      "奶盖",
+      "桑葚"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "霸气芝士草莓",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 29,
+     "toppings": [],
+     "tags": [
+      "奶盖",
+      "草莓"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "霸气玉骨莓莓桃",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "有果肉",
+      "水蜜桃"
+     ],
+     "isNew": false,
+     "since": ""
+    },
     {
      "name": "霸气杨枝甘露",
      "cat": "果茶",
@@ -183,106 +473,16 @@
      "since": ""
     },
     {
-     "name": "霸气橙子",
+     "name": "瘦瘦小绿瓶",
      "cat": "果茶",
      "tea": [
       "茉莉"
      ],
-     "price": 19,
+     "price": 20,
      "toppings": [],
      "tags": [
-      "清爽",
-      "有果肉"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "霸气青柑柠檬茶",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 15,
-     "toppings": [],
-     "tags": [
-      "清爽",
-      "柠檬"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "霸气油柑奇异果",
-     "cat": "果茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 19,
-     "toppings": [],
-     "tags": [
-      "油柑",
-      "清爽"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "霸气芝士葡萄",
-     "cat": "果茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 23,
-     "toppings": [],
-     "tags": [
-      "奶盖",
-      "有果肉"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "霸气芝士芒果",
-     "cat": "果茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 23,
-     "toppings": [],
-     "tags": [
-      "奶盖",
-      "芒果"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "初雪云酪苹果冰",
-     "cat": "果茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 24,
-     "toppings": [],
-     "tags": [
-      "苹果",
-      "奶盖"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "奈雪3倍超C小绿瓶",
-     "cat": "果茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 21,
-     "toppings": [],
-     "tags": [
-      "维C",
-      "轻负担"
+      "轻负担",
+      "维C"
      ],
      "isNew": false,
      "since": ""
@@ -297,26 +497,40 @@
      "toppings": [],
      "tags": [
       "维C",
-      "有果肉",
-      "回归"
+      "有果肉"
      ],
      "isNew": true,
      "since": "2026-09"
     },
     {
-     "name": "初雪柠酪泰橘",
-     "cat": "奶茶",
+     "name": "水蜜桃畅畅活菌酸奶昔",
+     "cat": "酸奶",
      "tea": [
       "茉莉"
      ],
-     "price": 22,
+     "price": 24,
      "toppings": [],
      "tags": [
-      "果奶",
-      "奶盖"
+      "益生菌",
+      "水蜜桃"
      ],
-     "isNew": true,
-     "since": "2026-09"
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "66颗蓝莓桑葚酸奶昔",
+     "cat": "酸奶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 26,
+     "toppings": [],
+     "tags": [
+      "桑葚",
+      "蓝莓"
+     ],
+     "isNew": false,
+     "since": ""
     },
     {
      "name": "霸气小红杏酸奶冰",
@@ -334,89 +548,33 @@
      "since": "2026-09"
     },
     {
-     "name": "草莓牛油果燕麦酸奶昔",
-     "cat": "酸奶",
+     "name": "Gelato芭乐冰奶",
+     "cat": "奶茶",
      "tea": [
       "茉莉"
      ],
-     "price": 23,
+     "price": 28,
      "toppings": [],
      "tags": [
-      "草莓",
-      "牛油果"
+      "奶盖",
+      "芭乐"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "400次金桂米酿奶咖",
-     "cat": "咖啡",
+     "name": "金色山脉珍珠奶茶",
+     "cat": "奶茶",
      "tea": [
-      "咖啡"
-     ],
-     "price": 23,
-     "toppings": [],
-     "tags": [
-      "桂花",
-      "米酿"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "霸气一桶美式",
-     "cat": "咖啡",
-     "tea": [
-      "咖啡"
-     ],
-     "price": 23,
-     "toppings": [],
-     "tags": [
-      "大桶"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "落日橘子海·奶咖",
-     "cat": "咖啡",
-     "tea": [
-      "咖啡"
+      "红茶"
      ],
      "price": 20,
-     "toppings": [],
+     "toppings": [
+      "珍珠"
+     ],
      "tags": [
-      "橘香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "小青柑汤力气泡美式",
-     "cat": "咖啡",
-     "tea": [
-      "咖啡"
-     ],
-     "price": 22,
-     "toppings": [],
-     "tags": [
-      "清爽",
-      "气泡"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "鸭屎香乌龙纯茶",
-     "cat": "纯茶",
-     "tea": [
-      "鸭屎香"
-     ],
-     "price": 11,
-     "toppings": [],
-     "tags": [
-      "轻负担",
-      "无糖"
+      "珍珠",
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
@@ -437,10 +595,26 @@
      "tea": [
       "茉莉"
      ],
-     "price": 16,
+     "price": 20,
      "toppings": [],
      "tags": [
-      "招牌"
+      "招牌",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "桂馥兰香",
+     "cat": "轻乳茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 20,
+     "toppings": [],
+     "tags": [
+      "桂花",
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
@@ -451,24 +625,40 @@
      "tea": [
       "乌龙"
      ],
-     "price": 16,
+     "price": 20,
      "toppings": [],
      "tags": [
-      "蜜桃"
+      "蜜桃",
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "寻香山茶",
+     "name": "白雾红尘",
+     "cat": "轻乳茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 20,
+     "toppings": [],
+     "tags": [
+      "浓醇"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "万里木兰",
      "cat": "轻乳茶",
      "tea": [
       "乌龙"
      ],
-     "price": 16,
+     "price": 20,
      "toppings": [],
      "tags": [
-      "山茶花"
+      "花香",
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
@@ -479,103 +669,16 @@
      "tea": [
       "绿茶"
      ],
-     "price": 15,
+     "price": 20,
      "toppings": [],
      "tags": [
-      "糯香"
+      "糯米"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "白雾红尘",
-     "cat": "奶茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "浓醇"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "一抹茉莉花",
-     "cat": "轻乳茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "花香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "凤栖梧",
-     "cat": "轻乳茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "花香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "桂馥兰香冰酿",
-     "cat": "纯茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "桂花",
-      "清爽"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "桂馥芭乐冰酿",
-     "cat": "果茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "芭乐",
-      "桂花"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "桂馥秋梨冰奶",
-     "cat": "奶茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 21,
-     "toppings": [],
-     "tags": [
-      "桂花",
-      "秋梨"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "浓抹香草籽",
+     "name": "山野栀子",
      "cat": "轻乳茶",
      "tea": [
       "绿茶"
@@ -583,13 +686,42 @@
      "price": 22,
      "toppings": [],
      "tags": [
-      "抹茶"
+      "栀子"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "浓抹花田",
+     "name": "去云南·玫瑰普洱",
+     "cat": "轻乳茶",
+     "tea": [
+      "普洱"
+     ],
+     "price": 24,
+     "toppings": [],
+     "tags": [
+      "玫瑰",
+      "普洱"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "雪顶伯牙绝弦",
+     "cat": "轻乳茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 24,
+     "toppings": [],
+     "tags": [
+      "奶油顶"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "轻因·云游栖梦",
      "cat": "轻乳茶",
      "tea": [
       "乌龙"
@@ -597,97 +729,137 @@
      "price": 22,
      "toppings": [],
      "tags": [
-      "抹茶",
-      "蜜桃"
+      "轻负担",
+      "低因"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "轻因·桂馥兰香",
+     "name": "夏梦玫珑",
      "cat": "轻乳茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 22,
+     "toppings": [],
+     "tags": [
+      "蜜瓜"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "千峰翠",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 16,
+     "toppings": [],
+     "tags": [
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "琥珀光",
+     "cat": "果茶",
      "tea": [
       "乌龙"
      ],
      "price": 16,
      "toppings": [],
      "tags": [
-      "轻负担",
-      "低因"
+      "清爽"
      ],
-     "isNew": true,
-     "since": "2026-08"
+     "isNew": false,
+     "since": ""
     },
     {
-     "name": "轻因·折桂令",
-     "cat": "纯茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 14,
-     "toppings": [],
-     "tags": [
-      "轻负担",
-      "低因"
-     ],
-     "isNew": true,
-     "since": "2026-08"
-    },
-    {
-     "name": "荔荔栀椰",
+     "name": "栀香水光柠檬茶",
      "cat": "果茶",
      "tea": [
       "绿茶"
      ],
-     "price": 21,
+     "price": 18,
      "toppings": [],
      "tags": [
-      "荔枝",
-      "椰香"
+      "柠檬",
+      "清爽"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "荔荔东美人",
+     "name": "橙香四季",
      "cat": "果茶",
      "tea": [
-      "乌龙"
+      "四季春"
      ],
-     "price": 21,
+     "price": 18,
      "toppings": [],
      "tags": [
-      "荔枝"
+      "橙子"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "一骑红尘冰酿",
-     "cat": "纯茶",
+     "name": "青梅摇摇沙",
+     "cat": "果茶",
      "tea": [
-      "红茶"
+      "绿茶"
      ],
      "price": 18,
      "toppings": [],
      "tags": [
-      "荔枝",
-      "清爽"
+      "青梅"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "花田乌龙冰酿",
-     "cat": "纯茶",
+     "name": "凤梨摇摇沙",
+     "cat": "果茶",
      "tea": [
-      "乌龙"
+      "绿茶"
      ],
      "price": 18,
      "toppings": [],
      "tags": [
-      "蜜桃",
-      "清爽"
+      "凤梨"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "伯牙·原叶茶",
+     "cat": "纯茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 13,
+     "toppings": [],
+     "tags": [
+      "无糖",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "桂馥兰香·原叶茶",
+     "cat": "纯茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 13,
+     "toppings": [],
+     "tags": [
+      "无糖",
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
@@ -705,26 +877,167 @@
     {
      "name": "冰鲜柠檬水",
      "cat": "果茶",
-     "tea": [],
+     "tea": [
+      "绿茶"
+     ],
      "price": 4,
      "toppings": [],
      "tags": [
-      "招牌",
+      "柠檬",
       "清爽"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "柠檬红茶",
+     "name": "棒打鲜橙",
      "cat": "果茶",
      "tea": [
-      "红茶"
+      "绿茶"
      ],
-     "price": 5,
+     "price": 6,
      "toppings": [],
      "tags": [
-      "柠檬"
+      "橙子",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "蜜桃四季春",
+     "cat": "果茶",
+     "tea": [
+      "四季春"
+     ],
+     "price": 7,
+     "toppings": [],
+     "tags": [
+      "水蜜桃"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "满杯百香果",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 7,
+     "toppings": [],
+     "tags": [
+      "百香果"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "芋圆葡萄",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 8,
+     "toppings": [
+      "芋圆"
+     ],
+     "tags": [
+      "芋圆",
+      "葡萄"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "芝士葡萄",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 7,
+     "toppings": [],
+     "tags": [
+      "奶盖",
+      "葡萄"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "青提肉多多",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 8,
+     "toppings": [],
+     "tags": [
+      "青提",
+      "有果肉"
+     ],
+     "isNew": true,
+     "since": "2026-06"
+    },
+    {
+     "name": "柚子香柠茶",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 6,
+     "toppings": [],
+     "tags": [
+      "柚子",
+      "柠檬",
+      "清爽"
+     ],
+     "isNew": true,
+     "since": "2026-06"
+    },
+    {
+     "name": "荔枝啵啵",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 8,
+     "toppings": [
+      "啵啵"
+     ],
+     "tags": [
+      "荔枝",
+      "清爽"
+     ],
+     "isNew": true,
+     "since": "2026-07"
+    },
+    {
+     "name": "荔枝椰椰",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 8,
+     "toppings": [],
+     "tags": [
+      "荔枝",
+      "椰香"
+     ],
+     "isNew": true,
+     "since": "2026-07"
+    },
+    {
+     "name": "茉莉奶绿",
+     "cat": "奶茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 6,
+     "toppings": [],
+     "tags": [
+      "清爽",
+      "平价"
      ],
      "isNew": false,
      "since": ""
@@ -740,79 +1053,73 @@
       "珍珠"
      ],
      "tags": [
-      "珍珠"
+      "珍珠",
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "黑糖全冰美式",
-     "cat": "咖啡",
+     "name": "黑糖珍珠奶茶",
+     "cat": "奶茶",
      "tea": [
-      "咖啡"
+      "红茶"
      ],
      "price": 7,
-     "toppings": [],
+     "toppings": [
+      "珍珠"
+     ],
      "tags": [
+      "珍珠",
       "黑糖"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "满杯百香果",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 7,
-     "toppings": [],
-     "tags": [
-      "百香果",
-      "清爽"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "蜜桃四季春",
-     "cat": "果茶",
+     "name": "四季春珍珠奶茶",
+     "cat": "奶茶",
      "tea": [
       "四季春"
      ],
      "price": 7,
-     "toppings": [],
+     "toppings": [
+      "珍珠"
+     ],
      "tags": [
-      "蜜桃"
+      "珍珠"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "好柿多多",
-     "cat": "果茶",
+     "name": "芝士奶盖四季春",
+     "cat": "奶茶",
      "tea": [
-      "绿茶"
-     ],
-     "price": 7,
-     "toppings": [],
-     "tags": [
-      "柿子"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "好柿椰椰",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
+      "四季春"
      ],
      "price": 8,
      "toppings": [],
      "tags": [
-      "椰香",
-      "柿子"
+      "奶盖"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "三拼霸霸奶茶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 8,
+     "toppings": [
+      "珍珠",
+      "椰果",
+      "布丁"
+     ],
+     "tags": [
+      "料多"
      ],
      "isNew": false,
      "since": ""
@@ -823,7 +1130,7 @@
      "tea": [
       "红茶"
      ],
-     "price": 9,
+     "price": 6,
      "toppings": [
       "麻薯"
      ],
@@ -835,61 +1142,45 @@
      "since": ""
     },
     {
-     "name": "芒果奶麻薯",
-     "cat": "奶茶",
+     "name": "雪王雪顶咖啡",
+     "cat": "咖啡",
      "tea": [
-      "红茶"
+      "咖啡"
      ],
-     "price": 9,
-     "toppings": [
-      "麻薯"
-     ],
+     "price": 6,
+     "toppings": [],
      "tags": [
-      "芒果",
-      "麻薯"
+      "奶油顶",
+      "平价"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "黑糖珍珠鲜牛乳",
-     "cat": "奶茶",
+     "name": "生椰拿铁",
+     "cat": "咖啡",
      "tea": [
-      "红茶"
-     ],
-     "price": 9,
-     "toppings": [
-      "珍珠"
-     ],
-     "tags": [
-      "黑糖",
-      "珍珠"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "牛油果甘露",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
+      "咖啡"
      ],
      "price": 10,
      "toppings": [],
      "tags": [
-      "牛油果"
+      "椰香"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "牛油果酸奶",
-     "cat": "酸奶",
-     "tea": [],
-     "price": 12,
+     "name": "浓美式",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 4,
      "toppings": [],
      "tags": [
-      "牛油果"
+      "无糖",
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
@@ -905,47 +1196,66 @@
    "desc": "以熊猫为 IP 的成都茶饮品牌，杨枝甘露招牌",
    "menu": [
     {
+     "name": "招牌芋圆奶茶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 12,
+     "toppings": [
+      "芋圆"
+     ],
+     "tags": [
+      "招牌",
+      "芋圆"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
      "name": "茉莉奶绿",
      "cat": "奶茶",
      "tea": [
       "茉莉"
      ],
-     "price": 10,
+     "price": 13,
      "toppings": [],
      "tags": [
-      "招牌"
+      "清爽",
+      "平价"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "血糯米奶茶",
+     "name": "豆乳米麻薯",
      "cat": "奶茶",
      "tea": [
       "红茶"
      ],
-     "price": 13,
+     "price": 16,
      "toppings": [
-      "血糯米"
+      "麻薯"
      ],
      "tags": [
-      "血糯米"
+      "麻薯",
+      "豆乳"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "酒酿奶绿小丸子",
+     "name": "铁观音奶冻",
      "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "乌龙"
      ],
-     "price": 13,
+     "price": 15,
      "toppings": [
-      "小丸子"
+      "奶冻"
      ],
      "tags": [
-      "酒酿"
+      "奶冻"
      ],
      "isNew": false,
      "since": ""
@@ -956,70 +1266,74 @@
      "tea": [
       "乌龙"
      ],
-     "price": 14,
+     "price": 16,
      "toppings": [],
      "tags": [
-      "豆乳",
-      "招牌"
+      "豆乳"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "香草金牡丹鲜奶茶",
-     "cat": "轻乳茶",
+     "name": "红豆麻薯烤奶",
+     "cat": "奶茶",
      "tea": [
       "红茶"
      ],
-     "price": 14,
-     "toppings": [],
-     "tags": [
-      "香草"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "金喜凤梨",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 14,
-     "toppings": [],
-     "tags": [
-      "凤梨",
-      "有果肉"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "岭南龙眼啵啵",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 15,
+     "price": 18,
      "toppings": [
-      "啵啵"
+      "麻薯",
+      "红豆"
      ],
      "tags": [
-      "龙眼"
+      "麻薯",
+      "红豆"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "岭南龙眼冰奶",
+     "name": "荔枝冰奶",
      "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "红茶"
      ],
-     "price": 15,
+     "price": 18,
      "toppings": [],
      "tags": [
-      "龙眼"
+      "荔枝"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "兰韵芭乐冰奶",
+     "cat": "奶茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 16,
+     "toppings": [],
+     "tags": [
+      "芭乐",
+      "兰花"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "茉莉芭乐奶冻",
+     "cat": "奶茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 17,
+     "toppings": [
+      "奶冻"
+     ],
+     "tags": [
+      "芭乐",
+      "奶冻"
      ],
      "isNew": false,
      "since": ""
@@ -1028,9 +1342,9 @@
      "name": "杨枝甘露",
      "cat": "果茶",
      "tea": [
-      "绿茶"
+      "茉莉"
      ],
-     "price": 17,
+     "price": 18,
      "toppings": [],
      "tags": [
       "芒果",
@@ -1040,32 +1354,30 @@
      "since": ""
     },
     {
-     "name": "焦糖饼干奶茶",
-     "cat": "奶茶",
+     "name": "青提茉莉",
+     "cat": "果茶",
      "tea": [
-      "红茶"
+      "茉莉"
      ],
-     "price": 17,
-     "toppings": [
-      "饼干"
-     ],
+     "price": 15,
+     "toppings": [],
      "tags": [
-      "焦糖"
+      "青提",
+      "有果肉"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "葡萄冻冻",
+     "name": "乌漆嘛黑",
      "cat": "果茶",
      "tea": [
       "绿茶"
      ],
-     "price": 17,
-     "toppings": [
-      "冻冻"
-     ],
+     "price": 16,
+     "toppings": [],
      "tags": [
+      "桑葚",
       "有果肉"
      ],
      "isNew": false,
@@ -1077,7 +1389,7 @@
      "tea": [
       "绿茶"
      ],
-     "price": 16,
+     "price": 12,
      "toppings": [
       "啵啵"
      ],
@@ -1089,57 +1401,16 @@
      "since": ""
     },
     {
-     "name": "芒果冰奶",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "芒果"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "青提茉莉",
+     "name": "青提油柑冰茶",
      "cat": "果茶",
      "tea": [
-      "茉莉"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "有果肉"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "生椰拿铁",
-     "cat": "咖啡",
-     "tea": [
-      "咖啡"
-     ],
-     "price": 19,
-     "toppings": [],
-     "tags": [
-      "椰香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "奶绿旋风",
-     "cat": "奶茶",
-     "tea": [
       "绿茶"
      ],
-     "price": 23,
+     "price": 22,
      "toppings": [],
      "tags": [
-      "浓醇"
+      "油柑",
+      "清爽"
      ],
      "isNew": false,
      "since": ""
@@ -1155,71 +1426,149 @@
    "desc": "深耕下沉市场的鲜果茶与奶茶品牌，门店密度高",
    "menu": [
     {
-     "name": "HPP·茉莉银针",
-     "cat": "纯茶",
+     "name": "超A芝士葡萄",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "奶盖",
+      "葡萄"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "杨枝甘露",
+     "cat": "果茶",
      "tea": [
       "茉莉"
      ],
-     "price": 7,
+     "price": 18,
      "toppings": [],
      "tags": [
-      "轻负担",
-      "无糖"
+      "芒果",
+      "招牌"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "直火乌龙Pro",
-     "cat": "纯茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 7,
-     "toppings": [],
-     "tags": [
-      "轻负担"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "红颜石榴汁",
+     "name": "招牌柠檬茶",
      "cat": "果茶",
-     "tea": [],
-     "price": 10,
+     "tea": [
+      "绿茶"
+     ],
+     "price": 14,
      "toppings": [],
      "tags": [
-      "石榴",
+      "柠檬",
       "清爽"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "荔枝冰椰",
+     "name": "泰橘冰茶",
      "cat": "果茶",
      "tea": [
       "绿茶"
      ],
-     "price": 10,
+     "price": 14,
      "toppings": [],
      "tags": [
-      "荔枝",
+      "泰橘",
+      "清爽"
+     ],
+     "isNew": true,
+     "since": "2026-07"
+    },
+    {
+     "name": "苹果大红袍",
+     "cat": "果茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "苹果",
+      "大红袍"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "七重果蔬",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "果蔬",
+      "轻负担"
+     ],
+     "isNew": true,
+     "since": "2026-06"
+    },
+    {
+     "name": "云岭茉莉白",
+     "cat": "轻乳茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 13,
+     "toppings": [],
+     "tags": [
+      "轻负担",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "云岭茉莉椰",
+     "cat": "轻乳茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 15,
+     "toppings": [],
+     "tags": [
       "椰香"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "茉莉奶绿",
-     "cat": "奶茶",
+     "name": "云雾栀子青",
+     "cat": "轻乳茶",
      "tea": [
-      "茉莉"
+      "绿茶"
      ],
-     "price": 10,
+     "price": 15,
      "toppings": [],
-     "tags": [],
+     "tags": [
+      "栀子"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "春见白兰",
+     "cat": "轻乳茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 16,
+     "toppings": [],
+     "tags": [
+      "白兰"
+     ],
      "isNew": false,
      "since": ""
     },
@@ -1229,132 +1578,77 @@
      "tea": [
       "红茶"
      ],
-     "price": 12,
-     "toppings": [],
-     "tags": [
-      "招牌"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "苹果油柑美式",
-     "cat": "咖啡",
-     "tea": [
-      "咖啡"
-     ],
-     "price": 14,
-     "toppings": [],
-     "tags": [
-      "油柑",
-      "苹果"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "云雾栀子",
-     "cat": "轻乳茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 14,
-     "toppings": [],
-     "tags": [
-      "栀子"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "苹果大红袍",
-     "cat": "果茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 14,
-     "toppings": [],
-     "tags": [
-      "苹果"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "满杯红玉石榴",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
      "price": 15,
      "toppings": [],
      "tags": [
-      "石榴",
-      "有果肉"
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "杨枝甘露轻盈版",
-     "cat": "果茶",
+     "name": "龙井香青团",
+     "cat": "奶茶",
      "tea": [
       "绿茶"
      ],
      "price": 16,
+     "toppings": [
+      "青团"
+     ],
+     "tags": [
+      "青团",
+      "糯米"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "曲香茉莉",
+     "cat": "纯茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 8,
      "toppings": [],
      "tags": [
-      "芒果",
+      "无糖",
       "轻负担"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "大柚冰奶",
-     "cat": "奶茶",
+     "name": "松语乌龙",
+     "cat": "纯茶",
      "tea": [
-      "绿茶"
+      "乌龙"
      ],
-     "price": 16,
+     "price": 8,
      "toppings": [],
      "tags": [
-      "柚子"
+      "无糖",
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "三重抹茶慕斯",
-     "cat": "奶茶",
+     "name": "香草籽维也纳",
+     "cat": "咖啡",
      "tea": [
-      "绿茶"
+      "咖啡"
      ],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "抹茶",
-      "甜品感"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "大柚糯米酸奶",
-     "cat": "酸奶",
-     "tea": [],
      "price": 17,
-     "toppings": [
-      "糯米"
-     ],
+     "toppings": [],
      "tags": [
-      "柚子"
+      "奶咖"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "大柚作为拿铁",
+     "name": "马上有米拿铁",
      "cat": "咖啡",
      "tea": [
       "咖啡"
@@ -1362,25 +1656,56 @@
      "price": 19,
      "toppings": [],
      "tags": [
-      "柚子"
+      "米酿",
+      "奶咖"
      ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-07"
     },
     {
-     "name": "超A芝士葡萄",
-     "cat": "果茶",
+     "name": "全冰有米美式",
+     "cat": "咖啡",
      "tea": [
-      "绿茶"
+      "咖啡"
      ],
-     "price": 19,
+     "price": 17,
      "toppings": [],
      "tags": [
-      "奶盖",
-      "有果肉"
+      "无糖",
+      "米酿"
      ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-07"
+    },
+    {
+     "name": "泰橘美式",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "泰橘",
+      "清爽"
+     ],
+     "isNew": true,
+     "since": "2026-07"
+    },
+    {
+     "name": "泰橘糯米酸奶",
+     "cat": "酸奶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "泰橘",
+      "益生菌"
+     ],
+     "isNew": true,
+     "since": "2026-07"
     }
    ]
   },
@@ -1393,22 +1718,6 @@
    "desc": "以五谷杂粮奶茶起步的上海品牌，血糯米经典",
    "menu": [
     {
-     "name": "热波波奶茶",
-     "cat": "奶茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 10,
-     "toppings": [
-      "珍珠"
-     ],
-     "tags": [
-      "珍珠"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
      "name": "血糯米奶茶",
      "cat": "奶茶",
      "tea": [
@@ -1420,62 +1729,167 @@
      ],
      "tags": [
       "血糯米",
-      "招牌"
+      "料多"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "手作黑糖波波牛乳茶",
-     "cat": "奶茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 14,
-     "toppings": [
-      "珍珠"
-     ],
-     "tags": [
-      "黑糖",
-      "珍珠"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "布蕾烤椰波波奶",
+     "name": "厚芋泥波波奶茶",
      "cat": "奶茶",
      "tea": [
       "红茶"
      ],
      "price": 15,
      "toppings": [
-      "珍珠"
+      "芋泥",
+      "波波"
      ],
      "tags": [
-      "布蕾",
-      "椰香"
+      "芋泥",
+      "料多"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "桃桃蜜柚",
-     "cat": "果茶",
+     "name": "茉莉奶绿",
+     "cat": "奶茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 9,
+     "toppings": [],
+     "tags": [
+      "清爽",
+      "平价"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "波波奶茶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 12,
+     "toppings": [
+      "波波"
+     ],
+     "tags": [
+      "珍珠"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "冰蓝海盐冰奶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 14,
+     "toppings": [],
+     "tags": [
+      "海盐",
+      "微咸"
+     ],
+     "isNew": true,
+     "since": "2026-07"
+    },
+    {
+     "name": "摩登玉兰",
+     "cat": "轻乳茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 16,
+     "toppings": [],
+     "tags": [
+      "白兰",
+      "花香"
+     ],
+     "isNew": true,
+     "since": "2026-07"
+    },
+    {
+     "name": "醒春龙井",
+     "cat": "轻乳茶",
      "tea": [
       "绿茶"
      ],
      "price": 15,
      "toppings": [],
      "tags": [
-      "蜜桃",
-      "柚子"
+      "龙井",
+      "清爽"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "山野金果冰茶",
+     "name": "浅浅清茉",
+     "cat": "轻乳茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 14,
+     "toppings": [],
+     "tags": [
+      "轻负担",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "杨枝甘露",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "芒果",
+      "招牌"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "西瓜椰椰",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "西瓜",
+      "椰香"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "青橘鲜打柠檬水",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 7,
+     "toppings": [],
+     "tags": [
+      "柠檬",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "鲜切西瓜冰茶",
      "cat": "果茶",
      "tea": [
       "绿茶"
@@ -1483,86 +1897,89 @@
      "price": 16,
      "toppings": [],
      "tags": [
+      "西瓜",
       "清爽"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "西红柿蛋花汤",
+     "name": "奇兰苹果茶特调",
+     "cat": "果茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "苹果",
+      "奇兰"
+     ],
+     "isNew": true,
+     "since": "2026-06"
+    },
+    {
+     "name": "羽衣甘蓝纤体瓶",
      "cat": "果茶",
      "tea": [
       "绿茶"
      ],
-     "price": 17,
+     "price": 18,
      "toppings": [],
      "tags": [
       "果蔬",
-      "清爽"
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "杨枝甘露经典版",
-     "cat": "果茶",
+     "name": "毛峰茉莉绿茶",
+     "cat": "纯茶",
      "tea": [
-      "绿茶"
+      "茉莉"
      ],
-     "price": 18,
+     "price": 9,
      "toppings": [],
      "tags": [
-      "芒果"
+      "无糖",
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "热超嗲草莓大福",
-     "cat": "奶茶",
+     "name": "冰蓝酸奶青提露",
+     "cat": "酸奶",
      "tea": [
-      "红茶"
+      "茉莉"
      ],
-     "price": 18,
-     "toppings": [
-      "麻薯"
-     ],
-     "tags": [
-      "草莓",
-      "麻薯"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "千目抹茶莓莓",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 18,
+     "price": 20,
      "toppings": [],
      "tags": [
-      "抹茶",
-      "草莓"
+      "青提",
+      "益生菌"
      ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-07"
     },
     {
-     "name": "冰蓝潮汐拿铁",
+     "name": "经典美式",
      "cat": "咖啡",
      "tea": [
       "咖啡"
      ],
-     "price": 18,
+     "price": 9,
      "toppings": [],
-     "tags": [],
+     "tags": [
+      "无糖",
+      "轻负担"
+     ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "烤椰拿铁",
+     "name": "小黄油拿铁",
      "cat": "咖啡",
      "tea": [
       "咖啡"
@@ -1570,22 +1987,7 @@
      "price": 19,
      "toppings": [],
      "tags": [
-      "椰香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "超糯溏心木薯糖水",
-     "cat": "奶茶",
-     "tea": [],
-     "price": 19,
-     "toppings": [
-      "木薯"
-     ],
-     "tags": [
-      "木薯",
-      "甜品感"
+      "奶咖"
      ],
      "isNew": false,
      "since": ""
@@ -1609,24 +2011,8 @@
      "price": 16,
      "toppings": [],
      "tags": [
-      "招牌"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "一朵茉莉花",
-     "cat": "轻乳茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 20,
-     "toppings": [
-      "碧根果"
-     ],
-     "tags": [
-      "奶盖",
-      "招牌"
+      "招牌",
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
@@ -1635,12 +2021,13 @@
      "name": "白兰",
      "cat": "轻乳茶",
      "tea": [
-      "绿茶"
+      "乌龙"
      ],
-     "price": 17,
+     "price": 16,
      "toppings": [],
      "tags": [
-      "白兰"
+      "白兰",
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
@@ -1669,152 +2056,8 @@
      "price": 16,
      "toppings": [],
      "tags": [
-      "栀子"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "一朵栀子花",
-     "cat": "轻乳茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 20,
-     "toppings": [],
-     "tags": [
       "栀子",
-      "奶盖"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "茉莉针王",
-     "cat": "轻乳茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 17,
-     "toppings": [],
-     "tags": [
-      "花香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "抹茶针王",
-     "cat": "轻乳茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 23,
-     "toppings": [],
-     "tags": [
-      "抹茶",
-      "奶盖"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "抹茶白兰",
-     "cat": "轻乳茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 23,
-     "toppings": [],
-     "tags": [
-      "抹茶",
-      "白兰"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "针王苹果",
-     "cat": "果茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 19,
-     "toppings": [],
-     "tags": [
-      "苹果"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "针王葡萄",
-     "cat": "果茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 19,
-     "toppings": [],
-     "tags": [
-      "有果肉"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "针王芒芒椰",
-     "cat": "果茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 21,
-     "toppings": [],
-     "tags": [
-      "芒果",
-      "椰香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "茉莉杨枝甘露",
-     "cat": "果茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 21,
-     "toppings": [],
-     "tags": [
-      "芒果"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "开心果茉莉椰",
-     "cat": "轻乳茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 20,
-     "toppings": [],
-     "tags": [
-      "开心果",
-      "椰香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "开心小兰花",
-     "cat": "轻乳茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 21,
-     "toppings": [],
-     "tags": [
-      "花香"
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
@@ -1828,66 +2071,198 @@
      "price": 17,
      "toppings": [],
      "tags": [
-      "桂花"
+      "桂花",
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "单丛",
+     "name": "浅桃悠悠",
      "cat": "轻乳茶",
      "tea": [
-      "鸭屎香"
+      "乌龙"
      ],
-     "price": 17,
+     "price": 18,
      "toppings": [],
      "tags": [
+      "水蜜桃"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "抹茶白兰",
+     "cat": "轻乳茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "抹茶"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "开心果茉莉椰",
+     "cat": "轻乳茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "开心果",
+      "椰香"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "一朵茉莉花",
+     "cat": "奶茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "招牌",
       "花香"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "蜜桃老铁",
-     "cat": "轻乳茶",
+     "name": "一朵栀子花",
+     "cat": "奶茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "栀子"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "一口单丛",
+     "cat": "奶茶",
      "tea": [
       "乌龙"
      ],
-     "price": 16,
+     "price": 19,
      "toppings": [],
      "tags": [
-      "蜜桃"
+      "单丛"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "桐木关小种",
+     "name": "一口观音",
      "cat": "奶茶",
      "tea": [
-      "红茶"
-     ],
-     "price": 17,
-     "toppings": [],
-     "tags": [
-      "浓醇"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "黑糖波波小种",
-     "cat": "奶茶",
-     "tea": [
-      "红茶"
+      "乌龙"
      ],
      "price": 19,
-     "toppings": [
-      "珍珠"
-     ],
+     "toppings": [],
      "tags": [
-      "黑糖",
-      "珍珠"
+      "铁观音"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "茉莉奶白冰茶",
+     "cat": "纯茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 13,
+     "toppings": [],
+     "tags": [
+      "无糖",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "栀子冰茶",
+     "cat": "纯茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 13,
+     "toppings": [],
+     "tags": [
+      "无糖",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "茉莉杨枝甘露",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 21,
+     "toppings": [],
+     "tags": [
+      "芒果",
+      "招牌"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "栀子青提",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "青提",
+      "有果肉"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "针王苹果拿铁",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 21,
+     "toppings": [],
+     "tags": [
+      "苹果",
+      "奶咖"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "400次鸳鸯泰奶",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 20,
+     "toppings": [],
+     "tags": [
+      "泰奶",
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
@@ -1910,248 +2285,280 @@
      ],
      "price": 10,
      "toppings": [
-      "仙草"
+      "仙草冻"
      ],
      "tags": [
       "招牌",
-      "仙草"
+      "料多"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "仙草珍珠奶茶",
+     "name": "老红糖珍珠奶茶",
      "cat": "奶茶",
      "tea": [
       "红茶"
      ],
-     "price": 11,
+     "price": 12,
      "toppings": [
-      "仙草",
       "珍珠"
      ],
      "tags": [
-      "仙草",
-      "珍珠"
+      "珍珠",
+      "红糖"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "桃桃乌龙奶茶",
-     "cat": "奶茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 12,
-     "toppings": [],
-     "tags": [
-      "蜜桃"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "百香芒芒",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 12,
-     "toppings": [],
-     "tags": [
-      "百香果",
-      "芒果"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "西红柿蛋花汤",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 13,
-     "toppings": [],
-     "tags": [
-      "果蔬"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "草莓奶云麻薯",
+     "name": "糯糯珠咸法酪泰奶",
      "cat": "奶茶",
      "tea": [
       "红茶"
      ],
-     "price": 13,
+     "price": 12,
      "toppings": [
-      "麻薯"
+      "糯糯珠"
+     ],
+     "tags": [
+      "泰奶",
+      "微咸"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "大橘奶绿",
+     "cat": "奶茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "橘子"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "草莓桃桃双皮奶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 15,
+     "toppings": [
+      "双皮奶"
      ],
      "tags": [
       "草莓",
-      "麻薯"
+      "双皮奶"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "葡萄桑葚多多",
-     "cat": "果茶",
+     "name": "冰淇淋泰式红茶",
+     "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "红茶"
      ],
      "price": 13,
-     "toppings": [],
+     "toppings": [
+      "冰淇淋"
+     ],
      "tags": [
-      "桑葚",
-      "有果肉"
+      "冰淇淋",
+      "泰奶"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "桃桃奶云麻薯",
-     "cat": "奶茶",
+     "name": "橙漫山茶花",
+     "cat": "轻乳茶",
      "tea": [
       "乌龙"
      ],
      "price": 14,
-     "toppings": [
-      "麻薯"
-     ],
+     "toppings": [],
      "tags": [
-      "蜜桃",
-      "麻薯"
+      "橙子",
+      "山茶花"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "焦糖布蕾珍珠奶茶",
-     "cat": "奶茶",
+     "name": "杨枝甘露",
+     "cat": "果茶",
      "tea": [
-      "红茶"
-     ],
-     "price": 15,
-     "toppings": [
-      "布蕾",
-      "珍珠"
-     ],
-     "tags": [
-      "焦糖",
-      "布蕾"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "粉梦芭乐冰奶",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
+      "茉莉"
      ],
      "price": 15,
      "toppings": [],
      "tags": [
-      "芭乐"
+      "芒果",
+      "招牌"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "粉芭乐柠檬茶",
+     "name": "一桶大脆啵啵鲜榨西瓜",
      "cat": "果茶",
      "tea": [
       "绿茶"
      ],
-     "price": 15,
-     "toppings": [],
+     "price": 13,
+     "toppings": [
+      "脆啵啵"
+     ],
      "tags": [
-      "芭乐",
-      "柠檬"
+      "西瓜",
+      "啵啵"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "桑葚桃桃酸奶昔",
-     "cat": "酸奶",
-     "tea": [],
-     "price": 15,
-     "toppings": [],
-     "tags": [
-      "桑葚",
-      "蜜桃"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "草莓酸奶水果茶",
-     "cat": "酸奶",
+     "name": "一桶大脆啵啵鲜榨蜜瓜",
+     "cat": "果茶",
      "tea": [
       "绿茶"
+     ],
+     "price": 13,
+     "toppings": [
+      "脆啵啵"
+     ],
+     "tags": [
+      "蜜瓜",
+      "啵啵"
+     ],
+     "isNew": true,
+     "since": "2026-07"
+    },
+    {
+     "name": "一桶大脆啵啵手捣鲜橙",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 13,
+     "toppings": [
+      "脆啵啵"
+     ],
+     "tags": [
+      "橙子",
+      "啵啵"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "海风青柠冰奶",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "柠檬",
+      "清爽"
+     ],
+     "isNew": true,
+     "since": "2026-07"
+    },
+    {
+     "name": "漫野杨梅椰",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
      ],
      "price": 16,
      "toppings": [],
      "tags": [
-      "草莓"
+      "杨梅",
+      "椰香"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "抹茶布蕾蛋糕珍珠",
-     "cat": "奶茶",
+     "name": "踏雪不老莓",
+     "cat": "果茶",
      "tea": [
-      "绿茶"
+      "茉莉"
      ],
-     "price": 17,
-     "toppings": [
-      "布蕾",
-      "珍珠"
-     ],
+     "price": 16,
+     "toppings": [],
      "tags": [
-      "抹茶",
-      "布蕾"
+      "莓果"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "一桶水果茶",
+     "name": "漫野苹果",
      "cat": "果茶",
      "tea": [
       "绿茶"
      ],
-     "price": 21,
+     "price": 15,
      "toppings": [],
      "tags": [
-      "大桶",
-      "清爽"
+      "苹果"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "一桶大爆有料烧仙草",
-     "cat": "奶茶",
+     "name": "柠漫山茶花",
+     "cat": "果茶",
      "tea": [
-      "红茶"
+      "乌龙"
      ],
-     "price": 23,
-     "toppings": [
-      "仙草"
-     ],
+     "price": 15,
+     "toppings": [],
      "tags": [
-      "仙草",
-      "大桶"
+      "柠檬",
+      "山茶花"
      ],
      "isNew": false,
      "since": ""
+    },
+    {
+     "name": "泰OK鲜橙红茶",
+     "cat": "果茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 12,
+     "toppings": [],
+     "tags": [
+      "橙子"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "冰淇淋西瓜仙草椰",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 14,
+     "toppings": [],
+     "tags": [
+      "西瓜",
+      "椰香",
+      "冰淇淋"
+     ],
+     "isNew": true,
+     "since": "2026-06"
     }
    ]
   },
@@ -2164,34 +2571,6 @@
    "desc": "校园与街边常见的平价奶茶品牌，烤奶人气高",
    "menu": [
     {
-     "name": "气泡柠檬水",
-     "cat": "果茶",
-     "tea": [],
-     "price": 5,
-     "toppings": [],
-     "tags": [
-      "清爽",
-      "气泡"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "现制冷泡茶",
-     "cat": "纯茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 6,
-     "toppings": [],
-     "tags": [
-      "轻负担",
-      "无糖"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
      "name": "益禾烤奶",
      "cat": "奶茶",
      "tea": [
@@ -2201,21 +2580,21 @@
      "toppings": [],
      "tags": [
       "招牌",
-      "烤奶"
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "黄金柚C冰茶",
-     "cat": "果茶",
+     "name": "薄荷奶绿",
+     "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "茉莉"
      ],
-     "price": 8,
+     "price": 9,
      "toppings": [],
      "tags": [
-      "柚子",
+      "薄荷",
       "清爽"
      ],
      "isNew": false,
@@ -2227,104 +2606,89 @@
      "tea": [
       "红茶"
      ],
-     "price": 9,
+     "price": 8,
      "toppings": [
       "珍珠"
      ],
      "tags": [
-      "珍珠"
+      "珍珠",
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "葡萄仙芋",
+     "name": "益杯烧仙草",
      "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "红茶"
      ],
      "price": 9,
      "toppings": [
-      "芋泥"
+      "仙草冻"
      ],
      "tags": [
-      "芋泥"
+      "仙草",
+      "料多"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "超级黑桑葚冰奶",
+     "name": "薄荷奥利奥冰旋风",
      "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "红茶"
      ],
      "price": 10,
      "toppings": [],
      "tags": [
-      "桑葚"
+      "薄荷",
+      "奥利奥"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "芭乐柠檬冰茶",
-     "cat": "果茶",
+     "name": "禾风奶绿",
+     "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "茉莉"
+     ],
+     "price": 9,
+     "toppings": [],
+     "tags": [
+      "清爽",
+      "平价"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "茉莉白雪",
+     "cat": "轻乳茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 12,
+     "toppings": [],
+     "tags": [
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "中国红·轻乳茶",
+     "cat": "轻乳茶",
+     "tea": [
+      "红茶"
      ],
      "price": 11,
      "toppings": [],
      "tags": [
-      "芭乐",
-      "柠檬"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "奶油粉芭乐",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 12,
-     "toppings": [],
-     "tags": [
-      "芭乐"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "抹茶仙芋",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 12,
-     "toppings": [
-      "芋泥"
-     ],
-     "tags": [
-      "抹茶",
-      "芋泥"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "芋泥木薯炖奶",
-     "cat": "奶茶",
-     "tea": [],
-     "price": 13,
-     "toppings": [
-      "芋泥",
-      "木薯"
-     ],
-     "tags": [
-      "芋泥",
-      "木薯"
+      "轻负担",
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
@@ -2333,18 +2697,154 @@
      "name": "杨枝甘露",
      "cat": "果茶",
      "tea": [
-      "绿茶"
+      "茉莉"
      ],
      "price": 14,
      "toppings": [],
      "tags": [
-      "芒果"
+      "芒果",
+      "招牌"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "粉芭乐香柠拿铁",
+     "name": "爆打鲜橙",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "橙子",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "西瓜鲜果茶",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "西瓜",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "柠檬小麦青汁",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 9,
+     "toppings": [],
+     "tags": [
+      "柠檬",
+      "果蔬"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "薄荷柠檬水",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 8,
+     "toppings": [],
+     "tags": [
+      "薄荷",
+      "柠檬",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "薄荷猕猴桃",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 11,
+     "toppings": [],
+     "tags": [
+      "薄荷",
+      "猕猴桃"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "翠峰茉莉",
+     "cat": "纯茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 6,
+     "toppings": [],
+     "tags": [
+      "无糖",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "栀子青绿",
+     "cat": "纯茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 8,
+     "toppings": [],
+     "tags": [
+      "无糖",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "生椰拿铁",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 12,
+     "toppings": [],
+     "tags": [
+      "椰香"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "橙C美式",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 13,
+     "toppings": [],
+     "tags": [
+      "橙子",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "咖云轻乳拿铁",
      "cat": "咖啡",
      "tea": [
       "咖啡"
@@ -2352,35 +2852,8 @@
      "price": 14,
      "toppings": [],
      "tags": [
-      "芭乐"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "薄荷冰淇淋拿铁",
-     "cat": "咖啡",
-     "tea": [
-      "咖啡"
-     ],
-     "price": 14,
-     "toppings": [],
-     "tags": [
-      "薄荷"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "葡萄冰奶",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "有果肉"
+      "轻乳",
+      "奶咖"
      ],
      "isNew": false,
      "since": ""
@@ -2401,7 +2874,7 @@
      "tea": [
       "咖啡"
      ],
-     "price": 18,
+     "price": 32,
      "toppings": [],
      "tags": [
       "招牌",
@@ -2416,41 +2889,192 @@
      "tea": [
       "咖啡"
      ],
-     "price": 16,
+     "price": 32,
      "toppings": [],
      "tags": [
+      "橙子",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "鲜萃轻轻茉莉",
+     "cat": "轻乳茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 32,
+     "toppings": [],
+     "tags": [
+      "轻负担",
+      "花香"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "标准美式",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "无糖",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "加浓美式",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "无糖",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "燕麦拿铁",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "燕麦",
+      "奶咖"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "葡萄冰萃美式",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "葡萄",
       "清爽"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "丝绒拿铁",
+     "name": "阿克苏苹果拿铁",
      "cat": "咖啡",
      "tea": [
       "咖啡"
      ],
-     "price": 19,
+     "price": 10,
      "toppings": [],
      "tags": [
-      "浓醇"
+      "苹果",
+      "奶咖"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "陨石拿铁",
+     "name": "鲜萃轻轻龙井",
+     "cat": "轻乳茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 15,
+     "toppings": [],
+     "tags": [
+      "轻负担",
+      "龙井"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "轻轻乌龙",
+     "cat": "轻乳茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 13,
+     "toppings": [],
+     "tags": [
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "生椰锡兰轻乳茶",
+     "cat": "轻乳茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 15,
+     "toppings": [],
+     "tags": [
+      "椰香"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "苹果碰",
      "cat": "咖啡",
      "tea": [
       "咖啡"
      ],
-     "price": 19,
+     "price": 22,
      "toppings": [],
      "tags": [
-      "黑糖"
+      "苹果",
+      "气泡"
      ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-08"
+    },
+    {
+     "name": "虎斑橘",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 22,
+     "toppings": [],
+     "tags": [
+      "橘子",
+      "气泡"
+     ],
+     "isNew": true,
+     "since": "2026-08"
+    },
+    {
+     "name": "咸法酪泰奶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 22,
+     "toppings": [],
+     "tags": [
+      "泰奶",
+      "微咸"
+     ],
+     "isNew": true,
+     "since": "2026-08"
     },
     {
      "name": "秋桂米酿拿铁",
@@ -2458,60 +3082,14 @@
      "tea": [
       "咖啡"
      ],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "桂花",
-      "米酿",
-      "秋季限定"
-     ],
-     "isNew": true,
-     "since": "2026-09"
-    },
-    {
-     "name": "秋山楂茉莉冰奶",
-     "cat": "奶茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "山楂",
-      "秋季限定"
-     ],
-     "isNew": true,
-     "since": "2026-09"
-    },
-    {
-     "name": "咸芝士·豆乳茶",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "豆乳",
-      "奶盖"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "咸芝士·豆乳拿铁",
-     "cat": "咖啡",
-     "tea": [
-      "咖啡"
-     ],
      "price": 19,
      "toppings": [],
      "tags": [
-      "豆乳",
-      "奶盖"
+      "桂花",
+      "米酿"
      ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-09"
     },
     {
      "name": "抹茶奶酪拿铁",
@@ -2522,13 +3100,14 @@
      "price": 19,
      "toppings": [],
      "tags": [
-      "抹茶"
+      "抹茶",
+      "奶咖"
      ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-09"
     },
     {
-     "name": "瑰夏白冷萃",
+     "name": "咸芝士豆乳鸳鸯拿铁",
      "cat": "咖啡",
      "tea": [
       "咖啡"
@@ -2536,53 +3115,11 @@
      "price": 19,
      "toppings": [],
      "tags": [
-      "冷萃"
+      "豆乳",
+      "微咸"
      ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "秋山楂美式",
-     "cat": "咖啡",
-     "tea": [
-      "咖啡"
-     ],
-     "price": 20,
-     "toppings": [],
-     "tags": [
-      "山楂"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "百香果凤梨冰沙冷萃",
-     "cat": "咖啡",
-     "tea": [
-      "咖啡"
-     ],
-     "price": 21,
-     "toppings": [],
-     "tags": [
-      "百香果",
-      "凤梨"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "冰吸黑巧拿铁",
-     "cat": "咖啡",
-     "tea": [
-      "咖啡"
-     ],
-     "price": 24,
-     "toppings": [],
-     "tags": [
-      "巧克力"
-     ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-09"
     }
    ]
   },
@@ -2595,100 +3132,225 @@
    "desc": "高性价比连锁咖啡品牌，价格亲民",
    "menu": [
     {
-     "name": "菠萝轻椰水",
-     "cat": "果茶",
-     "tea": [],
-     "price": 12,
+     "name": "生椰拿铁",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "招牌",
+      "椰香"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "生椰Dirty",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 17,
      "toppings": [],
      "tags": [
       "椰香",
-      "凤梨",
-      "清爽"
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "桃桃气泡水",
-     "cat": "果茶",
-     "tea": [],
-     "price": 12,
-     "toppings": [],
-     "tags": [
-      "蜜桃",
-      "气泡"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "宝石葡萄冰茶",
-     "cat": "果茶",
+     "name": "生椰茉莉茶",
+     "cat": "轻乳茶",
      "tea": [
-      "绿茶"
+      "茉莉"
      ],
-     "price": 12,
+     "price": 16,
      "toppings": [],
      "tags": [
-      "有果肉"
+      "椰香",
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "月下金桂生酪红茶",
-     "cat": "奶茶",
+     "name": "流云茉莉",
+     "cat": "轻乳茶",
      "tea": [
-      "红茶"
+      "茉莉"
      ],
-     "price": 14,
+     "price": 10,
      "toppings": [],
      "tags": [
-      "桂花"
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "杨梅荔枝双重奏",
+     "name": "潘帕斯蓝椰库可冰",
      "cat": "果茶",
      "tea": [
       "绿茶"
      ],
-     "price": 14,
+     "price": 17,
      "toppings": [],
      "tags": [
-      "杨梅",
-      "荔枝"
+      "椰香",
+      "冰沙"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "葡萄青提双重奏",
+     "name": "杨枝甘露",
      "cat": "果茶",
      "tea": [
-      "绿茶"
+      "茉莉"
      ],
-     "price": 14,
+     "price": 10,
      "toppings": [],
      "tags": [
-      "有果肉"
+      "芒果",
+      "招牌"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "百香芭乐双重奏",
+     "name": "金奖美式",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "无糖",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "橙C美式",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "橙子",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "茉莉拿铁",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "茉莉",
+      "奶咖"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "云顶慕斯欧培拉拿铁",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "奶咖",
+      "奶油顶"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "云顶慕斯海蓝生椰拿铁",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "椰香",
+      "奶油顶"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "云顶慕斯抹茶拿铁",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "抹茶",
+      "奶油顶"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "胶原莓果美式",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 29,
+     "toppings": [],
+     "tags": [
+      "莓果",
+      "胶原"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "胶原莓果冰茶",
      "cat": "果茶",
      "tea": [
       "绿茶"
      ],
-     "price": 14,
+     "price": 26,
      "toppings": [],
      "tags": [
-      "百香果",
-      "芭乐"
+      "莓果",
+      "胶原"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "胶原莓果奶昔",
+     "cat": "酸奶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 35,
+     "toppings": [],
+     "tags": [
+      "莓果",
+      "胶原"
      ],
      "isNew": false,
      "since": ""
@@ -2699,84 +3361,44 @@
      "tea": [
       "咖啡"
      ],
-     "price": 13,
+     "price": 12,
      "toppings": [],
      "tags": [
-      "凤梨"
+      "菠萝",
+      "清爽"
      ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-07"
     },
     {
-     "name": "活荔美式",
-     "cat": "咖啡",
-     "tea": [
-      "咖啡"
-     ],
-     "price": 13,
-     "toppings": [],
-     "tags": [
-      "荔枝"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "生椰拿铁",
-     "cat": "咖啡",
-     "tea": [
-      "咖啡"
-     ],
-     "price": 14,
-     "toppings": [],
-     "tags": [
-      "椰香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "月下金桂拿铁",
-     "cat": "咖啡",
-     "tea": [
-      "咖啡"
-     ],
-     "price": 15,
-     "toppings": [],
-     "tags": [
-      "桂花"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "潘帕斯蓝椰拿铁",
-     "cat": "咖啡",
-     "tea": [
-      "咖啡"
-     ],
-     "price": 15,
-     "toppings": [],
-     "tags": [
-      "椰香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "轻芝葡萄冰",
+     "name": "菠萝的海库可冰",
      "cat": "果茶",
      "tea": [
       "绿茶"
      ],
-     "price": 15,
+     "price": 16,
      "toppings": [],
      "tags": [
-      "奶盖",
-      "有果肉"
+      "菠萝",
+      "冰沙"
      ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-07"
+    },
+    {
+     "name": "菠萝轻椰水",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 12,
+     "toppings": [],
+     "tags": [
+      "菠萝",
+      "椰香"
+     ],
+     "isNew": true,
+     "since": "2026-07"
     }
    ]
   },
@@ -2796,48 +3418,139 @@
      ],
      "price": 19,
      "toppings": [
-      "珍珠"
+      "波霸"
      ],
      "tags": [
-      "黑糖",
       "珍珠",
-      "招牌"
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "杨枝甘露",
-     "cat": "果茶",
+     "name": "咸法酪脏脏茶",
+     "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "红茶"
      ],
      "price": 19,
      "toppings": [],
      "tags": [
-      "芒果"
+      "微咸",
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "葡萄酪酪",
-     "cat": "果茶",
+     "name": "咸法酪芒果糯叽叽",
+     "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "红茶"
+     ],
+     "price": 23,
+     "toppings": [
+      "糯米"
+     ],
+     "tags": [
+      "芒果",
+      "微咸"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "黄金桂",
+     "cat": "轻乳茶",
+     "tea": [
+      "乌龙"
      ],
      "price": 19,
+     "toppings": [],
+     "tags": [
+      "桂花",
+      "奶盖"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "金玉茶王",
+     "cat": "轻乳茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 22,
      "toppings": [],
      "tags": [
       "奶盖",
-      "有果肉",
+      "花香"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "金玉茶王冷萃",
+     "cat": "纯茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 12,
+     "toppings": [],
+     "tags": [
+      "无糖",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "锡兰柠檬茶",
+     "cat": "果茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 16,
+     "toppings": [],
+     "tags": [
+      "柠檬",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "超浓泰橘冰",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "泰橘",
+      "冰沙"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "杨枝甘露冰冰茶",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 25,
+     "toppings": [],
+     "tags": [
+      "芒果",
       "招牌"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "草莓桃子酪酪",
+     "name": "多肉菠萝王",
      "cat": "果茶",
      "tea": [
       "绿茶"
@@ -2845,63 +3558,104 @@
      "price": 22,
      "toppings": [],
      "tags": [
-      "奶盖",
-      "草莓",
-      "蜜桃"
+      "菠萝",
+      "有果肉"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "咸法酪抹茶脏脏茶",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 19,
-     "toppings": [
-      "珍珠"
-     ],
-     "tags": [
-      "抹茶",
-      "黑糖"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "锡兰木薯碎碎冰",
-     "cat": "奶茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 19,
-     "toppings": [
-      "木薯"
-     ],
-     "tags": [
-      "木薯"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "雪顶山楂草莓糖葫芦",
+     "name": "芒果酪酪",
      "cat": "果茶",
      "tea": [
-      "绿茶"
+      "茉莉"
+     ],
+     "price": 28,
+     "toppings": [],
+     "tags": [
+      "芒果",
+      "奶盖"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "草莓厚酸酪",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 28,
+     "toppings": [],
+     "tags": [
+      "草莓",
+      "奶盖"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "车厘子酪酪",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 35,
+     "toppings": [],
+     "tags": [
+      "车厘子",
+      "奶盖"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "大雪球·金牡丹柠檬奶",
+     "cat": "果茶",
+     "tea": [
+      "乌龙"
      ],
      "price": 23,
      "toppings": [],
      "tags": [
-      "山楂",
-      "草莓"
+      "柠檬",
+      "奶盖"
      ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-07"
     },
     {
-     "name": "野山楂茉莉",
+     "name": "大雪球·茉香柠檬奶",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 23,
+     "toppings": [],
+     "tags": [
+      "柠檬",
+      "奶盖"
+     ],
+     "isNew": true,
+     "since": "2026-07"
+    },
+    {
+     "name": "无花果玫瑰椰",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 22,
+     "toppings": [],
+     "tags": [
+      "无花果",
+      "椰香"
+     ],
+     "isNew": true,
+     "since": "2026-08"
+    },
+    {
+     "name": "无花果荔枝冰",
      "cat": "果茶",
      "tea": [
       "茉莉"
@@ -2909,106 +3663,11 @@
      "price": 19,
      "toppings": [],
      "tags": [
-      "山楂",
-      "清爽"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "生布蕾锡兰焦糖烧",
-     "cat": "奶茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 21,
-     "toppings": [
-      "布蕾"
-     ],
-     "tags": [
-      "布蕾",
-      "焦糖"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "生布蕾乌龙焦糖烧",
-     "cat": "奶茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 22,
-     "toppings": [
-      "布蕾"
-     ],
-     "tags": [
-      "布蕾",
-      "焦糖"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "无花果荔枝冰奶",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 20,
-     "toppings": [],
-     "tags": [
       "无花果",
       "荔枝"
      ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "绿豆糯冰浆",
-     "cat": "奶茶",
-     "tea": [],
-     "price": 20,
-     "toppings": [
-      "糯米"
-     ],
-     "tags": [
-      "绿豆"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "梅汁土凤梨",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 20,
-     "toppings": [],
-     "tags": [
-      "凤梨",
-      "微咸"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "凤梨椰椰糯叽叽",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 23,
-     "toppings": [
-      "糯米"
-     ],
-     "tags": [
-      "凤梨",
-      "椰香"
-     ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-08"
     }
    ]
   },
@@ -3024,117 +3683,105 @@
      "name": "杨枝甘露",
      "cat": "果茶",
      "tea": [
+      "茉莉"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "招牌",
+      "芒果"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "生椰杨枝甘露",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "椰香",
+      "芒果"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "芒椰小丸子",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 18,
+     "toppings": [
+      "小丸子"
+     ],
+     "tags": [
+      "芒果",
+      "小丸子"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "芝士多肉葡萄",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 23,
+     "toppings": [],
+     "tags": [
+      "奶盖",
+      "葡萄"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "蕉个新朋友",
+     "cat": "果茶",
+     "tea": [
       "绿茶"
      ],
      "price": 22,
      "toppings": [],
      "tags": [
-      "芒果",
-      "招牌"
+      "香蕉"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "柠渍凤梨苹果冰",
+     "name": "好事花生",
      "cat": "果茶",
      "tea": [
-      "绿茶"
+      "红茶"
+     ],
+     "price": 20,
+     "toppings": [],
+     "tags": [
+      "花生"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "芒果西米露",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
      ],
      "price": 10,
-     "toppings": [],
+     "toppings": [
+      "西米"
+     ],
      "tags": [
-      "凤梨",
-      "苹果",
-      "清爽"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "满杯青柠渍凤梨",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 12,
-     "toppings": [],
-     "tags": [
-      "凤梨",
-      "柠檬"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "西瓜冰奶",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 13,
-     "toppings": [],
-     "tags": [
-      "西瓜"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "柠渍凤梨香柚冰",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 13,
-     "toppings": [],
-     "tags": [
-      "凤梨",
-      "柚子"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "泰式柚子苹果",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 14,
-     "toppings": [],
-     "tags": [
-      "柚子",
-      "苹果"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "柠檬冰奶",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 14,
-     "toppings": [],
-     "tags": [
-      "柠檬"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "菠萝蜜香柚冰奶",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 15,
-     "toppings": [],
-     "tags": [
-      "菠萝蜜",
-      "柚子"
+      "芒果",
+      "西米"
      ],
      "isNew": false,
      "since": ""
@@ -3143,116 +3790,124 @@
      "name": "红心菠萝蜜杨枝甘露",
      "cat": "果茶",
      "tea": [
-      "绿茶"
+      "茉莉"
      ],
-     "price": 18,
+     "price": 21,
      "toppings": [],
      "tags": [
       "菠萝蜜",
       "芒果"
      ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-06"
     },
     {
-     "name": "芋圆芋泥奶绿",
-     "cat": "奶茶",
+     "name": "满杯红心菠萝蜜",
+     "cat": "果茶",
      "tea": [
-      "绿茶"
-     ],
-     "price": 20,
-     "toppings": [
-      "芋圆",
-      "芋泥"
-     ],
-     "tags": [
-      "芋泥"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "凤凰仙枞",
-     "cat": "轻乳茶",
-     "tea": [
-      "鸭屎香"
+      "茉莉"
      ],
      "price": 20,
      "toppings": [],
      "tags": [
-      "轻负担"
+      "菠萝蜜",
+      "有果肉"
      ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-06"
     },
     {
-     "name": "红茶鸳鸯",
+     "name": "椰椰红心菠萝蜜",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 20,
+     "toppings": [],
+     "tags": [
+      "菠萝蜜",
+      "椰香"
+     ],
+     "isNew": true,
+     "since": "2026-06"
+    },
+    {
+     "name": "日出浮雪·杨枝甘露",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 23,
+     "toppings": [],
+     "tags": [
+      "芒果",
+      "奶盖"
+     ],
+     "isNew": true,
+     "since": "2026-08"
+    },
+    {
+     "name": "黑糖珍珠奶茶",
      "cat": "奶茶",
      "tea": [
       "红茶"
      ],
-     "price": 25,
-     "toppings": [],
+     "price": 17,
+     "toppings": [
+      "珍珠"
+     ],
      "tags": [
-      "咖啡",
+      "珍珠",
       "浓醇"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "油柑汁",
-     "cat": "果茶",
-     "tea": [],
-     "price": 25,
-     "toppings": [],
+     "name": "厚芋泥小丸子奶茶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 19,
+     "toppings": [
+      "芋圆"
+     ],
      "tags": [
-      "油柑",
-      "清爽"
+      "芋泥",
+      "料多"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "霸7鸭屎香柠檬桶",
-     "cat": "果茶",
+     "name": "大吉大栗",
+     "cat": "奶茶",
      "tea": [
-      "鸭屎香"
+      "红茶"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "板栗"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "好运松子",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
      ],
      "price": 26,
      "toppings": [],
      "tags": [
-      "柠檬",
-      "大桶"
+      "松子"
      ],
      "isNew": false,
      "since": ""
     },
-    {
-     "name": "芒果欢乐吨吨桶",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 34,
-     "toppings": [],
-     "tags": [
-      "芒果",
-      "大桶"
-     ],
-     "isNew": false,
-     "since": ""
-    }
-   ]
-  },
-  {
-   "id": "coco",
-   "name": "CoCo都可",
-   "en": "COCO",
-   "color": "#F5821F",
-   "orderApp": "CoCo都可",
-   "desc": "来自台湾的老牌连锁茶饮，珍珠奶茶经典",
-   "menu": [
     {
      "name": "珍珠奶茶",
      "cat": "奶茶",
@@ -3270,92 +3925,144 @@
      "since": ""
     },
     {
-     "name": "四季珍珠奶青",
+     "name": "茉莉奶绿",
      "cat": "奶茶",
      "tea": [
-      "四季春"
+      "茉莉"
      ],
-     "price": 11,
-     "toppings": [
-      "珍珠"
-     ],
+     "price": 10,
+     "toppings": [],
      "tags": [
-      "珍珠"
+      "清爽"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "奶茶三兄弟",
+     "name": "奥利奥芝士奶茶",
      "cat": "奶茶",
      "tea": [
       "红茶"
      ],
-     "price": 12,
-     "toppings": [
-      "珍珠",
-      "布丁",
-      "仙草"
-     ],
-     "tags": [
-      "招牌"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "柠檬奶",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 13,
+     "price": 10,
      "toppings": [],
      "tags": [
-      "柠檬"
+      "奥利奥",
+      "奶盖"
      ],
      "isNew": false,
      "since": ""
-    },
+    }
+   ]
+  },
+  {
+   "id": "coco",
+   "name": "CoCo都可",
+   "en": "COCO",
+   "color": "#F5821F",
+   "orderApp": "CoCo都可",
+   "desc": "来自台湾的老牌连锁茶饮，珍珠奶茶经典",
+   "menu": [
     {
-     "name": "莓莓冰奶",
-     "cat": "奶茶",
+     "name": "鲜百香双响炮",
+     "cat": "果茶",
      "tea": [
       "绿茶"
      ],
-     "price": 13,
+     "price": 16,
      "toppings": [],
      "tags": [
-      "草莓"
+      "招牌",
+      "百香果"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "葡萄冰奶",
-     "cat": "奶茶",
+     "name": "柠檬水",
+     "cat": "果茶",
      "tea": [
       "绿茶"
      ],
-     "price": 13,
-     "toppings": [],
-     "tags": [
-      "有果肉"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "轻轻柠檬冰奶",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 14,
+     "price": 5,
      "toppings": [],
      "tags": [
       "柠檬",
-      "轻负担"
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "星空葡萄",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "葡萄"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "芒果冰沙",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "芒果",
+      "冰沙"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "芒果养乐多",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 16,
+     "toppings": [],
+     "tags": [
+      "芒果",
+      "养乐多"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "鲜柠檬绿茶",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 13,
+     "toppings": [],
+     "tags": [
+      "柠檬",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "鲜柠檬红茶",
+     "cat": "果茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 13,
+     "toppings": [],
+     "tags": [
+      "柠檬",
+      "清爽"
      ],
      "isNew": false,
      "since": ""
@@ -3366,130 +4073,123 @@
      "tea": [
       "绿茶"
      ],
-     "price": 14,
-     "toppings": [],
-     "tags": [
-      "石榴"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "莓莓酸奶双重奏",
-     "cat": "酸奶",
-     "tea": [],
-     "price": 15,
-     "toppings": [],
-     "tags": [
-      "草莓"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "蜜恋桃桃",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 15,
-     "toppings": [],
-     "tags": [
-      "蜜桃"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "鲜百香双响炮",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 16,
-     "toppings": [
-      "珍珠",
-      "椰果"
-     ],
-     "tags": [
-      "百香果",
-      "招牌"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "莓莓小姐姐",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "草莓"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "加油牛油果",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 17,
-     "toppings": [],
-     "tags": [
-      "牛油果"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "牛油果橙橙",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 17,
-     "toppings": [],
-     "tags": [
-      "牛油果",
-      "橙香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "消忧凤梨泡",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
      "price": 18,
      "toppings": [],
      "tags": [
-      "凤梨",
-      "气泡"
+      "榴莲",
+      "橘子"
+     ],
+     "isNew": true,
+     "since": "2026-09"
+    },
+    {
+     "name": "日落榴光",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "榴莲"
+     ],
+     "isNew": true,
+     "since": "2026-09"
+    },
+    {
+     "name": "珍珠奶茶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 12,
+     "toppings": [
+      "珍珠"
+     ],
+     "tags": [
+      "珍珠",
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "黑糖生椰拿铁咖啡",
+     "name": "鲜芋牛奶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 16,
+     "toppings": [
+      "芋圆"
+     ],
+     "tags": [
+      "芋泥",
+      "料多"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "现煮红豆奶茶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 13,
+     "toppings": [
+      "红豆"
+     ],
+     "tags": [
+      "红豆"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "经典香浓奶茶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 13,
+     "toppings": [],
+     "tags": [
+      "招牌",
+      "浓醇"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "现磨经典美式",
      "cat": "咖啡",
      "tea": [
       "咖啡"
      ],
-     "price": 18,
+     "price": 12,
+     "toppings": [],
+     "tags": [
+      "无糖",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "黑糖生椰拿铁",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 19,
      "toppings": [],
      "tags": [
       "黑糖",
       "椰香"
      ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-09"
     }
    ]
   },
@@ -3502,42 +4202,19 @@
    "desc": "台式手摇茶饮，波霸奶茶与免费加料受欢迎",
    "menu": [
     {
-     "name": "奇韵观音",
-     "cat": "纯茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 9,
-     "toppings": [],
-     "tags": [
-      "轻负担"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "桂花奇韵观音",
-     "cat": "纯茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 10,
-     "toppings": [],
-     "tags": [
-      "桂花"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "奇韵观音奶茶",
+     "name": "波霸奶茶",
      "cat": "奶茶",
      "tea": [
-      "乌龙"
+      "红茶"
      ],
-     "price": 11,
-     "toppings": [],
-     "tags": [],
+     "price": 13,
+     "toppings": [
+      "波霸"
+     ],
+     "tags": [
+      "招牌",
+      "珍珠"
+     ],
      "isNew": false,
      "since": ""
     },
@@ -3547,159 +4224,11 @@
      "tea": [
       "四季春"
      ],
-     "price": 12,
+     "price": 13,
      "toppings": [],
      "tags": [
-      "招牌"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "波霸奶茶",
-     "cat": "奶茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 12,
-     "toppings": [
-      "波霸"
-     ],
-     "tags": [
-      "珍珠",
-      "招牌"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "山楂绿",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 12,
-     "toppings": [],
-     "tags": [
-      "山楂",
+      "招牌",
       "清爽"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "茉香玫莓",
-     "cat": "奶茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 12,
-     "toppings": [],
-     "tags": [
-      "玫瑰",
-      "草莓"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "甘蔗马蹄青",
-     "cat": "果茶",
-     "tea": [
-      "四季春"
-     ],
-     "price": 13,
-     "toppings": [
-      "马蹄"
-     ],
-     "tags": [
-      "甘蔗",
-      "马蹄"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "奇韵观音玛奇朵",
-     "cat": "奶茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 13,
-     "toppings": [],
-     "tags": [
-      "奶盖"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "百香芒芒绿",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 13,
-     "toppings": [],
-     "tags": [
-      "百香果",
-      "芒果"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "观音柠檬奶茶",
-     "cat": "奶茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 14,
-     "toppings": [],
-     "tags": [
-      "柠檬"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "A2牛乳奇韵观音",
-     "cat": "轻乳茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 14,
-     "toppings": [],
-     "tags": [
-      "轻负担"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "养乐多绿",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 15,
-     "toppings": [],
-     "tags": [
-      "益生菌"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "阿华田",
-     "cat": "奶茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 15,
-     "toppings": [],
-     "tags": [
-      "巧克力"
      ],
      "isNew": false,
      "since": ""
@@ -3710,58 +4239,237 @@
      "tea": [
       "红茶"
      ],
-     "price": 15,
+     "price": 14,
      "toppings": [
       "冰淇淋"
      ],
      "tags": [
-      "甜品感"
+      "冰淇淋"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "可可玫瑰",
+     "name": "六窨茉莉奶绿",
+     "cat": "奶茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 11,
+     "toppings": [],
+     "tags": [
+      "花香",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "波霸奶绿",
+     "cat": "奶茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 11,
+     "toppings": [
+      "波霸"
+     ],
+     "tags": [
+      "珍珠"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "椰果奶茶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 11,
+     "toppings": [
+      "椰果"
+     ],
+     "tags": [
+      "椰果"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "焦糖奶茶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 12,
+     "toppings": [],
+     "tags": [
+      "焦糖",
+      "浓醇"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "红茶玛奇朵",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 13,
+     "toppings": [],
+     "tags": [
+      "奶盖"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "布丁奶茶",
      "cat": "奶茶",
      "tea": [
       "红茶"
      ],
      "price": 15,
-     "toppings": [],
-     "tags": [
-      "巧克力",
-      "玫瑰"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "富桂观音奶茶",
-     "cat": "奶茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 15,
-     "toppings": [],
-     "tags": [
-      "桂花"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "粉波霸桂花奶乌",
-     "cat": "奶茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 15,
      "toppings": [
-      "波霸"
+      "布丁"
      ],
      "tags": [
-      "桂花",
-      "珍珠"
+      "布丁"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "阿华田",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 14,
+     "toppings": [],
+     "tags": [
+      "可可",
+      "浓醇"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "奶绿装芒",
+     "cat": "奶茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "芒果"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "红茶拿铁",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 14,
+     "toppings": [],
+     "tags": [
+      "奶咖"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "抹茶拿铁",
+     "cat": "奶茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "抹茶",
+      "奶咖"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "四季春茶",
+     "cat": "纯茶",
+     "tea": [
+      "四季春"
+     ],
+     "price": 8,
+     "toppings": [],
+     "tags": [
+      "无糖",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "茉莉绿茶",
+     "cat": "纯茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 8,
+     "toppings": [],
+     "tags": [
+      "无糖",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "杨枝甘露",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 16,
+     "toppings": [],
+     "tags": [
+      "芒果",
+      "招牌"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "葡萄柚绿",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 13,
+     "toppings": [],
+     "tags": [
+      "葡萄柚",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "柠檬蜜",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 14,
+     "toppings": [],
+     "tags": [
+      "柠檬",
+      "蜂蜜"
      ],
      "isNew": false,
      "since": ""
@@ -3777,59 +4485,61 @@
    "desc": "长沙起家的国风茶饮，奶油顶茶底层次丰富",
    "menu": [
     {
-     "name": "风栖绿桂",
-     "cat": "轻乳茶",
+     "name": "幽兰拿铁",
+     "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "红茶"
      ],
-     "price": 13,
+     "price": 16,
      "toppings": [],
      "tags": [
-      "桂花",
-      "招牌"
+      "招牌",
+      "奶油顶",
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "风栖绿桂·马斯卡彭版",
-     "cat": "轻乳茶",
+     "name": "声声乌龙",
+     "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "乌龙"
      ],
-     "price": 14,
+     "price": 15,
      "toppings": [],
      "tags": [
-      "桂花",
-      "奶盖"
+      "招牌",
+      "奶油顶"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "有点小梨想",
-     "cat": "果茶",
+     "name": "筝筝纸鸢",
+     "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "乌龙"
      ],
-     "price": 14,
+     "price": 16,
      "toppings": [],
      "tags": [
-      "梨香"
+      "奶油顶",
+      "花香"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "事事好结果",
-     "cat": "果茶",
+     "name": "桂花弄",
+     "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "乌龙"
      ],
-     "price": 14,
+     "price": 15,
      "toppings": [],
      "tags": [
-      "柿子"
+      "桂花"
      ],
      "isNew": false,
      "since": ""
@@ -3842,169 +4552,204 @@
      ],
      "price": 14,
      "toppings": [],
-     "tags": [],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "声声乌龙",
-     "cat": "奶茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 16,
-     "toppings": [],
      "tags": [
-      "蜜桃"
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "桂花弄",
+     "name": "蔓越阑珊",
      "cat": "奶茶",
      "tea": [
       "乌龙"
      ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "蔓越莓"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "抹茶葡提",
+     "cat": "奶茶",
+     "tea": [
+      "绿茶"
+     ],
      "price": 16,
      "toppings": [],
      "tags": [
-      "桂花"
+      "抹茶",
+      "葡萄"
      ],
      "isNew": false,
      "since": ""
     },
     {
      "name": "少年时",
-     "cat": "轻乳茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "清爽"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "白雪戏少年",
      "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "乌龙"
      ],
      "price": 18,
      "toppings": [],
      "tags": [
-      "奶盖"
+      "花香",
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "幽兰拿铁",
+     "name": "栀子生椰",
      "cat": "奶茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "招牌",
-      "奶盖"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "柚逢少年气",
-     "cat": "果茶",
      "tea": [
       "绿茶"
      ],
      "price": 16,
      "toppings": [],
      "tags": [
-      "柚子",
-      "微酸"
+      "栀子",
+      "椰香"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "柚得半日闲",
+     "name": "有龙则灵",
      "cat": "奶茶",
      "tea": [
-      "绿茶"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "柚子",
-      "微咸"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "惟有柚香如故2.0",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "柚子"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "柚现山葵",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "柚子",
-      "山葵"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "柚在青云端",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
+      "乌龙"
      ],
      "price": 19,
      "toppings": [],
      "tags": [
-      "柚子",
-      "微苦"
+      "龙井",
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "梨园花腔",
+     "name": "抹茶菩提2.0",
+     "cat": "奶茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "抹茶"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "风栖绿桂",
      "cat": "轻乳茶",
      "tea": [
       "绿茶"
      ],
-     "price": 19,
+     "price": 13,
      "toppings": [],
      "tags": [
-      "梨香",
-      "花香"
+      "桂花",
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
+    },
+    {
+     "name": "烟火易冷",
+     "cat": "轻乳茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 15,
+     "toppings": [],
+     "tags": [
+      "花香",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "生亦如夏花",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 14,
+     "toppings": [],
+     "tags": [
+      "杨梅",
+      "清爽"
+     ],
+     "isNew": true,
+     "since": "2026-06"
+    },
+    {
+     "name": "偷摘一颗梅",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "杨梅",
+      "有果肉"
+     ],
+     "isNew": true,
+     "since": "2026-06"
+    },
+    {
+     "name": "梨园花腔",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "桂花",
+      "雪梨"
+     ],
+     "isNew": true,
+     "since": "2026-08"
+    },
+    {
+     "name": "少年游·无忧冷泡茶",
+     "cat": "纯茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 6,
+     "toppings": [],
+     "tags": [
+      "无糖",
+      "轻负担"
+     ],
+     "isNew": true,
+     "since": "2026-06"
+    },
+    {
+     "name": "钟意咸柠啡",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "柠檬",
+      "微咸"
+     ],
+     "isNew": true,
+     "since": "2026-07"
     }
    ]
   },
@@ -4017,78 +4762,42 @@
    "desc": "6-10 元的平价学生茶饮品牌，门店覆盖广",
    "menu": [
     {
-     "name": "黑糖珍珠奶茶",
-     "cat": "奶茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 6,
-     "toppings": [
-      "珍珠"
-     ],
-     "tags": [
-      "黑糖",
-      "珍珠"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "蜜桃爽爽茉莉冻",
+     "name": "经典一桶水果茶",
      "cat": "果茶",
      "tea": [
-      "茉莉"
+      "绿茶"
      ],
-     "price": 7,
-     "toppings": [
-      "冻冻"
-     ],
+     "price": 10,
+     "toppings": [],
      "tags": [
-      "蜜桃"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "香橙果粒茉莉冻",
-     "cat": "果茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 7,
-     "toppings": [
-      "冻冻"
-     ],
-     "tags": [
-      "橙香",
+      "大桶",
       "有果肉"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "冰淇淋拿铁",
-     "cat": "咖啡",
+     "name": "西瓜爽爽桶",
+     "cat": "果茶",
      "tea": [
-      "咖啡"
+      "绿茶"
      ],
-     "price": 7,
-     "toppings": [
-      "冰淇淋"
-     ],
+     "price": 10,
+     "toppings": [],
      "tags": [
-      "甜品感"
+      "西瓜",
+      "大桶"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "茉莉柠檬茶",
+     "name": "冰鲜柠檬水",
      "cat": "果茶",
      "tea": [
-      "茉莉"
+      "绿茶"
      ],
-     "price": 8,
+     "price": 4,
      "toppings": [],
      "tags": [
       "柠檬",
@@ -4098,46 +4807,181 @@
      "since": ""
     },
     {
-     "name": "柠檬红茶",
+     "name": "蜂蜜冰茉莉",
      "cat": "果茶",
      "tea": [
-      "红茶"
+      "茉莉"
      ],
-     "price": 8,
+     "price": 4,
      "toppings": [],
      "tags": [
-      "柠檬"
+      "蜂蜜",
+      "清爽"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "蓝莓果粒冰茉莉",
+     "name": "桃桃柠檬茶",
      "cat": "果茶",
      "tea": [
-      "茉莉"
+      "绿茶"
+     ],
+     "price": 6,
+     "toppings": [],
+     "tags": [
+      "柠檬",
+      "水蜜桃"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "百香金菠萝",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
      ],
      "price": 8,
      "toppings": [],
      "tags": [
-      "蓝莓",
+      "百香果",
+      "菠萝"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "多肉葡萄",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 8,
+     "toppings": [],
+     "tags": [
+      "葡萄",
       "有果肉"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "夏黑葡萄茉莉冻",
+     "name": "多肉杨梅",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 6,
+     "toppings": [],
+     "tags": [
+      "杨梅"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "满杯草莓",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 9,
+     "toppings": [],
+     "tags": [
+      "草莓"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "芝芝葡萄",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "奶盖",
+      "葡萄"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "杨枝甘露",
      "cat": "果茶",
      "tea": [
       "茉莉"
      ],
-     "price": 8,
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "芒果",
+      "招牌"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "芒果摇摇杯",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "芒果"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "草莓摇摇杯",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 10,
+     "toppings": [],
+     "tags": [
+      "草莓"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "葡萄晶球",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 7,
      "toppings": [
-      "冻冻"
+      "晶球"
      ],
      "tags": [
-      "有果肉"
+      "葡萄",
+      "晶球"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "水蜜桃晶球",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 7,
+     "toppings": [
+      "晶球"
+     ],
+     "tags": [
+      "水蜜桃",
+      "晶球"
      ],
      "isNew": false,
      "since": ""
@@ -4151,21 +4995,23 @@
      "price": 8,
      "toppings": [],
      "tags": [
-      "荔枝"
+      "荔枝",
+      "清爽"
      ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-08"
     },
     {
-     "name": "杨枝甘露",
-     "cat": "果茶",
+     "name": "柠檬撞奶",
+     "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "红茶"
      ],
-     "price": 9,
+     "price": 8,
      "toppings": [],
      "tags": [
-      "芒果"
+      "柠檬",
+      "奶香"
      ],
      "isNew": false,
      "since": ""
@@ -4176,57 +5022,74 @@
      "tea": [
       "绿茶"
      ],
-     "price": 9,
+     "price": 10,
      "toppings": [],
      "tags": [
       "抹茶",
       "荔枝"
      ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-08"
     },
     {
-     "name": "一桶水果茶",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 10,
-     "toppings": [],
-     "tags": [
-      "大桶",
-      "招牌"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "清风茉白拿铁",
-     "cat": "咖啡",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 10,
-     "toppings": [],
-     "tags": [
-      "茉莉"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "动感蓝莓摇摇杯",
+     "name": "清风茉白鲜奶茶",
      "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "茉莉"
      ],
-     "price": 10,
+     "price": 9,
      "toppings": [],
      "tags": [
-      "蓝莓"
+      "轻负担",
+      "清爽"
+     ],
+     "isNew": true,
+     "since": "2026-09"
+    },
+    {
+     "name": "晶风玉露",
+     "cat": "纯茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 5,
+     "toppings": [],
+     "tags": [
+      "无糖",
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
+    },
+    {
+     "name": "草莓酸奶摇摇茶",
+     "cat": "酸奶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 7,
+     "toppings": [],
+     "tags": [
+      "草莓",
+      "益生菌"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "粉粉荔枝拿铁",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 12,
+     "toppings": [],
+     "tags": [
+      "荔枝",
+      "奶咖"
+     ],
+     "isNew": true,
+     "since": "2026-08"
     }
    ]
   },
@@ -4239,111 +5102,27 @@
    "desc": "南京起家的新中式茶饮，云顶轻乳茶与江南风果茶见长",
    "menu": [
     {
-     "name": "桃叶乌龙",
+     "name": "玫瑰清露",
      "cat": "奶茶",
      "tea": [
-      "乌龙"
+      "红茶"
      ],
-     "price": 15,
+     "price": 19,
      "toppings": [],
      "tags": [
-      "蜜桃"
+      "招牌",
+      "玫瑰"
      ],
      "isNew": false,
      "since": ""
     },
     {
      "name": "木樨清露",
-     "cat": "纯茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 15,
-     "toppings": [],
-     "tags": [
-      "桂花",
-      "清爽"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "云梦之柚",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "柚子"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "红炉点雪",
-     "cat": "奶茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "奶盖"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "瑶池芙蓉",
      "cat": "奶茶",
      "tea": [
       "乌龙"
      ],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "花香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "花前金盏",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "花香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "月泊秦淮",
-     "cat": "奶茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "浓醇"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "木樨冰酿",
-     "cat": "纯茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 16,
+     "price": 18,
      "toppings": [],
      "tags": [
       "桂花"
@@ -4353,97 +5132,11 @@
     },
     {
      "name": "歇雨花茶",
-     "cat": "纯茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "轻负担"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "玫瑰清露",
-     "cat": "纯茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "玫瑰"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "清心",
-     "cat": "纯茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "轻负担",
-      "无糖"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "冷翠柠茶",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "柠檬",
-      "清爽"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "金缕香萝",
-     "cat": "果茶",
+     "cat": "奶茶",
      "tea": [
       "红茶"
      ],
-     "price": 17,
-     "toppings": [],
-     "tags": [
-      "凤梨"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "大橘在握",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "橘香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "青丝芙蓉",
-     "cat": "轻乳茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 18,
+     "price": 19,
      "toppings": [],
      "tags": [
       "花香"
@@ -4452,72 +5145,148 @@
      "since": ""
     },
     {
-     "name": "好芭",
-     "cat": "果茶",
+     "name": "青钗雪兮",
+     "cat": "奶茶",
      "tea": [
       "绿茶"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "青提"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "晨夕枫露",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "花香"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "木樨酌醴",
+     "cat": "奶茶",
+     "tea": [
+      "乌龙"
      ],
      "price": 19,
      "toppings": [],
      "tags": [
-      "芭乐"
+      "桂花",
+      "米酿"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "胭脂点点",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 15,
+     "toppings": [],
+     "tags": [
+      "莓果"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "碧裹兰亭",
+     "cat": "奶茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "兰花"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "世外仙姝",
+     "cat": "奶茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 20,
+     "toppings": [],
+     "tags": [
+      "花香",
+      "浓醇"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "薄妆浅黛",
+     "cat": "奶茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 21,
+     "toppings": [
+      "茶冻"
+     ],
+     "tags": [
+      "茶冻"
      ],
      "isNew": false,
      "since": ""
     },
     {
      "name": "无忧",
-     "cat": "奶茶",
+     "cat": "果茶",
      "tea": [
-      "乌龙"
+      "绿茶"
      ],
-     "price": 19,
+     "price": 13,
      "toppings": [],
      "tags": [
-      "清爽"
+      "菊花脑",
+      "果蔬"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "桃花仙人",
-     "cat": "奶茶",
+     "name": "清心",
+     "cat": "果茶",
      "tea": [
-      "乌龙"
+      "绿茶"
      ],
-     "price": 19,
+     "price": 13,
      "toppings": [],
      "tags": [
-      "蜜桃"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "桃花曲水",
-     "cat": "奶茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 19,
-     "toppings": [],
-     "tags": [
-      "蜜桃",
-      "清爽"
+      "菊花脑",
+      "柠檬"
      ],
      "isNew": false,
      "since": ""
     },
     {
      "name": "莫愁",
-     "cat": "轻乳茶",
+     "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "红茶"
      ],
-     "price": 21,
+     "price": 13,
      "toppings": [],
      "tags": [
-      "奶盖"
+      "菊花脑",
+      "微咸"
      ],
      "isNew": false,
      "since": ""
@@ -4533,91 +5302,225 @@
    "desc": "武汉人气茶饮，荔枝冰酿与手打柠檬茶出圈",
    "menu": [
     {
-     "name": "武汉茉莉",
-     "cat": "轻乳茶",
+     "name": "荔枝冰酿",
+     "cat": "果茶",
      "tea": [
-      "茉莉"
+      "绿茶"
      ],
-     "price": 16,
+     "price": 15,
      "toppings": [],
      "tags": [
       "招牌",
-      "花香"
+      "荔枝",
+      "米酿"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "抹茶青提冰奶",
+     "name": "苹果冰酿",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 16,
+     "toppings": [],
+     "tags": [
+      "苹果",
+      "米酿"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "苹果冰茶",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 12,
+     "toppings": [],
+     "tags": [
+      "苹果",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "水蜜桃冰酿",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 14,
+     "toppings": [],
+     "tags": [
+      "水蜜桃",
+      "米酿"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "兰香青柠",
+     "cat": "果茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "柠檬",
+      "兰花"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "杨梅冰酿",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "杨梅",
+      "米酿"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "茉莉葡萄冰茶",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 14,
+     "toppings": [],
+     "tags": [
+      "葡萄",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "青提柠檬水",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 14,
+     "toppings": [],
+     "tags": [
+      "青提",
+      "柠檬"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "空山栀子",
      "cat": "奶茶",
      "tea": [
       "绿茶"
      ],
-     "price": 16,
+     "price": 14,
      "toppings": [],
      "tags": [
-      "抹茶",
-      "有果肉"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "百香大橘双响炮",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "百香果",
-      "橘香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "香柚栀子冷萃",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "柚子",
       "栀子"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "白兰青提冷萃",
-     "cat": "果茶",
+     "name": "红苹果",
+     "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "红茶"
      ],
-     "price": 16,
+     "price": 13,
      "toppings": [],
      "tags": [
-      "白兰",
-      "有果肉"
+      "苹果"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "香椰芒果冰奶",
+     "name": "海盐柠檬奶",
      "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "红茶"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "柠檬",
+      "微咸"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "白兰玉露",
+     "cat": "奶茶",
+     "tea": [
+      "乌龙"
      ],
      "price": 16,
      "toppings": [],
      "tags": [
-      "椰香",
-      "芒果"
+      "白兰"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "咸宁桂花",
+     "cat": "奶茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "桂花"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "国王珍珠奶茶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 18,
+     "toppings": [
+      "珍珠"
+     ],
+     "tags": [
+      "珍珠",
+      "浓醇"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "浮云锡兰",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "奶油顶",
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
@@ -4628,7 +5531,7 @@
      "tea": [
       "红茶"
      ],
-     "price": 16,
+     "price": 19,
      "toppings": [
       "珍珠"
      ],
@@ -4636,124 +5539,8 @@
       "泰奶",
       "珍珠"
      ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "海盐柠檬奶",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "柠檬",
-      "微咸"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "重瓣玫瑰",
-     "cat": "奶茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "玫瑰"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "玉露大橘奶冰",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "橘香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "好前橙奶油玉露",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "橙香",
-      "奶盖"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "塞外玫瑰烤奶",
-     "cat": "奶茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 19,
-     "toppings": [],
-     "tags": [
-      "玫瑰",
-      "烤奶"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "四重厚抹生软酪",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 21,
-     "toppings": [],
-     "tags": [
-      "抹茶",
-      "奶盖"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "玉露抹茶生软酪",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 17,
-     "toppings": [],
-     "tags": [
-      "抹茶"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "事事橙玉露冰茶",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 17,
-     "toppings": [],
-     "tags": [
-      "橙香"
-     ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-08"
     },
     {
      "name": "青柠泰奶",
@@ -4764,51 +5551,38 @@
      "price": 17,
      "toppings": [],
      "tags": [
-      "柠檬",
-      "泰奶"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "桂香黄柠",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 17,
-     "toppings": [],
-     "tags": [
-      "桂花",
+      "泰奶",
       "柠檬"
      ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-08"
     },
     {
-     "name": "咸·咸宁桂花",
-     "cat": "奶茶",
+     "name": "荔枝白糯米奶冰",
+     "cat": "酸奶",
      "tea": [
-      "绿茶"
+      "茉莉"
      ],
-     "price": 17,
+     "price": 16,
      "toppings": [],
      "tags": [
-      "桂花",
-      "微咸"
+      "荔枝",
+      "糯米"
      ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-07"
     },
     {
-     "name": "香椰芒果清补凉",
-     "cat": "奶茶",
-     "tea": [],
-     "price": 17,
+     "name": "花魁单丛",
+     "cat": "纯茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 8,
      "toppings": [],
      "tags": [
-      "椰香",
-      "芒果"
+      "无糖",
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
@@ -4824,28 +5598,15 @@
    "desc": "西安国风茶饮，桂花引与唐诗风命名走红",
    "menu": [
     {
-     "name": "芊芊绿雪",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 13,
-     "toppings": [],
-     "tags": [
-      "招牌"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
      "name": "桂花引",
-     "cat": "奶茶",
+     "cat": "轻乳茶",
      "tea": [
-      "绿茶"
+      "乌龙"
      ],
      "price": 15,
      "toppings": [],
      "tags": [
+      "招牌",
       "桂花"
      ],
      "isNew": false,
@@ -4853,84 +5614,118 @@
     },
     {
      "name": "南山烟雨",
-     "cat": "奶茶",
+     "cat": "轻乳茶",
      "tea": [
-      "乌龙"
+      "绿茶"
      ],
      "price": 15,
      "toppings": [],
      "tags": [
-      "浓醇"
+      "招牌",
+      "清爽"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "十年金不换",
-     "cat": "奶茶",
+     "name": "芊芊绿雪",
+     "cat": "轻乳茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 13,
+     "toppings": [],
+     "tags": [
+      "清爽",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "茯生半日闲",
+     "cat": "轻乳茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "茯茶"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "鸣夏",
+     "cat": "轻乳茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 16,
+     "toppings": [],
+     "tags": [
+      "花香"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "瑶台月下逢",
+     "cat": "轻乳茶",
      "tea": [
       "乌龙"
      ],
      "price": 16,
      "toppings": [],
      "tags": [
-      "陈香"
+      "花香"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "初心乌龙",
+     "cat": "轻乳茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 16,
+     "toppings": [],
+     "tags": [
+      "清爽",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "望梅",
+     "cat": "轻乳茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "杨梅"
      ],
      "isNew": false,
      "since": ""
     },
     {
      "name": "月下吟桂",
-     "cat": "奶茶",
+     "cat": "轻乳茶",
      "tea": [
-      "绿茶"
+      "乌龙"
      ],
-     "price": 17,
+     "price": 16,
      "toppings": [],
      "tags": [
       "桂花"
      ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "晴空有云",
-     "cat": "酸奶",
-     "tea": [],
-     "price": 17,
-     "toppings": [],
-     "tags": [
-      "清爽"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "夏野有风",
-     "cat": "酸奶",
-     "tea": [],
-     "price": 17,
-     "toppings": [],
-     "tags": [
-      "果香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "柠香小李白",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 17,
-     "toppings": [],
-     "tags": [
-      "柠檬",
-      "清爽"
-     ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-09"
     },
     {
      "name": "梅占摇红",
@@ -4941,80 +5736,48 @@
      "price": 18,
      "toppings": [],
      "tags": [
-      "梅香"
+      "招牌",
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "对弈云山",
+     "name": "桂花米酿",
      "cat": "奶茶",
      "tea": [
       "乌龙"
      ],
-     "price": 18,
+     "price": 15,
      "toppings": [],
-     "tags": [
-      "山茶花"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "冰淇淋桂花气泡茶",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 19,
-     "toppings": [
-      "冰淇淋"
-     ],
      "tags": [
       "桂花",
-      "气泡"
+      "米酿"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "冰淇淋栀子气泡茶",
-     "cat": "果茶",
+     "name": "轻红",
+     "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "红茶"
      ],
-     "price": 19,
-     "toppings": [
-      "冰淇淋"
-     ],
-     "tags": [
-      "栀子",
-      "气泡"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "美式咖啡云",
-     "cat": "咖啡",
-     "tea": [
-      "咖啡"
-     ],
-     "price": 9,
+     "price": 15,
      "toppings": [],
      "tags": [
-      "清爽"
+      "花香"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "拿铁咖啡云",
-     "cat": "咖啡",
+     "name": "四时闲",
+     "cat": "奶茶",
      "tea": [
-      "咖啡"
+      "乌龙"
      ],
-     "price": 11,
+     "price": 19,
      "toppings": [],
      "tags": [
       "浓醇"
@@ -5023,29 +5786,89 @@
      "since": ""
     },
     {
-     "name": "生椰咖啡云",
-     "cat": "咖啡",
+     "name": "萄妆淡抹",
+     "cat": "奶茶",
      "tea": [
-      "咖啡"
+      "绿茶"
      ],
-     "price": 13,
+     "price": 18,
      "toppings": [],
      "tags": [
-      "椰香"
+      "葡萄"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "油柑咖啡云",
-     "cat": "咖啡",
+     "name": "快雪时晴",
+     "cat": "果茶",
      "tea": [
-      "咖啡"
+      "绿茶"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "雪梨",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "金桔柠檬茶",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 15,
+     "toppings": [],
+     "tags": [
+      "柠檬",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "烛影摇红",
+     "cat": "纯茶",
+     "tea": [
+      "红茶"
      ],
      "price": 13,
      "toppings": [],
      "tags": [
-      "油柑"
+      "无糖",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "兰桂若萱",
+     "cat": "纯茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 16,
+     "toppings": [],
+     "tags": [
+      "无糖",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "相见欢",
+     "cat": "酸奶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 15,
+     "toppings": [],
+     "tags": [
+      "益生菌"
      ],
      "isNew": false,
      "since": ""
@@ -5068,94 +5891,55 @@
      "toppings": [],
      "tags": [
       "招牌",
-      "牛油果"
+      "牛油果",
+      "轻负担"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "海红山楂酸奶奶昔",
+     "name": "巴旦木牛油果酸奶奶昔",
      "cat": "酸奶",
      "tea": [],
-     "price": 19,
+     "price": 27,
      "toppings": [],
      "tags": [
-      "山楂"
+      "牛油果",
+      "巴旦木"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "薄荷巧克力·酸奶脆墩墩",
+     "name": "杏仁牛油果酸奶奶昔",
      "cat": "酸奶",
      "tea": [],
-     "price": 16,
+     "price": 34,
      "toppings": [],
      "tags": [
-      "薄荷",
-      "巧克力"
+      "牛油果",
+      "杏仁"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "葡萄茉莉·酸奶脆墩墩",
+     "name": "芒果酸奶奶昔",
      "cat": "酸奶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 16,
+     "tea": [],
+     "price": 25,
      "toppings": [],
      "tags": [
-      "有果肉"
+      "芒果"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "抹茶·酸奶脆墩墩",
+     "name": "黑加仑酸奶奶昔",
      "cat": "酸奶",
      "tea": [],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "抹茶"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "双重草莓·酸奶脆墩墩",
-     "cat": "酸奶",
-     "tea": [],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "草莓"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "蒸·芋头牛乳",
-     "cat": "奶茶",
-     "tea": [],
-     "price": 17,
-     "toppings": [
-      "芋头"
-     ],
-     "tags": [
-      "芋泥",
-      "热饮"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "黑加仑葡萄干酸奶奶昔",
-     "cat": "酸奶",
-     "tea": [],
-     "price": 19,
+     "price": 22,
      "toppings": [],
      "tags": [
       "黑加仑"
@@ -5164,12 +5948,10 @@
      "since": ""
     },
     {
-     "name": "红苹果茉莉冰奶",
-     "cat": "奶茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 19,
+     "name": "青苹果酸奶奶昔",
+     "cat": "酸奶",
+     "tea": [],
+     "price": 24,
      "toppings": [],
      "tags": [
       "苹果"
@@ -5178,141 +5960,77 @@
      "since": ""
     },
     {
-     "name": "龙眼茉莉冰奶",
-     "cat": "奶茶",
+     "name": "火龙果酸奶奶昔",
+     "cat": "酸奶",
+     "tea": [],
+     "price": 22,
+     "toppings": [],
+     "tags": [
+      "火龙果"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "海红山楂酸奶奶昔",
+     "cat": "酸奶",
+     "tea": [],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "山楂",
+      "轻负担"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "青黛抹茶酸奶奶昔",
+     "cat": "酸奶",
+     "tea": [],
+     "price": 28,
+     "toppings": [],
+     "tags": [
+      "抹茶"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "芒果酸奶",
+     "cat": "酸奶",
+     "tea": [],
+     "price": 22,
+     "toppings": [],
+     "tags": [
+      "芒果"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "水蜜桃Molato",
+     "cat": "酸奶",
+     "tea": [],
+     "price": 22,
+     "toppings": [],
+     "tags": [
+      "水蜜桃"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "香柠茉莉冰奶",
+     "cat": "酸奶",
      "tea": [
       "茉莉"
      ],
-     "price": 19,
+     "price": 20,
      "toppings": [],
      "tags": [
-      "龙眼"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "冰吸薄巧冰奶",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 19,
-     "toppings": [],
-     "tags": [
-      "薄荷",
-      "巧克力"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "脏脏咸奶油泰奶",
-     "cat": "奶茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 21,
-     "toppings": [],
-     "tags": [
-      "泰奶",
-      "微咸"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "酸奶云顶·芭乐茉莉冰奶",
-     "cat": "酸奶",
-     "tea": [
+      "柠檬",
       "茉莉"
-     ],
-     "price": 22,
-     "toppings": [],
-     "tags": [
-      "芭乐",
-      "奶盖"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "酸奶云顶·葡萄茉莉冰奶",
-     "cat": "酸奶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 22,
-     "toppings": [],
-     "tags": [
-      "有果肉",
-      "奶盖"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "芒果椰椰血糯米酸奶奶昔",
-     "cat": "酸奶",
-     "tea": [],
-     "price": 22,
-     "toppings": [
-      "血糯米"
-     ],
-     "tags": [
-      "芒果",
-      "椰香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "杨梅碎碎冰",
-     "cat": "酸奶",
-     "tea": [],
-     "price": 22,
-     "toppings": [],
-     "tags": [
-      "杨梅",
-      "清爽"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "D24苏丹王榴莲椰奶冰",
-     "cat": "酸奶",
-     "tea": [],
-     "price": 24,
-     "toppings": [],
-     "tags": [
-      "榴莲",
-      "椰香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "夏黑葡萄酸奶奶昔",
-     "cat": "酸奶",
-     "tea": [],
-     "price": 24,
-     "toppings": [],
-     "tags": [
-      "有果肉"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "红苹果酸樱桃干酸奶奶昔",
-     "cat": "酸奶",
-     "tea": [],
-     "price": 25,
-     "toppings": [],
-     "tags": [
-      "苹果",
-      "樱桃"
      ],
      "isNew": false,
      "since": ""
@@ -5328,209 +6046,6 @@
    "desc": "深圳起家的手作茶饮，广西水牛奶系列口碑高",
    "menu": [
     {
-     "name": "mini黑糖珍珠·牛乳2.0",
-     "cat": "奶茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 15,
-     "toppings": [
-      "珍珠"
-     ],
-     "tags": [
-      "黑糖",
-      "珍珠"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "mini蒸·超厚芋泥",
-     "cat": "奶茶",
-     "tea": [],
-     "price": 15,
-     "toppings": [
-      "芋泥"
-     ],
-     "tags": [
-      "芋泥"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "黑糖珍珠·牛乳2.0",
-     "cat": "奶茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 23,
-     "toppings": [
-      "珍珠"
-     ],
-     "tags": [
-      "黑糖",
-      "珍珠",
-      "招牌"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "蒸·超厚芋泥",
-     "cat": "奶茶",
-     "tea": [],
-     "price": 24,
-     "toppings": [
-      "芋泥"
-     ],
-     "tags": [
-      "芋泥",
-      "招牌"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "煮·荔浦芋圆",
-     "cat": "奶茶",
-     "tea": [],
-     "price": 23,
-     "toppings": [
-      "芋圆"
-     ],
-     "tags": [
-      "芋泥"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "芒果·河粉",
-     "cat": "果茶",
-     "tea": [],
-     "price": 23,
-     "toppings": [],
-     "tags": [
-      "芒果"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "蜜桃乌龙冰茶",
-     "cat": "果茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 24,
-     "toppings": [],
-     "tags": [
-      "蜜桃",
-      "清爽"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "黄桃与栀子",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 25,
-     "toppings": [],
-     "tags": [
-      "黄桃",
-      "栀子"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "桃·花香",
-     "cat": "果茶",
-     "tea": [
-      "乌龙"
-     ],
-     "price": 25,
-     "toppings": [],
-     "tags": [
-      "蜜桃",
-      "花香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "柑榄与单丛",
-     "cat": "果茶",
-     "tea": [
-      "鸭屎香"
-     ],
-     "price": 25,
-     "toppings": [],
-     "tags": [
-      "油柑"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "现碾·无花果",
-     "cat": "果茶",
-     "tea": [],
-     "price": 26,
-     "toppings": [],
-     "tags": [
-      "无花果"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "蜜桃树莓柠",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 26,
-     "toppings": [],
-     "tags": [
-      "蜜桃",
-      "柠檬"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "猕猴桃与青苹果",
-     "cat": "果茶",
-     "tea": [],
-     "price": 27,
-     "toppings": [],
-     "tags": [
-      "猕猴桃",
-      "苹果"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "茉莉香葡萄",
-     "cat": "果茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 27,
-     "toppings": [],
-     "tags": [
-      "有果肉"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
      "name": "打·米麻薯",
      "cat": "奶茶",
      "tea": [
@@ -5538,11 +6053,124 @@
      ],
      "price": 29,
      "toppings": [
-      "麻薯"
+      "米麻薯"
      ],
      "tags": [
-      "麻薯",
-      "招牌"
+      "招牌",
+      "米麻薯",
+      "浓醇"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "手作·米麻薯奶茶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 29,
+     "toppings": [
+      "米麻薯"
+     ],
+     "tags": [
+      "米麻薯",
+      "料多"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "龙眼桂花冰",
+     "cat": "奶茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 29,
+     "toppings": [],
+     "tags": [
+      "龙眼",
+      "桂花"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "老椰清补凉",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 29,
+     "toppings": [],
+     "tags": [
+      "椰香",
+      "料多"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "斯里兰卡奶茶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 23,
+     "toppings": [],
+     "tags": [
+      "浓醇"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "超厚芋泥·水牛鲜乳",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 21,
+     "toppings": [
+      "芋泥"
+     ],
+     "tags": [
+      "芋泥",
+      "水牛乳"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "黑糖珍珠·水牛乳",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 21,
+     "toppings": [
+      "珍珠"
+     ],
+     "tags": [
+      "珍珠",
+      "黑糖"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "酒酿米麻薯雪糕",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 21,
+     "toppings": [
+      "米麻薯"
+     ],
+     "tags": [
+      "米酒",
+      "雪糕"
      ],
      "isNew": false,
      "since": ""
@@ -5551,71 +6179,76 @@
      "name": "桂花酒酿一米",
      "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "乌龙"
+     ],
+     "price": 26,
+     "toppings": [],
+     "tags": [
+      "桂花",
+      "米酿"
+     ],
+     "isNew": true,
+     "since": "2026-09"
+    },
+    {
+     "name": "港浓茶",
+     "cat": "果茶",
+     "tea": [
+      "红茶"
      ],
      "price": 29,
      "toppings": [],
      "tags": [
-      "桂花",
-      "酒酿"
+      "柠檬",
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "龙眼栀子椰",
+     "name": "鲜青芒冰茶",
      "cat": "果茶",
      "tea": [
       "绿茶"
      ],
-     "price": 29,
+     "price": 23,
      "toppings": [],
      "tags": [
-      "龙眼",
-      "栀子",
-      "椰香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "鲜榨东魁杨梅",
-     "cat": "果茶",
-     "tea": [],
-     "price": 29,
-     "toppings": [],
-     "tags": [
-      "杨梅",
+      "青芒",
       "清爽"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "菠萝蜜与木瓜",
+     "name": "粒粒·杨梅",
      "cat": "果茶",
-     "tea": [],
+     "tea": [
+      "茉莉"
+     ],
      "price": 32,
      "toppings": [],
      "tags": [
-      "菠萝蜜",
-      "木瓜"
+      "杨梅",
+      "有果肉"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "莲雾与山竹",
+     "name": "现碾·无花果",
      "cat": "果茶",
-     "tea": [],
-     "price": 38,
+     "tea": [
+      "绿茶"
+     ],
+     "price": 23,
      "toppings": [],
      "tags": [
-      "莲雾",
-      "山竹"
+      "无花果",
+      "清爽"
      ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-08"
     }
    ]
   },
@@ -5628,80 +6261,7 @@
    "desc": "长沙手打柠檬茶专门店，鸭屎香柠檬茶人气高",
    "menu": [
     {
-     "name": "茉香奶绿",
-     "cat": "奶茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 10,
-     "toppings": [],
-     "tags": [],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "黑糖珍珠鸭屎香奶茶",
-     "cat": "奶茶",
-     "tea": [
-      "鸭屎香"
-     ],
-     "price": 11,
-     "toppings": [
-      "珍珠"
-     ],
-     "tags": [
-      "黑糖",
-      "珍珠"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "特浓手打柠檬茶",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 15,
-     "toppings": [],
-     "tags": [
-      "柠檬",
-      "招牌"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "传统手打柠檬茶",
-     "cat": "果茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 15,
-     "toppings": [],
-     "tags": [
-      "柠檬"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "茉莉手打柠檬茶",
-     "cat": "果茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 16,
-     "toppings": [],
-     "tags": [
-      "柠檬",
-      "茉莉"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "清爽鸭屎香柠檬茶",
+     "name": "鸭屎香柠檬茶",
      "cat": "果茶",
      "tea": [
       "鸭屎香"
@@ -5709,6 +6269,7 @@
      "price": 16,
      "toppings": [],
      "tags": [
+      "招牌",
       "柠檬",
       "清爽"
      ],
@@ -5716,27 +6277,72 @@
      "since": ""
     },
     {
-     "name": "浓郁鸭屎香柠檬茶",
+     "name": "超大杯特浓手打柠檬茶",
      "cat": "果茶",
      "tea": [
-      "鸭屎香"
+      "绿茶"
      ],
-     "price": 16,
+     "price": 20,
      "toppings": [],
      "tags": [
-      "柠檬",
-      "浓醇"
+      "大杯",
+      "柠檬"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "热情百香柠檬茶",
+     "name": "超大杯鸭屎香柠檬茶",
+     "cat": "果茶",
+     "tea": [
+      "鸭屎香"
+     ],
+     "price": 21,
+     "toppings": [],
+     "tags": [
+      "大杯",
+      "柠檬"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "丰盈桃桃柚子茶",
      "cat": "果茶",
      "tea": [
       "绿茶"
      ],
-     "price": 16,
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "水蜜桃",
+      "柚子"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "莹润雪梨柚子茶",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "雪梨",
+      "柚子"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "百香茉莉冰柠茶",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 17,
      "toppings": [],
      "tags": [
       "百香果",
@@ -5746,109 +6352,96 @@
      "since": ""
     },
     {
-     "name": "鸭屎香柠檬茶",
+     "name": "超大杯茉莉梅烦恼",
      "cat": "果茶",
      "tea": [
-      "鸭屎香"
+      "茉莉"
      ],
-     "price": 17,
+     "price": 27,
      "toppings": [],
      "tags": [
-      "招牌",
-      "柠檬"
+      "大杯",
+      "梅子"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "桂花红宝石柠檬茶",
+     "name": "超大杯凤梨柠檬茶",
      "cat": "果茶",
      "tea": [
-      "红茶"
+      "绿茶"
      ],
-     "price": 17,
+     "price": 27,
      "toppings": [],
      "tags": [
-      "桂花",
-      "柠檬"
+      "大杯",
+      "凤梨"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "莓果可可冰奶",
-     "cat": "奶茶",
+     "name": "一杯冻冻葡萄汁",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 13,
+     "toppings": [
+      "晶球"
+     ],
+     "tags": [
+      "葡萄",
+      "晶球"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "山野青芒冰茶",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 17,
+     "toppings": [],
+     "tags": [
+      "青芒",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "山野双芒冰沙",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "芒果",
+      "冰沙"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "大力捶奇迹果蔬杯",
+     "cat": "果茶",
      "tea": [
       "绿茶"
      ],
      "price": 18,
      "toppings": [],
      "tags": [
-      "莓果",
-      "巧克力"
+      "果蔬",
+      "轻负担"
      ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "超大杯蜜桃茉莉柠檬茶",
-     "cat": "果茶",
-     "tea": [
-      "茉莉"
-     ],
-     "price": 20,
-     "toppings": [],
-     "tags": [
-      "蜜桃",
-      "大桶"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "大桶清爽鸭屎香柠檬茶",
-     "cat": "果茶",
-     "tea": [
-      "鸭屎香"
-     ],
-     "price": 22,
-     "toppings": [],
-     "tags": [
-      "柠檬",
-      "大桶"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "超大杯山野青芒冰茶",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 22,
-     "toppings": [],
-     "tags": [
-      "青芒",
-      "大桶"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "小钵子甜酒柠檬茶",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 28,
-     "toppings": [],
-     "tags": [
-      "甜酒",
-      "柠檬"
-     ],
-     "isNew": false,
-     "since": ""
+     "isNew": true,
+     "since": "2026-08"
     }
    ]
   },
@@ -5861,15 +6454,20 @@
    "desc": "合肥老牌平价茶饮，招牌全套奶茶料多实在",
    "menu": [
     {
-     "name": "蜜桃乌龙",
+     "name": "黑全套奶茶",
      "cat": "奶茶",
      "tea": [
-      "乌龙"
+      "红茶"
      ],
-     "price": 13,
-     "toppings": [],
+     "price": 17,
+     "toppings": [
+      "珍珠",
+      "椰果",
+      "仙草冻"
+     ],
      "tags": [
-      "蜜桃"
+      "招牌",
+      "料多"
      ],
      "isNew": false,
      "since": ""
@@ -5883,185 +6481,10 @@
      "price": 14,
      "toppings": [
       "珍珠",
-      "布丁",
-      "仙草"
+      "仙草冻"
      ],
      "tags": [
-      "招牌"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "满满橙意茶",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 14,
-     "toppings": [],
-     "tags": [
-      "橙香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "满满百香果",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 15,
-     "toppings": [],
-     "tags": [
-      "百香果"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "黑全套奶茶",
-     "cat": "奶茶",
-     "tea": [
-      "红茶"
-     ],
-     "price": 17,
-     "toppings": [
-      "珍珠",
-      "布丁",
-      "仙草"
-     ],
-     "tags": [
-      "浓醇"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "脆脆西瓜",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 17,
-     "toppings": [],
-     "tags": [
-      "西瓜",
-      "清爽"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "桂花酒酿小丸子",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 17,
-     "toppings": [
-      "小丸子"
-     ],
-     "tags": [
-      "桂花",
-      "酒酿"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "手剥水蜜桃",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "蜜桃",
-      "有果肉"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "抹茶生椰麻薯",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 18,
-     "toppings": [
-      "麻薯"
-     ],
-     "tags": [
-      "抹茶",
-      "椰香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "桂花酸奶",
-     "cat": "酸奶",
-     "tea": [],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "桂花"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "抹茶爽",
-     "cat": "奶茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 18,
-     "toppings": [],
-     "tags": [
-      "抹茶"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "杨枝甘露",
-     "cat": "果茶",
-     "tea": [
-      "绿茶"
-     ],
-     "price": 19,
-     "toppings": [],
-     "tags": [
-      "芒果"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "椰子清补凉",
-     "cat": "奶茶",
-     "tea": [],
-     "price": 19,
-     "toppings": [],
-     "tags": [
-      "椰香"
-     ],
-     "isNew": false,
-     "since": ""
-    },
-    {
-     "name": "芒果酸奶奶昔",
-     "cat": "酸奶",
-     "tea": [],
-     "price": 19,
-     "toppings": [],
-     "tags": [
-      "芒果"
+      "料多"
      ],
      "isNew": false,
      "since": ""
@@ -6070,52 +6493,121 @@
      "name": "徽州酒酿",
      "cat": "奶茶",
      "tea": [
-      "绿茶"
+      "红茶"
      ],
      "price": 19,
      "toppings": [],
      "tags": [
-      "酒酿",
-      "招牌"
+      "米酿",
+      "桂花"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "红豆奶茶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 13,
+     "toppings": [
+      "红豆"
+     ],
+     "tags": [
+      "红豆"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "芋泥鲜奶茶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 19,
+     "toppings": [
+      "芋泥"
+     ],
+     "tags": [
+      "芋泥"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "魔薯芋泥鲜奶茶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 20,
+     "toppings": [
+      "芋泥"
+     ],
+     "tags": [
+      "芋泥",
+      "紫薯"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "米酿祁红",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "米酿",
+      "浓醇"
      ],
      "isNew": false,
      "since": ""
     },
     {
      "name": "葡萄奶芙",
-     "cat": "果茶",
+     "cat": "奶茶",
      "tea": [
       "绿茶"
      ],
-     "price": 20,
+     "price": 25,
      "toppings": [],
      "tags": [
-      "奶盖",
-      "有果肉"
+      "葡萄",
+      "奶油顶"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "葡萄酸奶奶昔",
-     "cat": "酸奶",
-     "tea": [],
+     "name": "白桃乌龙鲜奶",
+     "cat": "奶茶",
+     "tea": [
+      "乌龙"
+     ],
      "price": 20,
      "toppings": [],
      "tags": [
-      "有果肉"
+      "水蜜桃"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "水蜜桃酸奶奶昔",
-     "cat": "酸奶",
-     "tea": [],
+     "name": "藕泥牛乳茶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
      "price": 20,
      "toppings": [],
      "tags": [
-      "蜜桃"
+      "藕泥",
+      "牛乳"
      ],
      "isNew": false,
      "since": ""
@@ -6129,22 +6621,128 @@
      "price": 21,
      "toppings": [],
      "tags": [
-      "芒果"
+      "芒果",
+      "有果肉"
      ],
      "isNew": false,
      "since": ""
     },
     {
-     "name": "芒果大满贯",
+     "name": "手剥大橘",
      "cat": "果茶",
      "tea": [
       "绿茶"
      ],
-     "price": 21,
+     "price": 20,
+     "toppings": [],
+     "tags": [
+      "橘子",
+      "有果肉"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "杨枝甘露",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 22,
      "toppings": [],
      "tags": [
       "芒果",
-      "大桶"
+      "招牌"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "葡萄养乐多",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 25,
+     "toppings": [],
+     "tags": [
+      "葡萄",
+      "养乐多"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "百香果毛峰",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "百香果",
+      "毛峰"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "凤梨毛峰",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "凤梨",
+      "毛峰"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "满满橙意茶",
+     "cat": "果茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 15,
+     "toppings": [],
+     "tags": [
+      "橙子",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "手榨蜜桃乌龙",
+     "cat": "果茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 14,
+     "toppings": [],
+     "tags": [
+      "水蜜桃",
+      "清爽"
+     ],
+     "isNew": false,
+     "since": ""
+    },
+    {
+     "name": "桂花酸奶",
+     "cat": "酸奶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 19,
+     "toppings": [],
+     "tags": [
+      "桂花",
+      "益生菌"
      ],
      "isNew": false,
      "since": ""

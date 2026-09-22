@@ -63,7 +63,7 @@ def load_milktea_facts() -> dict:
                 "news": str(d["news"]), "version": d["version"]}
     except Exception as e:
         print(f"警告：读取奶茶数据失败（{e}），用兜底值")
-        return {"brands": "25", "skus": "402", "news": "10", "version": "2.3.0"}
+        return {"brands": "25", "skus": "432", "news": "57", "version": "2.4.0"}
 
 
 def b64img(p: Path) -> str:
@@ -206,12 +206,12 @@ def milktea_page(mt: dict, img: str) -> str:
 <section><h2>做了什么</h2><ol>
   <li><b>心情推荐引擎</b><span class="dim">——10 种心情多选（开心/疲惫/低落/约会/熬夜/解腻/省钱/轻负担…），每种心情映射「品类 × 口味标签 × 品牌画像」三路打分，推荐语自动归因。</span></li>
   <li><b>双模式输入</b><span class="dim">——还支持口味偏好（6 大类 × 8 种茶底 × 补充条件）与品牌范围圈定，左侧边栏与主页品牌多选双向同步。</span></li>
-  <li><b>菜单数据工程</b><span class="dim">——数据与逻辑分离（menu-data.js + update.json 合并）；每周一自动联网核对新品/下架并推送上线，NEW 标 3 个月自动摘除。</span></li>
+  <li><b>菜单数据工程</b><span class="dim">——数据与逻辑分离（menu-data.js + update.json 合并）；品名逐家对照品牌官网/官方社媒与公开报道核对，每周一自动联网复核，NEW 标 3 个月自动摘除。</span></li>
   <li><b>交付形态</b><span class="dim">——零依赖单文件应用，手机全屏、桌面手机壳居中；GitHub Pages 公开托管，访客免登录直接打开。</span></li>
 </ol></section>
 
 <section><h2>关键选择，以及背后的取舍</h2><ul>
-  <li><b>不接品牌方 API。</b><span class="dim">点餐小程序无公开接口，选择「本地快照 + 每周联网核对」，页面明确提示数据时效。</span></li>
+  <li><b>不接品牌方 API。</b><span class="dim">点餐小程序无公开接口，选择「公开来源核对 + 每周联网复核」，页面明确标注来源与时效。</span></li>
   <li><b>规则打分，不上模型。</b><span class="dim">{mt['skus']} 个 SKU 的推荐排序用可解释的规则加权即可，每条推荐都能给出归因文案；引入排序模型对这个规模是负收益。</span></li>
   <li><b>真交互验证，不只看截图。</b><span class="dim">装不上 puppeteer 就用 Node 22 全局 WebSocket 直连 CDP 零依赖驱动系统 Chrome：点心情 → 圈品牌 → 断言推荐结果。</span></li>
 </ul></section>
@@ -224,7 +224,7 @@ def milktea_page(mt: dict, img: str) -> str:
 
 <div class="ft">
   <div class="row"><span><b>在线体验</b>　jw319.github.io/my-tools/milktea/</span><span><b>源码</b>　github.com/jw319/my-tools</span></div>
-  <div class="foot-note">菜单为本地快照 + 每周自动核对，个别门店实际在售/价格可能滞后；页面已注明，不构成任何消费建议。</div>
+  <div class="foot-note">菜单品名来自公开来源（品牌官网/官方社媒/公开报道），每周自动复核；个别门店实际在售与价格可能滞后，不构成任何消费建议。</div>
 </div>
 </div>"""
 

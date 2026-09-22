@@ -9,7 +9,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="杯里挑一">
-<meta name="description" content="杯里挑一：按心情、口味偏好、品牌范围智能推荐，从 25 家品牌 402 款里替你挑中今天这一杯，菜单每周更新。">
+<meta name="description" content="杯里挑一：按心情、口味偏好、品牌范围智能推荐，从 25 家品牌 432 款里替你挑中今天这一杯，菜单每周更新。">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%8B%3C/text%3E%3C/svg%3E">
 <style>
 :root{
@@ -361,7 +361,7 @@ input,select{font-family:inherit}
   <header class="outside">
 <div class="logo"><div class="logo-badge">🧋</div><h1>杯里挑一</h1></div>
 <p>看心情 · 按口味 · 圈定品牌 —— 百里挑一，不如杯里挑一</p>
-    <p class="hint">菜单数据每周一自动核对更新 · 25 家品牌 402 款饮品</p>
+    <p class="hint">菜单数据每周一自动核对更新 · 25 家品牌 432 款饮品</p>
   </header>
 
   <div class="phone" id="phone">
@@ -1152,7 +1152,7 @@ function renderBrandList(host){
     + '<button class="btn ghost sm" id="checkUpdate">检查更新</button>'
     + '</div>';
 
-  html += '<p class="note">菜单为基于公开信息的本地快照（约 ' + totalSku() + ' 款），每周一自动核对更新；可能滞后于门店实际在售，仅供选择参考。</p>';
+  html += '<p class="note">菜单为公开信息核对快照（约 ' + totalSku() + ' 款）：品名来自品牌官网/官方社媒与公开报道，2026-09-22 逐家核对；价格含促销口径差异，非门店实时数据，仅供选择参考。</p>';
 
   host.innerHTML = html;
 }
