@@ -1,0 +1,1515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>奶茶工作台 · 今天喝什么</title>
+<meta name="theme-color" content="#FBF7F2">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="奶茶工作台">
+<meta name="description" content="智能奶茶工作台：按心情、口味偏好、品牌范围智能推荐，18 家品牌菜单每周更新。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%8B%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --brand:#B87B4B; --brand-d:#9A6238; --brand-l:#D8A87E;
+  --cream:#FBF7F2; --card:#FFFFFF; --border:#EFE7DE; --line:#F3ECE4;
+  --tx:#2B2320; --tx2:#7A6B60; --tx3:#A99A8E;
+  --green:#3E9C6B; --amber:#C9873A; --new:#E0704A;
+  --shadow:0 1px 2px rgba(80,55,30,.05),0 6px 20px rgba(80,55,30,.06);
+  --shadow-l:0 12px 40px rgba(80,55,30,.14);
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:
+    radial-gradient(1100px 620px at 12% -6%, #F7E9DA 0%, rgba(247,233,218,0) 60%),
+    radial-gradient(900px 560px at 96% 4%, #F0E4D6 0%, rgba(240,228,214,0) 58%),
+    linear-gradient(180deg,#FBF7F2 0%,#F6EFE7 100%);
+  color:var(--tx);font-size:15px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select{font-family:inherit}
+
+/* ================= stage / phone shell ================= */
+.stage{
+  min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:18px;padding:28px 16px;
+}
+.outside{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;user-select:none}
+.outside .logo{display:flex;align-items:center;gap:11px}
+.outside .logo-badge{
+  width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:25px;
+  background:linear-gradient(140deg,#E6C39B,#B87B4B);box-shadow:0 6px 18px rgba(184,123,75,.32);
+}
+.outside h1{font-size:23px;font-weight:750;letter-spacing:-.4px}
+.outside p{font-size:13px;color:var(--tx2)}
+.outside .hint{font-size:12px;color:var(--tx3);margin-top:2px}
+
+.phone{
+  position:relative;width:390px;height:min(844px,calc(100dvh - 210px));
+  background:var(--cream);border-radius:46px;border:1px solid #EADFD2;
+  box-shadow:var(--shadow-l), 0 0 0 11px #FCFAF7, 0 0 0 13px #E9DFD3;
+  display:flex;flex-direction:column;overflow:hidden;
+}
+.phone::before{
+  content:'';position:absolute;top:11px;left:50%;transform:translateX(-50%);
+  width:118px;height:24px;border-radius:14px;background:#EDE3D6;z-index:40;
+}
+
+/* ================= app bar ================= */
+.appbar{
+  flex:0 0 auto;padding:34px 18px 12px;display:flex;align-items:center;justify-content:space-between;gap:10px;
+  background:linear-gradient(180deg,#FFFDFB,#FBF7F2);border-bottom:1px solid var(--line);
+}
+.appbar .ah-l{display:flex;align-items:center;gap:10px;min-width:0}
+.appbar .ah-logo{
+  width:34px;height:34px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:18px;
+  background:linear-gradient(140deg,#E6C39B,#B87B4B);box-shadow:0 4px 12px rgba(184,123,75,.3);flex:0 0 auto;
+}
+.appbar .ah-t{font-size:17px;font-weight:750;letter-spacing:-.3px;white-space:nowrap}
+.appbar .ah-s{font-size:11px;color:var(--tx3);margin-top:-2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vbadge{
+  font-size:11px;font-weight:650;color:var(--brand-d);background:#F6EBDF;border:1px solid #EEDCC8;
+  padding:4px 9px;border-radius:20px;white-space:nowrap;font-variant-numeric:tabular-nums;
+}
+
+/* ================= body: sidebar + main ================= */
+.body{flex:1 1 auto;display:flex;min-height:0}
+.sidebar{
+  flex:0 0 86px;display:flex;flex-direction:column;min-height:0;
+  background:linear-gradient(180deg,#F8F1E9,#F5EDE3);border-right:1px solid var(--line);
+}
+.sb-head{
+  flex:0 0 auto;padding:10px 0 6px;text-align:center;font-size:20px;user-select:none;
+  border-bottom:1px dashed var(--line);
+}
+.sb-scroll{flex:1 1 auto;overflow-y:auto;overflow-x:hidden;padding:6px 6px 8px;display:flex;flex-direction:column;gap:3px}
+.sb-scroll::-webkit-scrollbar{width:0}
+.sb-item{
+  display:flex;flex-direction:column;align-items:center;gap:4px;padding:7px 2px 6px;
+  border-radius:12px;border:1.5px solid transparent;transition:all .16s ease;position:relative;
+}
+.sb-item:active{transform:scale(.95)}
+.si-logo{
+  width:30px;height:30px;border-radius:9px;color:#fff;font-size:10.5px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;letter-spacing:-.3px;flex:0 0 auto;
+}
+.si-n{font-size:10.5px;font-weight:600;color:var(--tx2);line-height:1.25;text-align:center}
+.sb-item.on{background:#FBF1E6;border-color:var(--brand)}
+.sb-item.on .si-n{color:var(--brand-d)}
+.sb-item.on .si-logo{box-shadow:0 0 0 2px #FBF1E6,0 0 0 3.5px var(--brand)}
+.sb-item.all .si-logo{background:linear-gradient(140deg,#E6C39B,#B87B4B);font-size:15px}
+.sb-item .si-dot{position:absolute;top:6px;right:8px;width:6px;height:6px;border-radius:50%;background:var(--new);opacity:0;transition:opacity .16s}
+.sb-item .si-dot.on{opacity:1}
+.sb-nav{
+  flex:0 0 auto;display:flex;flex-direction:column;gap:2px;padding:6px;
+  border-top:1px solid var(--line);background:#FFFDFB;
+}
+.sb-nav button{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  min-height:48px;border-radius:11px;color:var(--tx3);font-size:10px;font-weight:650;transition:all .18s ease;
+}
+.sb-nav button .ni{font-size:17px;line-height:1}
+.sb-nav button.on{color:var(--brand-d);background:#F6EBDF}
+.sb-nav button:active{transform:scale(.95)}
+
+.screen{flex:1 1 auto;overflow-y:auto;overflow-x:hidden;padding:16px 14px 22px;scroll-behavior:smooth;min-width:0}
+.screen::-webkit-scrollbar{width:6px}
+.screen::-webkit-scrollbar-thumb{background:#E3D7C9;border-radius:6px}
+.view{display:none;animation:fade .26s ease}
+.view.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ================= generic ================= */
+.sec-t{font-size:13px;font-weight:700;color:var(--tx2);margin:2px 2px 10px;display:flex;align-items:center;gap:7px}
+.sec-t::before{content:'';width:3px;height:13px;border-radius:2px;background:var(--brand)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}
+.muted{color:var(--tx2)}
+.pill{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;padding:2px 8px;border-radius:20px;background:#F4ECE2;color:var(--tx2)}
+.pill.new{background:#FDEBE2;color:var(--new)}
+.pill.custom{background:#E7F1FF;color:#3B6FB0}
+.pill.tea{background:#EEF4EC;color:#4C7A4E}
+.pill.top{background:#FBF0E2;color:#A9762F}
+.pill.mood{background:#F0EAF6;color:#7B5EA7}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:0 18px;
+  border-radius:14px;font-size:15px;font-weight:650;background:var(--brand);color:#fff;
+  box-shadow:0 6px 16px rgba(184,123,75,.28);transition:all .18s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:#fff;color:var(--brand-d);border:1px solid #E7D8C7;box-shadow:none}
+.btn.soft{background:#F6EBDF;color:var(--brand-d);box-shadow:none}
+.btn.block{width:100%}
+.btn[disabled]{opacity:.45;box-shadow:none;pointer-events:none}
+.btn.sm{min-height:38px;font-size:13px;padding:0 12px;border-radius:11px;white-space:nowrap}
+
+/* ================= toast ================= */
+.toast{
+  position:absolute;left:50%;bottom:26px;transform:translate(-50%,14px);
+  background:rgba(43,35,32,.93);color:#fff;font-size:13px;font-weight:600;
+  padding:10px 18px;border-radius:22px;box-shadow:0 10px 26px rgba(30,20,12,.3);
+  opacity:0;pointer-events:none;transition:all .28s ease;z-index:80;max-width:82%;text-align:center;
+}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* ================= today pick ================= */
+.today{
+  position:relative;overflow:hidden;border-radius:var(--radius);padding:15px 16px;margin-bottom:16px;
+  background:linear-gradient(135deg,#FFF6EC 0%,#FBEFE1 100%);border:1px solid #F0DCC4;
+}
+.today::after{content:'🧋';position:absolute;right:-6px;bottom:-14px;font-size:76px;opacity:.1}
+.today .tp-h{font-size:11.5px;font-weight:700;color:var(--brand-d);letter-spacing:.4px;margin-bottom:6px;display:flex;gap:6px;align-items:center}
+.today .tp-n{font-size:19px;font-weight:750;letter-spacing:-.3px}
+.today .tp-m{font-size:12.5px;color:var(--tx2);margin-top:3px;position:relative}
+
+/* ================= steps ================= */
+.step{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 15px;margin-bottom:13px}
+.step-h{display:flex;align-items:center;gap:9px;margin-bottom:11px}
+.step-no{width:23px;height:23px;border-radius:50%;background:var(--brand);color:#fff;font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.step-t{font-size:14.5px;font-weight:700}
+.step-hint{font-size:11.5px;color:var(--tx3);margin-left:auto}
+
+/* category grid */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.cat{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:66px;
+  border:1.5px solid var(--border);border-radius:14px;background:#FFFDFB;font-size:12.5px;font-weight:650;color:var(--tx2);transition:all .18s ease;
+}
+.cat .ce{font-size:21px}
+.cat.on{border-color:var(--brand);background:#FBF1E6;color:var(--brand-d);box-shadow:0 4px 12px rgba(184,123,75,.14)}
+.cat:active{transform:scale(.97)}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  min-height:38px;padding:8px 14px;border-radius:20px;border:1.5px solid var(--border);background:#FFFDFB;
+  font-size:13px;font-weight:600;color:var(--tx2);transition:all .16s ease;display:inline-flex;align-items:center;gap:5px;
+}
+.chip .ce{font-size:15px;line-height:1}
+.chip.on{background:var(--brand);border-color:var(--brand);color:#fff;box-shadow:0 4px 12px rgba(184,123,75,.24)}
+.chip:active{transform:scale(.96)}
+
+/* brand scope strip（主页面中的品牌多选条） */
+.brand-strip{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 8px;width:100%;scrollbar-width:none}
+.brand-strip::-webkit-scrollbar{display:none}
+.bs-item{
+  flex:0 0 auto;min-height:38px;padding:8px 13px;border-radius:20px;border:1.5px solid var(--border);background:#FFFDFB;
+  font-size:13px;font-weight:650;color:var(--tx2);white-space:nowrap;transition:all .16s ease;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.bs-item .bd{width:8px;height:8px;border-radius:50%;flex:0 0 auto}
+.bs-item.on{background:var(--brand);border-color:var(--brand);color:#fff;box-shadow:0 4px 12px rgba(184,123,75,.24)}
+.bs-item:active{transform:scale(.96)}
+
+/* ================= result cards ================= */
+.res{margin-top:6px}
+.rc{
+  display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--border);
+  border-radius:var(--radius);box-shadow:var(--shadow);padding:13px 14px;margin-bottom:11px;animation:fade .3s ease;
+}
+.rc-badge{
+  width:42px;height:42px;border-radius:12px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:15px;font-weight:800;letter-spacing:-.5px;
+}
+.rc-b{flex:1 1 auto;min-width:0}
+.rc-top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.rc-name{font-size:15.5px;font-weight:750;letter-spacing:-.2px}
+.rc-brand{font-size:11.5px;color:var(--tx3)}
+.rc-price{margin-left:auto;font-size:15px;font-weight:800;color:var(--brand-d);font-variant-numeric:tabular-nums;white-space:nowrap}
+.rc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.rc-why{font-size:12.5px;color:var(--tx2);margin-top:8px;padding-top:8px;border-top:1px dashed var(--line);line-height:1.5}
+.rc-foot{display:flex;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap}
+.score{position:relative;display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--brand-d);white-space:nowrap}
+.score .bar{width:78px;height:7px;border-radius:5px;background:#F0E6DA;overflow:hidden}
+.score .bar i{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,#E2B682,var(--brand));transition:width .6s cubic-bezier(.2,.8,.2,1)}
+
+/* ================= wheel ================= */
+.seg{display:flex;gap:4px;background:#F3EAE0;border:1px solid var(--border);border-radius:14px;padding:4px;margin-bottom:15px}
+.seg button{flex:1;min-height:40px;border-radius:11px;font-size:13px;font-weight:650;color:var(--tx2);transition:all .18s ease}
+.seg button.on{background:#fff;color:var(--brand-d);box-shadow:0 2px 8px rgba(80,55,30,.1)}
+.wheel-wrap{display:flex;flex-direction:column;align-items:center;gap:14px}
+.wheel-stage{position:relative;width:272px;height:272px;max-width:86vw}
+.wheel-stage canvas{width:100%;height:100%;display:block;border-radius:50%;filter:drop-shadow(0 10px 26px rgba(90,60,35,.2))}
+.wheel-ptr{
+  position:absolute;top:-4px;left:50%;transform:translateX(-50%);z-index:5;
+  width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:22px solid var(--brand-d);
+  filter:drop-shadow(0 3px 5px rgba(80,55,30,.35));
+}
+.wheel-hub{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;
+  background:linear-gradient(140deg,#FFFDFB,#F3E7D9);border:2px solid #EADCC9;display:flex;align-items:center;justify-content:center;
+  font-size:26px;box-shadow:0 4px 12px rgba(80,55,30,.16);pointer-events:none;
+}
+.wheel-actions{display:flex;gap:10px;width:100%}
+.wheel-actions .btn{flex:1}
+
+/* ================= brand menu ================= */
+.grid-brand{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.bc{
+  position:relative;overflow:hidden;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:13px 13px 12px;text-align:left;transition:all .18s ease;
+}
+.bc:active{transform:scale(.975)}
+.bc-emoji{position:absolute;right:-8px;bottom:-12px;font-size:56px;opacity:.06}
+.bc-logo{
+  width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;color:#fff;
+  font-size:14px;font-weight:800;letter-spacing:-.5px;margin-bottom:9px;box-shadow:0 3px 9px rgba(0,0,0,.14);
+}
+.bc-name{font-size:15px;font-weight:750;letter-spacing:-.2px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.bc-en{font-size:10.5px;color:var(--tx3);letter-spacing:.6px;margin-top:1px;text-transform:uppercase}
+.bc-meta{display:flex;gap:6px;align-items:center;margin-top:9px;flex-wrap:wrap}
+.bc-new{font-size:10.5px;font-weight:700;color:#fff;background:var(--new);border-radius:20px;padding:1px 7px}
+
+.detail-h{display:flex;align-items:flex-start;gap:12px;padding:15px;border-radius:var(--radius);margin-bottom:14px;background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow)}
+.detail-logo{width:50px;height:50px;border-radius:14px;flex:0 0 auto;display:flex;align-items:center;justify-content:center;color:#fff;font-size:17px;font-weight:800;box-shadow:0 4px 12px rgba(0,0,0,.16)}
+.detail-h .dn{font-size:19px;font-weight:750;letter-spacing:-.3px}
+.detail-h .dd{font-size:12.5px;color:var(--tx2);margin-top:4px;line-height:1.5}
+.back{display:inline-flex;align-items:center;gap:5px;min-height:40px;padding:0 12px 0 8px;border-radius:12px;font-size:14px;font-weight:650;color:var(--brand-d);background:#F6EBDF;margin-bottom:13px}
+.back:active{transform:scale(.96)}
+
+.grp{border:1px solid var(--border);border-radius:14px;background:var(--card);box-shadow:var(--shadow);margin-bottom:11px;overflow:hidden}
+.grp-h{display:flex;align-items:center;gap:9px;min-height:48px;padding:10px 14px;font-size:14px;font-weight:700;background:#FFFDFB;transition:background .16s}
+.grp-h:active{background:#F8F2EA}
+.grp-h .cnt{margin-left:auto;font-size:11.5px;font-weight:650;color:var(--tx3);background:#F3EAE0;border-radius:20px;padding:1px 9px}
+.grp-h .chev{font-size:11px;color:var(--tx3);transition:transform .22s ease}
+.grp.open .grp-h .chev{transform:rotate(180deg)}
+.grp-b{display:none;border-top:1px solid var(--line)}
+.grp.open .grp-b{display:block}
+.sku{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;border-bottom:1px solid var(--line)}
+.sku:last-child{border-bottom:none}
+.sku-b{flex:1 1 auto;min-width:0}
+.sku-n{font-size:14px;font-weight:650;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.sku-t{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.sku-p{font-size:14px;font-weight:800;color:var(--brand-d);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* add form */
+.add{margin-top:6px}
+.add-form{display:none;padding:14px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);margin-top:11px}
+.add-form.on{display:block;animation:fade .24s ease}
+.field{margin-bottom:11px}
+.field label{display:block;font-size:12.5px;font-weight:650;color:var(--tx2);margin-bottom:5px}
+.field input,.field select{
+  width:100%;min-height:44px;padding:0 12px;border-radius:12px;border:1.5px solid var(--border);background:#FFFDFB;
+  font-size:14.5px;color:var(--tx);outline:none;transition:border-color .16s;
+}
+.field input:focus,.field select:focus{border-color:var(--brand)}
+.field.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.field.row>div{min-width:0}
+.form-actions{display:flex;gap:10px}
+.form-actions .btn{flex:1}
+
+/* version bar */
+.verbar{margin-top:16px;padding:14px;border-radius:var(--radius);background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.verbar .vb-t{font-size:12.5px;color:var(--tx2);font-weight:600}
+.verbar .vb-t b{color:var(--tx);font-variant-numeric:tabular-nums}
+.verbar .btn{margin-left:auto}
+.note{font-size:11.5px;color:var(--tx3);line-height:1.6;margin-top:12px;padding:0 2px;text-align:center}
+
+/* result popup */
+.pop-mask{position:absolute;inset:0;background:rgba(43,35,32,.42);backdrop-filter:blur(3px);z-index:60;display:none;align-items:center;justify-content:center;padding:22px}
+.pop-mask.on{display:flex;animation:fade .2s ease}
+.pop{
+  width:100%;max-width:330px;background:var(--card);border-radius:22px;box-shadow:var(--shadow-l);padding:22px 20px 18px;
+  text-align:center;position:relative;overflow:hidden;animation:pop .34s cubic-bezier(.2,1.1,.4,1);
+}
+@keyframes pop{from{opacity:0;transform:scale(.88) translateY(12px)}to{opacity:1;transform:none}}
+.pop::before{content:'';position:absolute;left:-30%;top:-40%;width:160%;height:120%;background:radial-gradient(closest-side,rgba(216,168,126,.22),transparent 70%);pointer-events:none}
+.pop-badge{width:58px;height:58px;border-radius:17px;margin:0 auto 13px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;font-weight:800;box-shadow:0 6px 18px rgba(0,0,0,.18);position:relative}
+.pop-tag{font-size:11.5px;font-weight:700;color:var(--brand-d);letter-spacing:.6px;position:relative}
+.pop-name{font-size:23px;font-weight:800;letter-spacing:-.5px;margin:4px 0 4px;position:relative}
+.pop-brand{font-size:13px;color:var(--tx2);position:relative}
+.pop-price{font-size:26px;font-weight:800;color:var(--brand-d);margin:12px 0 4px;position:relative;font-variant-numeric:tabular-nums}
+.pop-tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:10px;position:relative}
+.pop-actions{display:flex;flex-direction:column;gap:9px;margin-top:18px;position:relative}
+.pop-actions .row{display:flex;gap:9px}
+.pop-actions .row .btn{flex:1}
+
+.empty{text-align:center;padding:34px 18px;color:var(--tx2)}
+.empty .ee{font-size:44px;margin-bottom:10px}
+.empty .et{font-size:15px;font-weight:700;color:var(--tx)}
+.empty .ed{font-size:13px;margin-top:7px;line-height:1.6}
+.empty .btn{margin-top:16px}
+
+/* ================= mobile ================= */
+@media (max-width:560px){
+  body{background:var(--cream)}
+  .stage{padding:0;gap:0;justify-content:flex-start}
+  .outside{display:none}
+  .phone{width:100%;height:100dvh;border-radius:0;border:none;box-shadow:none;background:var(--cream)}
+  .phone::before{display:none}
+  .appbar{padding-top:calc(14px + env(safe-area-inset-top))}
+  .sidebar{flex-basis:76px}
+}
+@media (max-width:379px){
+  .sidebar{flex-basis:70px}
+  .si-n{font-size:10px}
+}
+@media (max-height:820px) and (min-width:561px){
+  .outside .hint{display:none}
+}
+</style>
+</head>
+<body>
+<div class="stage">
+  <header class="outside">
+    <div class="logo"><div class="logo-badge">🧋</div><h1>奶茶工作台</h1></div>
+    <p>看心情 · 按口味 · 圈定品牌 —— 智能推荐今天喝什么</p>
+    <p class="hint">菜单数据每周一自动核对更新 · 18 家品牌全覆盖</p>
+  </header>
+
+  <div class="phone" id="phone">
+    <!-- app bar -->
+    <div class="appbar">
+      <div class="ah-l">
+        <div class="ah-logo">🧋</div>
+        <div>
+          <div class="ah-t">奶茶工作台</div>
+          <div class="ah-s" id="appSub">全部品牌 · 等你选个心情</div>
+        </div>
+      </div>
+      <div class="vbadge" id="appVersion">v1.0.0</div>
+    </div>
+
+    <!-- sidebar + main -->
+    <div class="body">
+      <aside class="sidebar" id="sidebar">
+        <div class="sb-head">🧋</div>
+        <div class="sb-scroll" id="sbList"></div>
+        <nav class="sb-nav" id="sbNav">
+          <button data-tab="rec"><span class="ni">🎯</span>推荐</button>
+          <button data-tab="wheel"><span class="ni">🎡</span>转盘</button>
+          <button data-tab="menu"><span class="ni">📋</span>菜单</button>
+        </nav>
+      </aside>
+
+      <main class="screen" id="screen">
+        <section class="view active" id="view-rec"></section>
+        <section class="view" id="view-wheel"></section>
+        <section class="view" id="view-menu"></section>
+      </main>
+    </div>
+
+    <!-- wheel result popup -->
+    <div class="pop-mask" id="popMask"></div>
+    <!-- toast -->
+    <div class="toast" id="toast"></div>
+  </div>
+</div>
+
+<!-- 菜单数据独立成文件：每周更新只改这里 -->
+<script src="./menu-data.js"></script>
+<script>
+(function(){
+'use strict';
+
+/* =========================================================================
+ * 1. 运行期数据库（数据本体在 menu-data.js，可被 update.json 合并覆盖）
+ * ======================================================================= */
+var db = {
+  version: DB_VERSION,
+  updated: DB_UPDATED,
+  brands: BRANDS
+};
+
+/* ---------- localStorage 安全封装（隐私模式不崩溃） ---------- */
+var LS = {
+  ok: (function(){ try{ var k='__mt_t'; localStorage.setItem(k,'1'); localStorage.removeItem(k); return true; }catch(e){ return false; } })(),
+  get: function(key, def){
+    if(!this.ok) return def;
+    try{ var v = localStorage.getItem(key); return v==null ? def : JSON.parse(v); }catch(e){ return def; }
+  },
+  set: function(key, val){
+    if(!this.ok) return false;
+    try{ localStorage.setItem(key, JSON.stringify(val)); return true; }catch(e){ return false; }
+  }
+};
+
+var KEY_CUSTOM = 'mt_custom_skus';
+var KEY_TODAY  = 'mt_today_pick';
+
+/* ---------- 自定义新品存储 ---------- */
+var custom = LS.get(KEY_CUSTOM, {});
+function getCustom(brandId){ return Array.isArray(custom[brandId]) ? custom[brandId] : []; }
+function saveCustom(){
+  if(!LS.set(KEY_CUSTOM, custom)) toast('当前环境无法保存，本次修改仅在本次会话有效');
+}
+function addCustomSku(brandId, sku){
+  if(!custom[brandId]) custom[brandId] = [];
+  custom[brandId].push(sku);
+  saveCustom();
+}
+
+/* =========================================================================
+ * 2. 心情库 + 品牌画像（推荐引擎的“世界观”）
+ * ======================================================================= */
+var MOODS = [
+  { id:'happy',   emoji:'😄', name:'开心',    cats:['果茶'],            tags:['清爽','有果肉'],                 brandTags:['果茶强','高端'],       why:'开心就要清爽果味庆祝一下' },
+  { id:'tired',   emoji:'😪', name:'疲惫',    cats:['咖啡'],            tags:['浓醇'],                           brandTags:['咖啡强'],              why:'累了得靠咖啡因和浓醇口感回血' },
+  { id:'down',    emoji:'😢', name:'低落',    cats:['奶茶'],            tags:['奶盖','浓醇'],                    brandTags:['经典'],                why:'低落的时候需要一杯温柔浓醇的安慰' },
+  { id:'angry',   emoji:'😤', name:'烦躁',    cats:['果茶','纯茶'],     tags:['清爽','微咸','无糖'],             brandTags:['果茶强'],              why:'烦躁降火，柠檬系清爽路线最对路' },
+  { id:'date',    emoji:'🥰', name:'约会',    cats:['果茶','奶茶'],     tags:['有果肉','奶盖','奶油顶'],         brandTags:['高端','国风'],          why:'约会适合有颜值、有话题的款' },
+  { id:'focus',   emoji:'📚', name:'专注',    cats:['咖啡','纯茶'],     tags:['无糖'],                           brandTags:['咖啡强'],              why:'专注要低干扰，咖啡因 + 无糖最稳' },
+  { id:'latenight',emoji:'🌙',name:'熬夜',    cats:['咖啡'],            tags:['浓醇'],                           brandTags:['咖啡强'],              why:'熬夜党直接上咖啡因，别犹豫' },
+  { id:'greasy',  emoji:'🥵', name:'解腻',    cats:['纯茶','果茶'],     tags:['清爽','无糖','微咸'],             brandTags:['轻负担强'],            why:'吃腻了来杯清口解腻的' },
+  { id:'budget',  emoji:'💰', name:'省钱',    cats:[],                  tags:[],                                 brandTags:['平价'],                why:'省钱模式，好喝不心疼' },
+  { id:'light',   emoji:'🌱', name:'轻负担',  cats:['纯茶','轻乳茶'],   tags:['轻负担','无糖'],                  brandTags:['轻负担强'],            why:'怕胖怕腻走轻负担路线' }
+];
+
+/* 品牌画像：擅长什么（用于把心情“翻译”成品牌倾向） */
+var BRAND_TAGS = {
+  heytea:      ['果茶强','高端'],
+  nayuki:      ['果茶强','高端'],
+  chagee:      ['轻负担强','国风'],
+  mixue:       ['平价'],
+  chabaidao:   ['平价','料多强'],
+  guming:      ['平价','果茶强'],
+  aunty:       ['平价','料多强'],
+  molli:       ['轻负担强'],
+  shuyi:       ['平价','料多强'],
+  yihetang:    ['平价'],
+  luckin:      ['咖啡强','平价'],
+  cotti:       ['咖啡强','平价'],
+  lelecha:     ['高端','果茶强'],
+  seven:       ['果茶强'],
+  coco:        ['经典','平价'],
+  yidiandian:  ['经典','平价'],
+  chayan:      ['国风','高端'],
+  tianlala:    ['平价']
+};
+function brandTagList(brand){ return BRAND_TAGS[brand.id] || []; }
+
+/* =========================================================================
+ * 3. 工具
+ * ======================================================================= */
+function esc(s){
+  return String(s==null?'':s).replace(/[&<>"']/g, function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+  });
+}
+function $(sel, root){ return (root||document).querySelector(sel); }
+function $all(sel, root){ return Array.prototype.slice.call((root||document).querySelectorAll(sel)); }
+function todayStr(){
+  var d = new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+function initials(brand){ return brand.en ? brand.en.slice(0,2).toUpperCase() : brand.name.slice(0,2); }
+function tint(hex, alpha){
+  var h = hex.replace('#','');
+  if(h.length===3){ h = h[0]+h[0]+h[1]+h[1]+h[2]+h[2]; }
+  var r = parseInt(h.slice(0,2),16), g = parseInt(h.slice(2,4),16), b = parseInt(h.slice(4,6),16);
+  return 'rgba('+r+','+g+','+b+','+alpha+')';
+}
+function toast(msg){
+  var t = $('#toast');
+  t.textContent = msg;
+  t.classList.add('on');
+  clearTimeout(toast._t);
+  toast._t = setTimeout(function(){ t.classList.remove('on'); }, 2000);
+}
+function getBrand(id){
+  for(var i=0;i<db.brands.length;i++){ if(db.brands[i].id===id) return db.brands[i]; }
+  return null;
+}
+function brandSkus(brand){
+  var list = brand.menu.slice();
+  var cs = getCustom(brand.id);
+  for(var i=0;i<cs.length;i++){ list.push(cs[i]); }
+  return list;
+}
+
+/* =========================================================================
+ * 4. 状态层
+ * ======================================================================= */
+var state = {
+  tab: 'rec',
+  brandView: { mode:'list', id:null },     // 菜单页：'list' | 'detail'
+  wheelMode: 'brand',                       // 'brand' | 'all' | 'pref'
+  wheelBrandId: db.brands[0].id,
+  wheelSegs: [],
+  lastWheelIdx: -1,
+  spinning: false,
+  recBrands: [],                            // 推荐品牌范围：[] = 全部
+  rec: { moods:[], cat:null, teas:[], conds:[] },
+  recResults: []
+};
+
+/* =========================================================================
+ * 5. 侧边栏（品牌导航 + 范围多选）
+ * ======================================================================= */
+function renderSidebar(){
+  var host = $('#sbList');
+  var html = '';
+
+  html += '<button class="sb-item all' + (state.recBrands.length===0?' on':'') + '" data-sb="all">'
+    + '<span class="si-logo">🧋</span><span class="si-n">全部</span></button>';
+
+  for(var i=0;i<db.brands.length;i++){
+    var b = db.brands[i];
+    var sel = state.recBrands.indexOf(b.id) > -1;
+    var viewing = state.tab==='menu' && state.brandView.mode==='detail' && state.brandView.id===b.id;
+    html += '<button class="sb-item' + (sel||viewing?' on':'') + '" data-sb="' + esc(b.id) + '">'
+      + '<span class="si-dot' + (sel?' on':'') + '"></span>'
+      + '<span class="si-logo" style="background:' + esc(b.color) + '">' + esc(initials(b)) + '</span>'
+      + '<span class="si-n">' + esc(b.name) + '</span></button>';
+  }
+
+  host.innerHTML = html;
+}
+
+function updateAppSub(){
+  var sub = $('#appSub');
+  if(!sub) return;
+  var scope = state.recBrands.length
+    ? '已圈定 ' + state.recBrands.length + ' 家品牌'
+    : '全部 ' + db.brands.length + ' 家品牌';
+  var mood = state.rec.moods.length ? ' · ' + state.rec.moods.length + ' 个心情' : '';
+  sub.textContent = scope + mood;
+}
+
+/* =========================================================================
+ * 6. 渲染层 —— 智能推荐（心情 + 品牌范围 + 口味偏好）
+ * ======================================================================= */
+function renderRec(){
+  var host = $('#view-rec');
+  var html = '';
+
+  /* 今日之选 */
+  var pick = LS.get(KEY_TODAY, null);
+  if(pick && pick.date === todayStr()){
+    html += '<div class="today">'
+      + '<div class="tp-h">🎉 今日之选 · ' + esc(pick.date) + '</div>'
+      + '<div class="tp-n">' + esc(pick.name) + '</div>'
+      + '<div class="tp-m">' + esc(pick.brandName) + ' · ¥' + esc(pick.price)
+      + (pick.tea && pick.tea.length ? ' · ' + esc(pick.tea.join('/')) : '') + '</div>'
+      + '</div>';
+  }
+
+  /* Step 1 心情 */
+  html += '<div class="step"><div class="step-h"><span class="step-no">1</span>'
+    + '<span class="step-t">现在什么心情</span><span class="step-hint">可多选</span></div>'
+    + '<div class="chips">';
+  for(var m=0;m<MOODS.length;m++){
+    var mo = MOODS[m];
+    html += '<button class="chip' + (state.rec.moods.indexOf(mo.id)>-1?' on':'') + '" data-mood="' + esc(mo.id) + '">'
+      + '<span class="ce">' + mo.emoji + '</span>' + esc(mo.name) + '</button>';
+  }
+  html += '</div></div>';
+
+  /* Step 2 品牌范围（与左侧边栏联动，可单选可多选） */
+  html += '<div class="step"><div class="step-h"><span class="step-no">2</span>'
+    + '<span class="step-t">圈几个品牌</span><span class="step-hint">与左侧栏同步</span></div>'
+    + '<div class="brand-strip" id="scopeStrip">';
+  html += '<button class="bs-item' + (state.recBrands.length===0?' on':'') + '" data-scope="all">全部</button>';
+  for(var b=0;b<db.brands.length;b++){
+    var br = db.brands[b];
+    html += '<button class="bs-item' + (state.recBrands.indexOf(br.id)>-1?' on':'') + '" data-scope="' + esc(br.id) + '">'
+      + '<span class="bd" style="background:' + esc(br.color) + '"></span>' + esc(br.name) + '</button>';
+  }
+  html += '</div></div>';
+
+  /* Step 3 大类 */
+  html += '<div class="step"><div class="step-h"><span class="step-no">3</span>'
+    + '<span class="step-t">想喝哪个大类</span><span class="step-hint">可不选</span></div>'
+    + '<div class="cat-grid">';
+  for(var i=0;i<CATS.length;i++){
+    var c = CATS[i];
+    html += '<button class="cat' + (state.rec.cat===c?' on':'') + '" data-cat="' + esc(c) + '">'
+      + '<span class="ce">' + esc(CAT_ICON[c]) + '</span>' + esc(c) + '</button>';
+  }
+  html += '</div></div>';
+
+  /* Step 4 茶底 */
+  html += '<div class="step"><div class="step-h"><span class="step-no">4</span>'
+    + '<span class="step-t">喜欢的茶底</span><span class="step-hint">可多选</span></div>'
+    + '<div class="chips">';
+  for(var j=0;j<TEAS.length;j++){
+    var t = TEAS[j];
+    html += '<button class="chip' + (state.rec.teas.indexOf(t)>-1?' on':'') + '" data-tea="' + esc(t) + '">' + esc(t) + '</button>';
+  }
+  html += '</div></div>';
+
+  /* Step 5 补充条件 */
+  html += '<div class="step"><div class="step-h"><span class="step-no">5</span>'
+    + '<span class="step-t">再补两句</span><span class="step-hint">可选</span></div>'
+    + '<div class="chips">';
+  for(var k=0;k<CONDS.length;k++){
+    var cd = CONDS[k];
+    html += '<button class="chip' + (state.rec.conds.indexOf(cd)>-1?' on':'') + '" data-cond="' + esc(cd) + '">' + esc(cd) + '</button>';
+  }
+  html += '</div></div>';
+
+  html += '<button class="btn block" id="recGo">开始推荐 ✨</button>';
+
+  /* 结果区 */
+  html += '<div class="res" id="recRes"></div>';
+
+  html += '<p class="note">推荐基于本地菜单快照（每周一核对更新），结果仅供参考，实际以门店为准。</p>';
+
+  host.innerHTML = html;
+  renderRecResults();
+}
+
+function renderRecResults(){
+  var box = $('#recRes');
+  if(!box) return;
+  if(!state.recResults.length){
+    box.innerHTML = '';
+    return;
+  }
+  var r = state.recResults;
+  var out = '<div class="sec-t" style="margin-top:20px">为你找到 ' + r.length + ' 杯</div>';
+  for(var i=0;i<r.length;i++){
+    var x = r[i];
+    out += '<div class="rc">'
+      + '<div class="rc-badge" style="background:' + esc(x.brand.color) + '">' + esc(initials(x.brand)) + '</div>'
+      + '<div class="rc-b">'
+      + '<div class="rc-top"><span class="rc-name">' + esc(x.item.name) + '</span>'
+      + (x.item.isNew ? '<span class="pill new">NEW</span>' : '')
+      + (x.moodHit ? '<span class="pill mood">' + esc(x.moodHit) + '</span>' : '')
+      + '<span class="rc-price">¥' + esc(x.item.price) + '</span></div>'
+      + '<div class="rc-brand">' + esc(x.brand.name) + ' · ' + esc(x.item.cat) + '</div>'
+      + '<div class="rc-tags">' + tagHtml(x.item) + '</div>'
+      + '<div class="rc-why">💡 ' + esc(x.why) + '</div>'
+      + '<div class="rc-foot">'
+      + '<span class="score">匹配度 <span class="bar"><i style="width:' + x.score + '%"></i></span> ' + x.score + '</span>'
+      + '<button class="btn soft sm" style="margin-left:auto" data-choose="' + i + '">就它了</button>'
+      + '</div></div></div>';
+  }
+  box.innerHTML = out;
+}
+
+function tagHtml(item){
+  var h = '';
+  for(var i=0;i<item.tea.length;i++){ h += '<span class="pill tea">' + esc(item.tea[i]) + '</span>'; }
+  for(var j=0;j<item.toppings.length;j++){ h += '<span class="pill top">' + esc(item.toppings[j]) + '</span>'; }
+  if(item.custom){ h += '<span class="pill custom">自定义</span>'; }
+  return h || '<span class="pill">无小料</span>';
+}
+
+/* ---------- 推荐算法：心情 + 范围 + 偏好 三路打分 ---------- */
+function condHit(item, cond){
+  switch(cond){
+    case '加小料': return item.toppings.length > 0;
+    case '无小料': return item.toppings.length === 0;
+    case '冷饮': return item.cat==='果茶' || item.cat==='纯茶' || item.cat==='咖啡';
+    case '热饮': return item.cat==='奶茶' || item.cat==='轻乳茶';
+    case '低糖': return item.cat==='纯茶' || item.cat==='轻乳茶';
+    case '价格 ≤ 15 元': return item.price <= 15;
+    case '只推荐新品': return item.isNew === true;
+    default: return false;
+  }
+}
+function hardCond(cond){ return cond==='价格 ≤ 15 元' || cond==='只推荐新品'; }
+
+function getMood(id){
+  for(var i=0;i<MOODS.length;i++){ if(MOODS[i].id===id) return MOODS[i]; }
+  return null;
+}
+
+/** 心情对单品的契合分：返回 {score, hitMoods:[mood对象]} */
+function moodScore(item, brand){
+  var total = 0;
+  var hitMoods = [];
+  var moods = state.rec.moods;
+  for(var m=0;m<moods.length;m++){
+    var mo = getMood(moods[m]);
+    if(!mo) continue;
+    var s = 0;
+    if(mo.cats.indexOf(item.cat) > -1) s += 5;
+    var bTags = brandTagList(brand);
+    for(var bt=0;bt<mo.brandTags.length;bt++){
+      if(bTags.indexOf(mo.brandTags[bt]) > -1){ s += 4; break; }
+    }
+    var tagHits = 0;
+    for(var t=0;t<mo.tags.length;t++){
+      if(item.tags.indexOf(mo.tags[t]) > -1) tagHits++;
+    }
+    s += tagHits * 5;
+    if(mo.id==='budget' && item.price <= 12) s += 6;
+    if(s > 0){ total += s; hitMoods.push(mo); }
+  }
+  return { score: Math.min(total, 36), hitMoods: hitMoods };
+}
+
+function runRecommend(){
+  var moods = state.rec.moods;
+  var cat = state.rec.cat;
+  var teas = state.rec.teas;
+  var conds = state.rec.conds;
+  var scope = state.recBrands;
+
+  if(!moods.length && !cat && !teas.length && !conds.length){
+    toast('先选个心情，或补点口味偏好～');
+    return;
+  }
+
+  var results = [];
+  for(var b=0;b<db.brands.length;b++){
+    var brand = db.brands[b];
+    /* 品牌范围：圈了就只在圈里找 */
+    if(scope.length && scope.indexOf(brand.id) < 0) continue;
+
+    var skus = brandSkus(brand);
+    for(var s=0;s<skus.length;s++){
+      var item = skus[s];
+      /* 硬门槛 1：大类（可选） */
+      if(cat && item.cat !== cat) continue;
+
+      /* 硬门槛 2：硬性条件 */
+      var blocked = false;
+      for(var h=0;h<conds.length;h++){
+        if(hardCond(conds[h]) && !condHit(item, conds[h])){ blocked = true; break; }
+      }
+      if(blocked) continue;
+
+      /* 茶底契合 */
+      var teaHits = 0;
+      for(var t=0;t<teas.length;t++){
+        if(item.tea.indexOf(teas[t]) > -1) teaHits++;
+      }
+
+      /* 软条件契合 */
+      var condHits = 0, softTotal = 0;
+      for(var c=0;c<conds.length;c++){
+        if(!hardCond(conds[c])){ softTotal++; if(condHit(item, conds[c])) condHits++; }
+      }
+
+      /* 心情契合 */
+      var ms = moodScore(item, brand);
+
+      /* 总分 */
+      var score = 48;
+      score += Math.min(24, teaHits * 12);
+      score += softTotal ? Math.round((condHits/softTotal) * 24) : 0;
+      score += ms.score;
+      score += item.isNew ? 2 : 0;
+      if(!moods.length && !teas.length && softTotal===0) score = Math.min(score, 78);  // 只圈品牌时不过分拔高
+      score = Math.max(55, Math.min(99, score));
+
+      results.push({
+        brand: brand,
+        item: item,
+        score: score,
+        moodHit: ms.hitMoods.length ? ms.hitMoods.map(function(x){ return x.emoji + x.name; }).join('·') : '',
+        why: buildWhy(item, teas, conds, teaHits, condHits, softTotal, ms.hitMoods)
+      });
+    }
+  }
+
+  /* 排序：分数降序，同分优先新品 */
+  results.sort(function(a,b){
+    if(b.score !== a.score) return b.score - a.score;
+    return (b.item.isNew?1:0) - (a.item.isNew?1:0);
+  });
+
+  /* 品牌多样性：每家品牌最多出 2 杯，凑满 5 杯 */
+  var perBrand = {}, final = [];
+  for(var r=0;r<results.length && final.length<5;r++){
+    var bid = results[r].brand.id;
+    perBrand[bid] = (perBrand[bid] || 0) + 1;
+    if(perBrand[bid] <= 2) final.push(results[r]);
+  }
+  if(final.length < 5){
+    for(var r2=0;r2<results.length && final.length<5;r2++){
+      if(final.indexOf(results[r2]) < 0) final.push(results[r2]);
+    }
+  }
+  state.recResults = final;
+  renderRecResults();
+
+  if(!final.length){
+    var box = $('#recRes');
+    box.innerHTML = '<div class="empty"><div class="ee">🥲</div><div class="et">没有找到合适的</div>'
+      + '<div class="ed">' + esc(suggestRelax()) + '</div>'
+      + '<button class="btn ghost" id="recReset" style="margin-top:16px">清空条件重选</button></div>';
+    return;
+  }
+  var anchor = $('#recRes');
+  if(anchor && anchor.scrollIntoView) anchor.scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function suggestRelax(){
+  var tips = [];
+  if(state.rec.conds.indexOf('价格 ≤ 15 元') > -1) tips.push('取消「价格 ≤ 15 元」');
+  if(state.rec.conds.indexOf('只推荐新品') > -1) tips.push('取消「只推荐新品」');
+  if(state.recBrands.length) tips.push('左侧多圈几家品牌');
+  if(state.rec.cat) tips.push('换个大类或不选大类');
+  if(state.rec.teas.length) tips.push('少选几个茶底');
+  if(!tips.length) tips.push('换个心情试试');
+  return '建议放宽条件：' + tips.join('、') + '。';
+}
+
+function buildWhy(item, teas, conds, teaHits, condHits, softTotal, hitMoods){
+  var parts = [];
+  if(hitMoods && hitMoods.length){
+    parts.push('正合「' + hitMoods.map(function(x){ return x.name; }).join('、') + '」的状态（' + hitMoods[0].why + '）');
+  }
+  if(teaHits > 0){
+    var hitTeas = [];
+    for(var i=0;i<teas.length;i++){ if(item.tea.indexOf(teas[i])>-1) hitTeas.push(teas[i]); }
+    parts.push(hitTeas.join('、') + '茶底');
+  }
+  if(item.cat) parts.push(item.cat + '大类');
+  var why = parts.length ? parts.join(' + ') + '，命中你的偏好' : '综合条件来看还挺合适';
+  if(softTotal > 0 && condHits > 0){
+    var hitConds = [];
+    for(var j=0;j<conds.length;j++){
+      if(!hardCond(conds[j]) && condHit(item, conds[j])) hitConds.push(conds[j]);
+    }
+    if(hitConds.length) why += '；还满足' + hitConds.join('、');
+  }
+  if(item.isNew) why += '，且是本季新品';
+  return why + '。';
+}
+
+/* =========================================================================
+ * 7. 渲染层 —— 转盘
+ * ======================================================================= */
+function renderWheel(){
+  var host = $('#view-wheel');
+  var html = '';
+
+  html += '<div class="seg" id="wheelSeg">'
+    + segBtn('brand','指定品牌') + segBtn('all','全随机') + segBtn('pref','按偏好')
+    + '</div>';
+
+  if(state.wheelMode === 'brand'){
+    html += '<div class="sec-t">选一个品牌</div><div class="brand-strip" id="brandStrip">';
+    for(var i=0;i<db.brands.length;i++){
+      var b = db.brands[i];
+      html += '<button class="bs-item' + (b.id===state.wheelBrandId?' on':'') + '" data-wb="' + esc(b.id) + '">'
+        + '<span class="bd" style="background:' + esc(b.color) + '"></span>' + esc(b.name) + '</button>';
+    }
+    html += '</div>';
+  } else if(state.wheelMode === 'all'){
+    html += '<p class="note" style="text-align:left;margin:0 2px 12px">每次点「换一批」会重新从 ' + db.brands.length + ' 家品牌里抽样，惊喜更多。</p>';
+  } else {
+    html += '<p class="note" style="text-align:left;margin:0 2px 12px">沿用「推荐」页已选的偏好条件，在结果集里随机。'
+      + (state.rec.cat ? '当前大类：<b style="color:var(--brand-d)">' + esc(state.rec.cat) + '</b>' : '当前还没选大类，会从全部饮品里抽。') + '</p>';
+  }
+
+  html += '<div class="wheel-wrap">'
+    + '<div class="wheel-stage"><div class="wheel-ptr"></div>'
+    + '<canvas id="wheelCanvas"></canvas><div class="wheel-hub">🧋</div></div>'
+    + '<div class="wheel-actions">'
+    + '<button class="btn" id="spinBtn">开始转 🎡</button>'
+    + '<button class="btn ghost" id="shuffleBtn">换一批</button>'
+    + '</div></div>';
+
+  host.innerHTML = html;
+  buildWheelSegments();
+  drawWheel();
+}
+function segBtn(mode, label){
+  return '<button class="' + (state.wheelMode===mode?'on':'') + '" data-mode="' + mode + '">' + esc(label) + '</button>';
+}
+
+function sample(arr, n){
+  var copy = arr.slice(), out = [];
+  n = Math.min(n, copy.length);
+  for(var i=0;i<n;i++){
+    var idx = Math.floor(Math.random()*copy.length);
+    out.push(copy.splice(idx,1)[0]);
+  }
+  return out;
+}
+
+function buildWheelSegments(){
+  var segs = [];
+  if(state.wheelMode === 'brand'){
+    var brand = getBrand(state.wheelBrandId);
+    if(brand){
+      var skus = brandSkus(brand);
+      var pool = sample(skus, Math.min(skus.length, 12));
+      for(var i=0;i<pool.length;i++){ segs.push({ label: pool[i].name, item: pool[i], brand: brand }); }
+    }
+  } else if(state.wheelMode === 'all'){
+    var combos = [];
+    for(var b=0;b<db.brands.length;b++){
+      var br = db.brands[b];
+      var ss = brandSkus(br);
+      if(ss.length){ combos.push({ brand: br, item: ss[Math.floor(Math.random()*ss.length)] }); }
+    }
+    var picked = sample(combos, 9);
+    for(var k=0;k<picked.length;k++){
+      segs.push({ label: picked[k].item.name, item: picked[k].item, brand: picked[k].brand });
+    }
+  } else { // pref
+    var cat = state.rec.cat;
+    var pool2 = [];
+    for(var m=0;m<db.brands.length;m++){
+      var bm = db.brands[m];
+      if(state.recBrands.length && state.recBrands.indexOf(bm.id) < 0) continue;
+      var list = brandSkus(bm);
+      for(var x=0;x<list.length;x++){
+        if(!cat || list[x].cat === cat){ pool2.push({ brand: bm, item: list[x] }); }
+      }
+    }
+    if(!pool2.length){ pool2.push({ brand: db.brands[0], item: brandSkus(db.brands[0])[0] }); }
+    var picked2 = sample(pool2, Math.min(9, pool2.length));
+    for(var y=0;y<picked2.length;y++){
+      segs.push({ label: picked2[y].item.name, item: picked2[y].item, brand: picked2[y].brand });
+    }
+  }
+  state.wheelSegs = segs;
+  state.rotation = 0;
+  state.lastWheelIdx = -1;
+}
+
+function drawWheel(){
+  var cv = $('#wheelCanvas');
+  if(!cv) return;
+  var wrap = cv.parentNode;
+  var size = wrap.clientWidth || 272;
+  var dpr = Math.min(window.devicePixelRatio || 1, 3);
+  cv.width = size * dpr;
+  cv.height = size * dpr;
+  var ctx = cv.getContext('2d');
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.clearRect(0,0,size,size);
+
+  var segs = state.wheelSegs;
+  var n = segs.length;
+  var cx = size/2, cy = size/2, R = size/2 - 3;
+  if(!n){
+    ctx.fillStyle = '#F3EAE0';
+    ctx.beginPath(); ctx.arc(cx,cy,R,0,Math.PI*2); ctx.fill();
+    return;
+  }
+  var ang = Math.PI*2/n;
+  var rot = state.rotation || 0;
+
+  ctx.beginPath(); ctx.arc(cx,cy,R,0,Math.PI*2); ctx.fillStyle = '#FFFDFB'; ctx.fill();
+
+  for(var i=0;i<n;i++){
+    var start = rot + i*ang;
+    var end = start + ang;
+    var base = segs[i].brand.color || '#B87B4B';
+    ctx.beginPath();
+    ctx.moveTo(cx,cy);
+    ctx.arc(cx,cy,R,start,end);
+    ctx.closePath();
+    ctx.fillStyle = (i%2===0) ? base : tint(base, .78);
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,.55)';
+    ctx.lineWidth = 1.2;
+    ctx.stroke();
+
+    var mid = start + ang/2;
+    var label = segs[i].label;
+    if(label.length > 6) label = label.slice(0,6);
+    ctx.save();
+    ctx.translate(cx,cy);
+    ctx.rotate(mid);
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = '#FFFDFB';
+    ctx.font = (n>16 ? 600 : 700) + ' ' + (n>18 ? 10 : (n>12 ? 11 : 12)) + 'px -apple-system,"PingFang SC",sans-serif';
+    ctx.shadowColor = 'rgba(0,0,0,.3)';
+    ctx.shadowBlur = 3;
+    ctx.fillText(label, R - 12, 0);
+    ctx.restore();
+  }
+
+  ctx.beginPath(); ctx.arc(cx,cy,R*0.16,0,Math.PI*2); ctx.fillStyle = '#FFFDFB'; ctx.fill();
+}
+
+function easeOutCubic(t){ return 1 - Math.pow(1-t, 3); }
+
+function spinWheel(){
+  if(state.spinning) return;
+  var segs = state.wheelSegs;
+  var n = segs.length;
+  if(n < 2){ toast('这个结果集太小啦，换个模式试试'); return; }
+
+  state.spinning = true;
+  var btn = $('#spinBtn'); if(btn){ btn.disabled = true; btn.textContent = '转动中…'; }
+
+  var ang = Math.PI*2/n;
+  var idx;
+  var guard = 0;
+  do { idx = Math.floor(Math.random()*n); guard++; } while(n>1 && idx===state.lastWheelIdx && guard<50);
+  state.lastWheelIdx = idx;
+
+  var turns = 6 + Math.floor(Math.random()*3);
+  var current = state.rotation || 0;
+  var targetCenter = -Math.PI/2 - (idx + 0.5) * ang;
+  var final = targetCenter;
+  var minFinal = current + turns * Math.PI*2;
+  while(final < minFinal) final += Math.PI*2;
+
+  var dur = 4000, start = (window.performance && performance.now) ? performance.now() : Date.now();
+
+  function frame(now){
+    now = now || Date.now();
+    var t = Math.min(1, (now - start)/dur);
+    state.rotation = current + (final - current) * easeOutCubic(t);
+    drawWheel();
+    if(t < 1){ requestAnimationFrame(frame); }
+    else {
+      state.rotation = final % (Math.PI*2);
+      state.spinning = false;
+      if(btn){ btn.disabled = false; btn.textContent = '再转一次 🎡'; }
+      showWheelResult(segs[idx]);
+    }
+  }
+  requestAnimationFrame(frame);
+}
+
+function showWheelResult(seg){
+  var mask = $('#popMask');
+  var item = seg.item, brand = seg.brand;
+  var html = '<div class="pop">'
+    + '<div class="pop-badge" style="background:' + esc(brand.color) + '">' + esc(initials(brand)) + '</div>'
+    + '<div class="pop-tag">🎡 转盘转出</div>'
+    + '<div class="pop-name">' + esc(item.name) + (item.isNew ? ' <span class="pill new">NEW</span>' : '') + '</div>'
+    + '<div class="pop-brand">' + esc(brand.name) + ' · ' + esc(item.cat) + '</div>'
+    + '<div class="pop-price">¥' + esc(item.price) + '</div>'
+    + '<div class="pop-tags">' + tagHtml(item) + '</div>'
+    + '<div class="pop-actions">'
+    + '<button class="btn block" id="popAgain">再转一次 🎡</button>'
+    + '<div class="row">'
+    + (state.wheelMode!=='brand' ? '<button class="btn ghost" id="popShuffle">换一批</button>' : '')
+    + '<button class="btn soft" id="popPick">就它了</button>'
+    + '<button class="btn soft" id="popClose">关闭</button>'
+    + '</div></div></div>';
+  mask.innerHTML = html;
+  mask.classList.add('on');
+
+  var again = $('#popAgain');
+  if(again){ again.onclick = function(){ mask.classList.remove('on'); spinWheel(); }; }
+  var shuffle = $('#popShuffle');
+  if(shuffle){ shuffle.onclick = function(){ mask.classList.remove('on'); buildWheelSegments(); drawWheel(); toast('换了一批，再来一次吧'); }; }
+  var pick = $('#popPick');
+  if(pick){ pick.onclick = function(){ setTodayPick(brand, item); mask.classList.remove('on'); }; }
+  var close = $('#popClose');
+  if(close){ close.onclick = function(){ mask.classList.remove('on'); }; }
+  mask.onclick = function(e){ if(e.target === mask) mask.classList.remove('on'); };
+}
+
+function setTodayPick(brand, item){
+  var pick = {
+    date: todayStr(),
+    brandId: brand.id,
+    brandName: brand.name,
+    name: item.name,
+    price: item.price,
+    tea: item.tea,
+    toppings: item.toppings,
+    isNew: item.isNew
+  };
+  LS.set(KEY_TODAY, pick);
+  toast('已记入「今日之选」🥤');
+  if(state.tab === 'rec'){ renderRec(); }
+}
+
+/* =========================================================================
+ * 8. 渲染层 —— 品牌菜单（左侧栏点品牌名 = 切换查看该品牌菜单）
+ * ======================================================================= */
+function renderMenu(){
+  var host = $('#view-menu');
+  if(state.brandView.mode === 'detail'){
+    renderBrandDetail(host, state.brandView.id);
+  } else {
+    renderBrandList(host);
+  }
+}
+
+function renderBrandList(host){
+  var html = '<div class="sec-t">' + db.brands.length + ' 家品牌 · 点击查看菜单</div><div class="grid-brand">';
+  for(var i=0;i<db.brands.length;i++){
+    var b = db.brands[i];
+    var skus = brandSkus(b);
+    var newCount = 0;
+    for(var s=0;s<skus.length;s++){ if(skus[s].isNew) newCount++; }
+    html += '<button class="bc" data-brand="' + esc(b.id) + '">'
+      + '<span class="bc-emoji">🧋</span>'
+      + '<span class="bc-logo" style="background:' + esc(b.color) + '">' + esc(initials(b)) + '</span>'
+      + '<div class="bc-name">' + esc(b.name) + (newCount>0 ? '<span class="bc-new">新品 ' + newCount + '</span>' : '') + '</div>'
+      + '<div class="bc-en">' + esc(b.en) + '</div>'
+      + '<div class="bc-meta"><span class="pill">' + skus.length + ' 款</span></div>'
+      + '</button>';
+  }
+  html += '</div>';
+
+  /* 数据版本条 */
+  html += '<div class="verbar">'
+    + '<div class="vb-t">数据版本 <b id="verNum">v' + esc(db.version) + '</b> · 更新于 <b id="verDate">' + esc(db.updated) + '</b></div>'
+    + '<button class="btn ghost sm" id="checkUpdate">检查更新</button>'
+    + '</div>';
+
+  html += '<p class="note">菜单为基于公开信息的本地快照（约 ' + totalSku() + ' 款），每周一自动核对更新；可能滞后于门店实际在售，仅供选择参考。</p>';
+
+  host.innerHTML = html;
+}
+
+function renderBrandDetail(host, brandId){
+  var b = getBrand(brandId);
+  if(!b){ state.brandView = { mode:'list', id:null }; renderBrandList(host); return; }
+
+  var skus = brandSkus(b);
+  var groups = {};
+  for(var i=0;i<CATS.length;i++){ groups[CATS[i]] = []; }
+  for(var s=0;s<skus.length;s++){
+    var it = skus[s];
+    if(!groups[it.cat]) groups[it.cat] = [];
+    groups[it.cat].push(it);
+  }
+
+  var html = '<button class="back" id="brandBack">‹ 全部品牌</button>';
+  html += '<div class="detail-h">'
+    + '<div class="detail-logo" style="background:' + esc(b.color) + '">' + esc(initials(b)) + '</div>'
+    + '<div><div class="dn">' + esc(b.name) + '</div>'
+    + '<div class="dd">' + esc(b.desc) + '</div>'
+    + '<div class="dd"><b style="color:var(--brand-d)">' + skus.length + '</b> 款在售 · 共 ' + CATS.length + ' 个品类</div>'
+    + '</div></div>';
+
+  for(var g=0;g<CATS.length;g++){
+    var cat = CATS[g];
+    var items = groups[cat];
+    if(!items || !items.length) continue;
+    html += '<div class="grp open">'
+      + '<div class="grp-h"><span>' + esc(CAT_ICON[cat]) + '</span>' + esc(cat)
+      + '<span class="cnt">' + items.length + '</span><span class="chev">▼</span></div>'
+      + '<div class="grp-b">';
+    for(var k=0;k<items.length;k++){
+      var item = items[k];
+      html += '<div class="sku">'
+        + '<div class="sku-b"><div class="sku-n">' + esc(item.name)
+        + (item.isNew ? '<span class="pill new">NEW</span>' : '')
+        + (item.custom ? '<span class="pill custom">自定义</span>' : '')
+        + '</div>'
+        + '<div class="sku-t">' + tagHtml(item) + '</div></div>'
+        + '<div class="sku-p">¥' + esc(item.price) + '</div>'
+        + '</div>';
+    }
+    html += '</div></div>';
+  }
+
+  /* 添加新品 */
+  html += '<div class="add">'
+    + '<button class="btn ghost block" id="addToggle">＋ 添加新品</button>'
+    + '<div class="add-form" id="addForm">'
+    + '<div class="field"><label>饮品名称</label><input id="fName" type="text" maxlength="24" placeholder="例如：焦糖布丁奶茶"></div>'
+    + '<div class="field row">'
+    + '<div><label>品类</label><select id="fCat">';
+  for(var c2=0;c2<CATS.length;c2++){ html += '<option value="' + esc(CATS[c2]) + '">' + esc(CATS[c2]) + '</option>'; }
+  html += '</select></div>'
+    + '<div><label>价格（元）</label><input id="fPrice" type="number" min="1" max="99" value="18"></div>'
+    + '</div>'
+    + '<div class="field"><label>茶底</label><select id="fTea">';
+  for(var t2=0;t2<TEAS.length;t2++){ html += '<option value="' + esc(TEAS[t2]) + '">' + esc(TEAS[t2]) + '</option>'; }
+  html += '</select></div>'
+    + '<div class="field"><label>小料（逗号分隔，可留空）</label><input id="fTop" type="text" maxlength="40" placeholder="例如：珍珠,芋圆"></div>'
+    + '<div class="form-actions"><button class="btn ghost" id="fCancel">取消</button><button class="btn" id="fSave">保存</button></div>'
+    + '</div></div>';
+
+  host.innerHTML = html;
+}
+
+function totalSku(){
+  var n = 0;
+  for(var i=0;i<db.brands.length;i++){ n += brandSkus(db.brands[i]).length; }
+  return n;
+}
+
+/* =========================================================================
+ * 9. 事件绑定
+ * ======================================================================= */
+function switchTab(tab){
+  state.tab = tab;
+  $all('.sb-nav button').forEach(function(el){ el.classList.toggle('on', el.dataset.tab === tab); });
+  $all('.view').forEach(function(el){ el.classList.toggle('active', el.id === 'view-' + tab); });
+  var screen = $('#screen');
+  if(screen){ screen.scrollTop = 0; }
+  renderSidebar();
+  if(tab === 'rec') renderRec();
+  else if(tab === 'wheel') renderWheel();
+  else renderMenu();
+}
+
+/** 切换推荐品牌范围（左侧栏与主页面共用同一状态） */
+function toggleScope(id){
+  if(id === 'all'){
+    state.recBrands = [];
+  } else {
+    var idx = state.recBrands.indexOf(id);
+    if(idx > -1) state.recBrands.splice(idx,1);
+    else state.recBrands.push(id);
+  }
+  renderSidebar();
+  if(state.tab === 'rec') renderRec();
+  updateAppSub();
+}
+
+function bindGlobal(){
+  /* 侧边栏导航 */
+  $('#sbNav').addEventListener('click', function(e){
+    var btn = e.target.closest('button[data-tab]');
+    if(btn) switchTab(btn.dataset.tab);
+  });
+
+  /* 侧边栏品牌：
+   * - 菜单页：点品牌 = 切换查看该品牌菜单
+   * - 推荐/转盘页：点品牌 = 圈定/取消推荐范围（可多选） */
+  $('#sbList').addEventListener('click', function(e){
+    var item = e.target.closest('[data-sb]');
+    if(!item) return;
+    var id = item.dataset.sb;
+    if(state.tab === 'menu'){
+      if(id === 'all'){ state.brandView = { mode:'list', id:null }; }
+      else { state.brandView = { mode:'detail', id:id }; }
+      renderMenu();
+      renderSidebar();
+      var screen = $('#screen'); if(screen) screen.scrollTop = 0;
+    } else {
+      toggleScope(id);
+    }
+  });
+
+  /* 推荐页 */
+  $('#view-rec').addEventListener('click', function(e){
+    var moodBtn = e.target.closest('[data-mood]');
+    if(moodBtn){
+      var mo = moodBtn.dataset.mood;
+      var mi = state.rec.moods.indexOf(mo);
+      if(mi > -1) state.rec.moods.splice(mi,1); else state.rec.moods.push(mo);
+      renderRec();
+      updateAppSub();
+      return;
+    }
+    var scopeBtn = e.target.closest('[data-scope]');
+    if(scopeBtn){
+      toggleScope(scopeBtn.dataset.scope);
+      return;
+    }
+    var catBtn = e.target.closest('[data-cat]');
+    if(catBtn){
+      var c = catBtn.dataset.cat;
+      state.rec.cat = (state.rec.cat === c) ? null : c;
+      renderRec();
+      return;
+    }
+    var teaBtn = e.target.closest('[data-tea]');
+    if(teaBtn){
+      var t = teaBtn.dataset.tea;
+      var idx = state.rec.teas.indexOf(t);
+      if(idx > -1) state.rec.teas.splice(idx,1); else state.rec.teas.push(t);
+      renderRec();
+      return;
+    }
+    var condBtn = e.target.closest('[data-cond]');
+    if(condBtn){
+      var cd = condBtn.dataset.cond;
+      var i2 = state.rec.conds.indexOf(cd);
+      if(i2 > -1) state.rec.conds.splice(i2,1); else state.rec.conds.push(cd);
+      renderRec();
+      return;
+    }
+    if(e.target.closest('#recGo')){ runRecommend(); return; }
+    if(e.target.closest('#recReset')){
+      state.rec = { moods:[], cat:null, teas:[], conds:[] };
+      state.recBrands = [];
+      state.recResults = [];
+      renderSidebar();
+      renderRec();
+      updateAppSub();
+      return;
+    }
+    var choose = e.target.closest('[data-choose]');
+    if(choose){
+      var r = state.recResults[parseInt(choose.dataset.choose,10)];
+      if(r) setTodayPick(r.brand, r.item);
+      return;
+    }
+  });
+
+  /* 转盘页 */
+  $('#view-wheel').addEventListener('click', function(e){
+    var modeBtn = e.target.closest('[data-mode]');
+    if(modeBtn){
+      state.wheelMode = modeBtn.dataset.mode;
+      renderWheel();
+      return;
+    }
+    var wb = e.target.closest('[data-wb]');
+    if(wb){
+      state.wheelBrandId = wb.dataset.wb;
+      buildWheelSegments();
+      renderWheel();
+      return;
+    }
+    if(e.target.closest('#spinBtn')){ spinWheel(); return; }
+    if(e.target.closest('#shuffleBtn')){ buildWheelSegments(); drawWheel(); toast('换了一批，转起来吧'); return; }
+  });
+
+  /* 菜单页 */
+  $('#view-menu').addEventListener('click', function(e){
+    var card = e.target.closest('[data-brand]');
+    if(card){
+      state.brandView = { mode:'detail', id: card.dataset.brand };
+      renderMenu();
+      renderSidebar();
+      var screen = $('#screen'); if(screen) screen.scrollTop = 0;
+      return;
+    }
+    if(e.target.closest('#brandBack')){
+      state.brandView = { mode:'list', id:null };
+      renderMenu();
+      renderSidebar();
+      var s2 = $('#screen'); if(s2) s2.scrollTop = 0;
+      return;
+    }
+    if(e.target.closest('#checkUpdate')){ checkUpdate(true); return; }
+    var grpHead = e.target.closest('.grp-h');
+    if(grpHead){ grpHead.parentNode.classList.toggle('open'); return; }
+    if(e.target.closest('#addToggle')){
+      $('#addForm').classList.toggle('on');
+      return;
+    }
+    if(e.target.closest('#fCancel')){
+      $('#addForm').classList.remove('on');
+      return;
+    }
+    if(e.target.closest('#fSave')){ saveNewSku(); return; }
+  });
+}
+
+function saveNewSku(){
+  var brandId = state.brandView.id;
+  var brand = getBrand(brandId);
+  if(!brand) return;
+  var name = ($('#fName').value || '').trim();
+  var price = parseInt($('#fPrice').value, 10);
+  var cat = $('#fCat').value;
+  var tea = $('#fTea').value;
+  var topRaw = ($('#fTop').value || '').trim();
+  var toppings = topRaw ? topRaw.split(/[,，]/).map(function(s){ return s.trim(); }).filter(Boolean) : [];
+
+  if(!name){ toast('先给饮品起个名字吧'); return; }
+  if(!(price >= 1 && price <= 99)){ toast('价格请填 1-99 之间的数字'); return; }
+  if(name.length > 24){ toast('名字有点长，精简一下'); return; }
+
+  addCustomSku(brandId, {
+    name: name, cat: cat, tea: [tea], price: price,
+    toppings: toppings, tags: [], isNew: false, custom: true, since: todayStr()
+  });
+  toast('已添加「' + name + '」');
+  renderMenu();
+  var screen = $('#screen'); if(screen) screen.scrollTop = 0;
+}
+
+/* =========================================================================
+ * 10. 数据更新（update.json：每周一由自动化任务重写）
+ * ======================================================================= */
+function checkUpdate(manual){
+  var btn = $('#checkUpdate');
+  if(btn){ btn.disabled = true; btn.textContent = '检查中…'; }
+  var done = function(){ if(btn){ btn.disabled = false; btn.textContent = '检查更新'; } };
+
+  try{
+    fetch('./update.json?t=' + Date.now(), {cache:'no-store'})
+      .then(function(res){ if(!res.ok) throw new Error('not ok'); return res.json(); })
+      .then(function(data){
+        if(data && Array.isArray(data.brands) && data.brands.length){
+          if(data.version && data.version === db.version && !manual){
+            done(); return;   /* 版本没变，静默跳过 */
+          }
+          mergeUpdate(data);
+          if(manual){ toast('数据已更新到 v' + db.version); }
+          else { toast('菜单数据已更新到 v' + db.version); }
+          refreshAfterData();
+        } else if(manual){
+          toast('已是最新数据');
+        }
+        done();
+      })
+      .catch(function(){ if(manual){ toast('已是最新数据'); } done(); });
+  }catch(e){
+    if(manual){ toast('已是最新数据'); }
+    done();
+  }
+}
+
+/** 启动静默检查（file:// 或离线时静默失败，不打扰用户） */
+function autoUpdate(){
+  checkUpdate(false);
+}
+
+/** 数据合并后刷新当前视图 */
+function refreshAfterData(){
+  renderSidebar();
+  updateAppSub();
+  if(state.tab === 'rec') renderRec();
+  else if(state.tab === 'wheel') renderWheel();
+  else renderMenu();
+}
+
+/** 用 update.json 的数据合并覆盖内置库（结构相同） */
+function mergeUpdate(data){
+  if(data.version) db.version = data.version;
+  if(data.updated) db.updated = data.updated;
+  var map = {};
+  for(var i=0;i<db.brands.length;i++){ map[db.brands[i].id] = db.brands[i]; }
+  for(var j=0;j<data.brands.length;j++){
+    var nb = data.brands[j];
+    if(!nb || !nb.id) continue;
+    if(map[nb.id]){
+      var ex = map[nb.id];
+      if(nb.name) ex.name = nb.name;
+      if(nb.en) ex.en = nb.en;
+      if(nb.color) ex.color = nb.color;
+      if(nb.desc) ex.desc = nb.desc;
+      if(Array.isArray(nb.menu)) ex.menu = nb.menu;
+    } else {
+      db.brands.push(nb);
+    }
+  }
+  var vb = $('#appVersion'); if(vb) vb.textContent = 'v' + db.version;
+}
+
+/* =========================================================================
+ * 11. 启动
+ * ======================================================================= */
+function init(){
+  var vb = $('#appVersion');
+  if(vb) vb.textContent = 'v' + db.version;
+
+  bindGlobal();
+  renderSidebar();
+  renderRec();
+  updateAppSub();
+
+  /* 支持通过 #rec / #wheel / #menu 深链直达某个页 */
+  var hashTab = (location.hash || '').replace('#','');
+  switchTab(['rec','wheel','menu'].indexOf(hashTab) > -1 ? hashTab : 'rec');
+
+  /* 视口变化时转盘重绘（尺寸自适应） */
+  var rt;
+  window.addEventListener('resize', function(){
+    clearTimeout(rt);
+    rt = setTimeout(function(){ if(state.tab === 'wheel') drawWheel(); }, 160);
+  });
+
+  if(!LS.ok){ toast('隐私模式下无法保存自定义数据'); }
+
+  /* 启动静默拉取最新菜单 */
+  autoUpdate();
+}
+
+if(document.readyState === 'loading'){
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+})();
+</script>
+</body>
+</html>
