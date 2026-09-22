@@ -24,6 +24,29 @@ echo "=================================================="
 echo " 黄金走势预测工作台  $(date '+%Y-%m-%d %H:%M:%S')"
 echo "=================================================="
 
+# ---- 幂等保护：今天已成功生成过就跳过 ----
+# 因为定时触发会设多个时间点（WorkBuddy 客户端何时在线不确定），
+# 一天里可能被触发好几次。这里用 data/latest.json 的 generated_at 判断
+# 当天是否已经跑过，避免重复采集/建模/推送。
+# 想强制重跑：./run_daily.sh --force
+TODAY="$(date '+%Y-%m-%d')"
+if [ "${1:-}" != "--force" ]; then
+    if "$PY" -c "
+import json, sys
+from pathlib import Path
+f = Path(r'''$ROOT''') / 'data' / 'latest.json'
+try:
+    gen = json.loads(f.read_text(encoding='utf-8')).get('generated_at', '')
+    sys.exit(0 if gen[:10] == '$TODAY' else 1)
+except Exception:
+    sys.exit(1)
+" 2>/dev/null; then
+        echo
+        echo "今天（$TODAY）已更新过，跳过本次。需要强制重跑请执行： ./run_daily.sh --force"
+        exit 0
+    fi
+fi
+
 echo; echo ">>> [1/5] 采集数据"
 "$PY" scripts/collect.py
 
