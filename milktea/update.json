@@ -1,6 +1,6 @@
 {
- "version": "2.4.0",
- "updated": "2026-09-22",
+ "version": "2.5.0",
+ "updated": "2026-09-28",
  "brands": [
   {
    "id": "heytea",
@@ -578,6 +578,21 @@
      ],
      "isNew": false,
      "since": ""
+    },
+    {
+     "name": "初雪柠酪泰橘",
+     "cat": "奶茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 22,
+     "toppings": [],
+     "tags": [
+      "泰橘",
+      "奶盖"
+     ],
+     "isNew": true,
+     "since": "2026-09"
     }
    ]
   },
@@ -863,6 +878,51 @@
      ],
      "isNew": false,
      "since": ""
+    },
+    {
+     "name": "一抹茉莉花",
+     "cat": "轻乳茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "抹茶",
+      "花香"
+     ],
+     "isNew": true,
+     "since": "2026-09"
+    },
+    {
+     "name": "浓抹花田",
+     "cat": "轻乳茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 22,
+     "toppings": [],
+     "tags": [
+      "抹茶",
+      "水蜜桃"
+     ],
+     "isNew": true,
+     "since": "2026-09"
+    },
+    {
+     "name": "浓抹香草籽",
+     "cat": "轻乳茶",
+     "tea": [
+      "绿茶"
+     ],
+     "price": 22,
+     "toppings": [],
+     "tags": [
+      "抹茶",
+      "奶盖"
+     ],
+     "isNew": true,
+     "since": "2026-09"
     }
    ]
   },
@@ -976,7 +1036,7 @@
       "青提",
       "有果肉"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-06"
     },
     {
@@ -992,7 +1052,7 @@
       "柠檬",
       "清爽"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-06"
     },
     {
@@ -1512,7 +1572,7 @@
       "果蔬",
       "轻负担"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-06"
     },
     {
@@ -1915,7 +1975,7 @@
       "苹果",
       "奇兰"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-06"
     },
     {
@@ -2266,6 +2326,36 @@
      ],
      "isNew": false,
      "since": ""
+    },
+    {
+     "name": "针王与维也纳",
+     "cat": "咖啡",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 21,
+     "toppings": [],
+     "tags": [
+      "花香",
+      "奶盖"
+     ],
+     "isNew": true,
+     "since": "2026-09"
+    },
+    {
+     "name": "白兰与维也纳",
+     "cat": "咖啡",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 21,
+     "toppings": [],
+     "tags": [
+      "白兰",
+      "奶盖"
+     ],
+     "isNew": true,
+     "since": "2026-09"
     }
    ]
   },
@@ -2557,7 +2647,7 @@
       "椰香",
       "冰淇淋"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-06"
     }
    ]
@@ -3113,6 +3203,36 @@
       "咖啡"
      ],
      "price": 19,
+     "toppings": [],
+     "tags": [
+      "豆乳",
+      "微咸"
+     ],
+     "isNew": true,
+     "since": "2026-09"
+    },
+    {
+     "name": "咸芝士豆乳拿铁",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 21,
+     "toppings": [],
+     "tags": [
+      "豆乳",
+      "微咸"
+     ],
+     "isNew": true,
+     "since": "2026-09"
+    },
+    {
+     "name": "咸芝士豆乳茶",
+     "cat": "奶茶",
+     "tea": [
+      "乌龙"
+     ],
+     "price": 18,
      "toppings": [],
      "tags": [
       "豆乳",
@@ -3798,7 +3918,7 @@
       "菠萝蜜",
       "芒果"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-06"
     },
     {
@@ -3813,7 +3933,7 @@
       "菠萝蜜",
       "有果肉"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-06"
     },
     {
@@ -3828,7 +3948,7 @@
       "菠萝蜜",
       "椰香"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-06"
     },
     {
@@ -4688,7 +4808,7 @@
       "杨梅",
       "清爽"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-06"
     },
     {
@@ -4703,7 +4823,7 @@
       "杨梅",
       "有果肉"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-06"
     },
     {
@@ -4733,7 +4853,7 @@
       "无糖",
       "轻负担"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-06"
     },
     {
