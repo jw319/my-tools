@@ -1,6 +1,6 @@
 {
- "version": "2.5.0",
- "updated": "2026-09-28",
+ "version": "2.6.0",
+ "updated": "2026-10-14",
  "brands": [
   {
    "id": "heytea",
@@ -593,6 +593,24 @@
      ],
      "isNew": true,
      "since": "2026-09"
+    },
+    {
+     "name": "熔岩法式可可慕斯",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 22,
+     "toppings": [
+      "香草奶冻"
+     ],
+     "tags": [
+      "奶盖",
+      "可可",
+      "浓醇"
+     ],
+     "isNew": true,
+     "since": "2026-10"
     }
    ]
   },
@@ -923,6 +941,53 @@
      ],
      "isNew": true,
      "since": "2026-09"
+    },
+    {
+     "name": "归云南·小黄油熟普",
+     "cat": "奶茶",
+     "tea": [
+      "普洱"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "黄油",
+      "浓醇"
+     ],
+     "isNew": true,
+     "since": "2026-10"
+    },
+    {
+     "name": "归云南·云焦卡美罗",
+     "cat": "奶茶",
+     "tea": [
+      "普洱"
+     ],
+     "price": 18,
+     "toppings": [
+      "卡美罗"
+     ],
+     "tags": [
+      "焦糖",
+      "卡美罗"
+     ],
+     "isNew": true,
+     "since": "2026-10"
+    },
+    {
+     "name": "归云南·云漫普洱",
+     "cat": "纯茶",
+     "tea": [
+      "普洱"
+     ],
+     "price": 18,
+     "toppings": [],
+     "tags": [
+      "清爽",
+      "轻负担"
+     ],
+     "isNew": true,
+     "since": "2026-10"
     }
    ]
   },
@@ -1069,7 +1134,7 @@
       "荔枝",
       "清爽"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     },
     {
@@ -1084,7 +1149,7 @@
       "荔枝",
       "椰香"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     },
     {
@@ -1542,7 +1607,7 @@
       "泰橘",
       "清爽"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     },
     {
@@ -1719,7 +1784,7 @@
       "米酿",
       "奶咖"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     },
     {
@@ -1734,7 +1799,7 @@
       "无糖",
       "米酿"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     },
     {
@@ -1749,7 +1814,7 @@
       "泰橘",
       "清爽"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     },
     {
@@ -1764,7 +1829,7 @@
       "泰橘",
       "益生菌"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     }
    ]
@@ -1855,7 +1920,7 @@
       "海盐",
       "微咸"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     },
     {
@@ -1870,7 +1935,7 @@
       "白兰",
       "花香"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     },
     {
@@ -2020,7 +2085,7 @@
       "青提",
       "益生菌"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     },
     {
@@ -2527,7 +2592,7 @@
       "蜜瓜",
       "啵啵"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     },
     {
@@ -2559,7 +2624,7 @@
       "柠檬",
       "清爽"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     },
     {
@@ -3240,6 +3305,23 @@
      ],
      "isNew": true,
      "since": "2026-09"
+    },
+    {
+     "name": "经典珍珠奶茶",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 9,
+     "toppings": [
+      "珍珠"
+     ],
+     "tags": [
+      "珍珠",
+      "0植脂末"
+     ],
+     "isNew": true,
+     "since": "2026-10"
     }
    ]
   },
@@ -3487,7 +3569,7 @@
       "菠萝",
       "清爽"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     },
     {
@@ -3502,7 +3584,7 @@
       "菠萝",
       "冰沙"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     },
     {
@@ -3517,7 +3599,7 @@
       "菠萝",
       "椰香"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     }
    ]
@@ -3741,7 +3823,7 @@
       "柠檬",
       "奶盖"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     },
     {
@@ -3756,7 +3838,7 @@
       "柠檬",
       "奶盖"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     },
     {
@@ -4868,7 +4950,7 @@
       "柠檬",
       "微咸"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     }
    ]
@@ -5689,7 +5771,7 @@
       "荔枝",
       "糯米"
      ],
-     "isNew": true,
+     "isNew": false,
      "since": "2026-07"
     },
     {
