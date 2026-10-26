@@ -1,6 +1,6 @@
 {
- "version": "2.7.0",
- "updated": "2026-10-19",
+ "version": "2.8.0",
+ "updated": "2026-10-26",
  "brands": [
   {
    "id": "heytea",
@@ -1207,6 +1207,34 @@
      ],
      "isNew": false,
      "since": "2026-07"
+    },
+    {
+     "name": "好柿多多",
+     "cat": "果茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 7,
+     "toppings": [],
+     "tags": [
+      "柿子",
+      "有果肉"
+     ],
+     "isNew": true,
+     "since": "2026-09"
+    },
+    {
+     "name": "好柿椰椰",
+     "cat": "果茶",
+     "tea": [],
+     "price": 8,
+     "toppings": [],
+     "tags": [
+      "柿子",
+      "椰香"
+     ],
+     "isNew": true,
+     "since": "2026-09"
     },
     {
      "name": "茉莉奶绿",
