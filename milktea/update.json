@@ -1,6 +1,6 @@
 {
- "version": "2.8.0",
- "updated": "2026-10-26",
+ "version": "2.9.0",
+ "updated": "2026-11-02",
  "brands": [
   {
    "id": "heytea",
@@ -222,6 +222,21 @@
       "芋泥",
       "料多",
       "回归"
+     ],
+     "isNew": true,
+     "since": "2026-10"
+    },
+    {
+     "name": "苦巧·咸酪碎银子",
+     "cat": "奶茶",
+     "tea": [
+      "普洱"
+     ],
+     "price": 25,
+     "toppings": [],
+     "tags": [
+      "可可",
+      "咸酪"
      ],
      "isNew": true,
      "since": "2026-10"
@@ -1041,6 +1056,52 @@
      "tags": [
       "清爽",
       "轻负担"
+     ],
+     "isNew": true,
+     "since": "2026-10"
+    },
+    {
+     "name": "橙巧可可",
+     "cat": "奶茶",
+     "tea": [
+      "红茶"
+     ],
+     "price": 21,
+     "toppings": [],
+     "tags": [
+      "可可",
+      "橙子",
+      "联名"
+     ],
+     "isNew": true,
+     "since": "2026-10"
+    },
+    {
+     "name": "云漫可可",
+     "cat": "奶茶",
+     "tea": [
+      "普洱"
+     ],
+     "price": 24,
+     "toppings": [],
+     "tags": [
+      "可可",
+      "浓醇",
+      "联名"
+     ],
+     "isNew": true,
+     "since": "2026-10"
+    },
+    {
+     "name": "可可黑森林",
+     "cat": "奶茶",
+     "tea": [],
+     "price": 24,
+     "toppings": [],
+     "tags": [
+      "可可",
+      "浓醇",
+      "联名"
      ],
      "isNew": true,
      "since": "2026-10"
@@ -3424,6 +3485,36 @@
      ],
      "isNew": true,
      "since": "2026-10"
+    },
+    {
+     "name": "红豆子拿铁",
+     "cat": "咖啡",
+     "tea": [
+      "咖啡"
+     ],
+     "price": 35,
+     "toppings": [],
+     "tags": [
+      "红豆",
+      "联名"
+     ],
+     "isNew": true,
+     "since": "2026-11"
+    },
+    {
+     "name": "瑞之抹茶",
+     "cat": "纯茶",
+     "tea": [
+      "茉莉"
+     ],
+     "price": 29,
+     "toppings": [],
+     "tags": [
+      "抹茶",
+      "联名"
+     ],
+     "isNew": true,
+     "since": "2026-11"
     }
    ]
   },
